@@ -52,4 +52,9 @@ public class DroidPlayer : MonoBehaviour {
     {
         return energy;
     }
+
+    public void Activate()
+    {
+        // code to activate droids
+    }
 }
