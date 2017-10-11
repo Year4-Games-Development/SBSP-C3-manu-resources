@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /**
  * @Class DroidPlayer sets droid status
@@ -19,8 +20,9 @@ public class DroidPlayer : MonoBehaviour {
 	/*
      * initialization
      */
-	void Awake () {
-        miningDroid = GetComponent<DroidPlayer>();
+	void Awake ()
+    {
+       // miningDroid = GetComponent<DroidPlayer>();
     }
 	
     /*
@@ -28,7 +30,7 @@ public class DroidPlayer : MonoBehaviour {
      */
 	public void UpdateDisplay ()
     {
-        bool location = miningDroid.GetLocation();
+        bool location = GetLocation();
         bool energy = miningDroid.GetEnergyStatus();
 
         string msg = "Droid is recharged: = " + energy + " | Droid is currently: = " + location;
