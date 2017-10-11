@@ -11,6 +11,7 @@ public class ItemDatabase : MonoBehaviour {
 
     void Start()
     {
+
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/SBSP-C3-manu-resources/StreamingAssets/Items.json"));
 
         ConstructItemDatabase();
@@ -66,7 +67,9 @@ public class Item {
         this.Stackable = stackable;
         this.Rarity = rarity;
         this.Slug = slug;
-        this.Sprite = Resources.Load<Sprite>("Sprites/Items/" + slug);
+
+        this.Sprite = Resources.Load<Sprite>("Sprites/Items/"+ slug);
+
     }
 
     public Item()
