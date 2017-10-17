@@ -27,5 +27,20 @@
 	"stackable" : true,
 	"rarity" : 6,
 	"slug" : "Metal"
+	},
+
+	{
+	"id" : 2,
+	"title" : "Gold",
+	"value" : 2,
+	"stats":{
+		"defence" : 3,
+		"power" : 9,
+		"weight" : 10
+	},
+	"description" : "Gold is valuable",
+	"stackable" : false,
+	"rarity" : 10,
+	"slug" : "Gold"
 	}
 ]
