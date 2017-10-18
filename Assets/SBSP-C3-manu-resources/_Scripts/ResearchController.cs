@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class ResearchController : MonoBehaviour
 {
     private ResearchModel researchModel;
+    private RechargeTimer rechargeTimer;
+
     public int ironAmount = 600;
     public bool scienceLv1Researched = false;
     public bool scienceLv2Researched = false;
     public bool scienceLv3Researched = false;
+
 
     /// <summary>
     /// /Science button references
@@ -36,11 +39,18 @@ public class ResearchController : MonoBehaviour
     void Awake ()
     {
         researchModel = new ResearchModel();
+        rechargeTimer = new RechargeTimer();
 	}
 
     public ResearchModel GetResearchModel()
     {
         return researchModel;
+    }
+
+
+    public RechargeTimer GetRechargeTimer()
+    {
+        return rechargeTimer;
     }
 
     public void ScienceLv1Upgrade()
@@ -62,5 +72,6 @@ public class ResearchController : MonoBehaviour
         ironAmount -= 300;
         scienceLv3Researched = true;
         Debug.Log("scienceLv3 Called " + ironAmount);
+
     }
 }
