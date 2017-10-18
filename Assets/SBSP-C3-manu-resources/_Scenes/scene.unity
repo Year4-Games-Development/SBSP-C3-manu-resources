@@ -142,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: 346}
+  m_AnchoredPosition: {x: -320, y: 347}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100496734
@@ -265,7 +265,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 802, y: 693}
+  m_SizeDelta: {x: 802, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131925083
 MonoBehaviour:
@@ -458,8 +458,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 537093523}
-  - {fileID: 664890024}
   - {fileID: 1047465957}
+  - {fileID: 664890024}
   m_Father: {fileID: 1428464040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -910,7 +910,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 537093525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270710}
+        m_MethodName: ScienceLv1Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &537093525
@@ -1021,7 +1032,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 621196005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270708}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &621196005
@@ -1168,8 +1190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000005722}
-  m_SizeDelta: {x: 802, y: 693}
+  m_AnchoredPosition: {x: -1, y: -4.55}
+  m_SizeDelta: {x: 802, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660476903
 MonoBehaviour:
@@ -1216,7 +1238,7 @@ GameObject:
   - component: {fileID: 664890026}
   - component: {fileID: 664890025}
   m_Layer: 5
-  m_Name: scienceLevel2
+  m_Name: scienceLevel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1234,7 +1256,7 @@ RectTransform:
   m_Children:
   - {fileID: 1072277074}
   m_Father: {fileID: 250460620}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1279,7 +1301,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 664890026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270710}
+        m_MethodName: ScienceLv3Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &664890026
@@ -1439,7 +1472,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -29}
-  m_SizeDelta: {x: 802, y: 642}
+  m_SizeDelta: {x: 802, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675370646
 MonoBehaviour:
@@ -1741,10 +1774,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1059.46, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1824,7 +1857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 322, y: 320}
+  m_AnchoredPosition: {x: 322, y: 317}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913273402
@@ -2021,7 +2054,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -26}
-  m_SizeDelta: {x: 802, y: 642}
+  m_SizeDelta: {x: 802, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951935631
 MonoBehaviour:
@@ -2107,6 +2140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf541cf77c540a459b438fb3d8c7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ironAmount: 600
+  scienceLv1Researched: 0
+  scienceLv2Researched: 0
+  scienceLv3Researched: 0
+  scienceLv1: {fileID: 537093524}
+  scienceLv2: {fileID: 1047465958}
+  scienceLv3: {fileID: 664890025}
+  combatLv1: {fileID: 1544067858}
+  combatLv2: {fileID: 1358828889}
+  combatLv3: {fileID: 621196004}
+  enginLv1: {fileID: 1381689957}
+  enginLv2: {fileID: 375706230}
+  enginLv3: {fileID: 1238026000}
 --- !u!4 &1017270711
 Transform:
   m_ObjectHideFlags: 0
@@ -2132,7 +2178,7 @@ GameObject:
   - component: {fileID: 1047465959}
   - component: {fileID: 1047465958}
   m_Layer: 5
-  m_Name: scienceLevel3
+  m_Name: scienceLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2150,7 +2196,7 @@ RectTransform:
   m_Children:
   - {fileID: 505144798}
   m_Father: {fileID: 250460620}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2195,7 +2241,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047465959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270710}
+        m_MethodName: ScienceLv2Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1047465959
@@ -3046,7 +3103,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1358828890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270708}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1358828890
@@ -3751,7 +3819,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1544067859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1017270708}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1544067859
@@ -4111,7 +4190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -113, y: 346}
+  m_AnchoredPosition: {x: -113, y: 345}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785551750
@@ -4293,7 +4372,7 @@ RectTransform:
   m_GameObject: {fileID: 1980966343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.54, y: 0.5, z: 1}
   m_Children:
   - {fileID: 675370645}
   - {fileID: 951935630}
@@ -4302,10 +4381,10 @@ RectTransform:
   m_Father: {fileID: 905716632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -17.05}
+  m_SizeDelta: {x: 800, y: 659.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980966345
 MonoBehaviour:
@@ -4374,7 +4453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: 320}
+  m_AnchoredPosition: {x: 120, y: 321}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020290661
