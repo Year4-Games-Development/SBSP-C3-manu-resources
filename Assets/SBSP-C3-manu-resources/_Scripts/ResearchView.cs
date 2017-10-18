@@ -50,6 +50,7 @@ public class ResearchView : MonoBehaviour
     void Update ()
     {
         UpdateViews();
+        UpdateResearchable();
 	}
      
     private void UpdateViews()
@@ -74,4 +75,37 @@ public class ResearchView : MonoBehaviour
         enginLevel2.text = researchModel.GetEnginLevel2();//text on the buttons 
         enginLevel3.text = researchModel.GetEnginLevel3();//text on the buttons 
     }
+
+
+    private void UpdateResearchable()
+    {
+        if (researchController.ironAmount < 100 || researchController.scienceLv1Researched == true)
+        {
+            researchController.scienceLv1.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            researchController.scienceLv1.GetComponent<Button>().enabled = true;
+        }
+
+        if (researchController.ironAmount < 200 || researchController.scienceLv2Researched == true || researchController.scienceLv1Researched == false)
+        {
+            researchController.scienceLv2.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            researchController.scienceLv2.GetComponent<Button>().enabled = true;
+        }
+
+        if (researchController.ironAmount < 300 || researchController.scienceLv3Researched == true || researchController.scienceLv2Researched == false)
+        {
+            researchController.scienceLv3.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            researchController.scienceLv3.GetComponent<Button>().enabled = true;
+        }
+    }
+    
+
 }
