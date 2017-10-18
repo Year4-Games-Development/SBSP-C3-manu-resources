@@ -8,10 +8,10 @@ public class ManuView : MonoBehaviour
     /// <summary>
     /// /science upgrades
     /// </summary>
-    public Text munufactureText;
-    public Text fuel;
-    public Text rockets;
-    public Text ammo;
+    public Text manufactureText;
+    public Text fuelBtn;
+    public Text rocketBtn;
+    public Text ammoBtn;
 
     private ManuController manuController;
     private ManuModel manuModel;
@@ -19,6 +19,7 @@ public class ManuView : MonoBehaviour
     void Awake()
     {
         manuController = GetComponent<ManuController>();
+        
     }
 
     // Use this for initialization
@@ -35,11 +36,10 @@ public class ManuView : MonoBehaviour
 
     private void UpdateViews()
     {
-        ///science setters 
-        munufactureText.text = manuModel.GetManufactureText();
-        fuel.text = manuModel.GetFuel();
-        rockets.text = manuModel.GetRockets();
-        ammo.text = manuModel.GetAmmo();
-
+        ///manufacture button text 
+        manufactureText.text = manuModel.GetManufactureText();
+        fuelBtn.text = manuModel.GetFuelText();
+        rocketBtn.text = manuModel.GetRocketText();
+        ammoBtn.text = manuModel.GetAmmoText();
     }
 }
