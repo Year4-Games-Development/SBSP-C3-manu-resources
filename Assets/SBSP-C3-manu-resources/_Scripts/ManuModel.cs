@@ -18,16 +18,16 @@ public class ManuModel{
     {
         return manufactureText;
     }
-    public string GetRockets()
+    public string GetRocketText()
     {
         return rockets;
     }
-    public string GetFuel()
-    {
+    public string GetFuelText()
+    {   
         return fuel;
 
     }
-    public string GetAmmo()
+    public string GetAmmoText()
     {
         return ammo;
     }
