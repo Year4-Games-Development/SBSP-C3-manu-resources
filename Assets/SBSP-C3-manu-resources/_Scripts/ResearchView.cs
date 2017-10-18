@@ -42,7 +42,7 @@ public class ResearchView : MonoBehaviour
     void Start ()
     {
         researchModel = researchController.GetResearchModel();
-        rechargeTimer = researchController.GetRechargeTimer();
+        //rechargeTimer = researchController.GetRechargeTimer();
         UpdateViews();
     }
 
