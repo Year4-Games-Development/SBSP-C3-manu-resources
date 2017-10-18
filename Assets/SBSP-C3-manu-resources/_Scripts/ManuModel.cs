@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class ManuModel{
+public class ManuModel
+{
 
     /// <summary>
     /// items that can be manufactured 

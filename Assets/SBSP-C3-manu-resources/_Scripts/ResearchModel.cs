@@ -10,6 +10,8 @@ public class ResearchModel
     private string scienceLevel1 = "Faster Mining Rate";
     private string scienceLevel2 = "Larger Droids Area";
     private string scienceLevel3 = "Extra Droids";
+
+  
     /// <summary>
     /// combat branch variables
     /// </summary>
@@ -24,6 +26,13 @@ public class ResearchModel
     private string enginLevel1 = "Better engins";
     private string enginLevel2 = "Better reactor";
     private string enginLevel3 = "Unknown";
+    
+    /// <summary>
+    /// research time for each level 
+    /// </summary>
+    private float researchTimeLv1 = 10;
+    private float researchTimeLv3 = 20;
+    private float researchTimeLv2 = 30;
 
 
     /// <summary>
@@ -85,6 +94,33 @@ public class ResearchModel
     public string GetEnginLevel3()
     {
         return enginLevel3;
+    }
+
+    /// <summary>
+    /// research time for all level 1 items 
+    /// </summary>
+    /// <returns></returns>
+    public float GetResearchTimeLv1()
+    {
+        return researchTimeLv1;
+    }
+
+    /// <summary>
+    /// research time for all level 2 items 
+    /// </summary>
+    /// <returns></returns>
+    public float GetResearchTimeLv2()
+    {
+        return researchTimeLv2;
+    }
+
+    /// <summary>
+    /// research time for all level 3 items 
+    /// </summary>
+    /// <returns></returns>
+    public float GetResearchTimeLv3()
+    {
+        return researchTimeLv3;
     }
 
 }

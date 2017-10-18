@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RechargeTimer : MonoBehaviour {
+public class RechargeTimer
+{
 
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
@@ -25,13 +26,11 @@ public class RechargeTimer : MonoBehaviour {
         return secondsLeft;
     }
 
-
     public int GetElapsedSeconds()
     {
         int elapsedSeconds = (int)(Time.time - countdownTimerStartTime);
         return elapsedSeconds;
     }
-
 
     public float GetProportionTimeRemaining()
     {
