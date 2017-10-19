@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroidView : MonoBehaviour {
+public class DroidView{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public DroidView()
+    {
+
+
+
+    }  
+
 }

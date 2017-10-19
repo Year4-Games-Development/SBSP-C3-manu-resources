@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class DroidBayView : MonoBehaviour {
+public class DroidBayView{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private Button _deployButton;
+    private Button _upgradeButton;
+    private Button _removeButton;
+
+	public DroidBayView(Button deploy, Button upgrade, Button remove)
+    {
+
+        _deployButton = deploy;
+        _upgradeButton = upgrade;
+        _removeButton = remove;
+
+    }
 }
