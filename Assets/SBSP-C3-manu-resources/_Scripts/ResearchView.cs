@@ -76,117 +76,34 @@ public class ResearchView : MonoBehaviour
         enginLevel3.text = researchModel.GetEnginLevel3();//text on the buttons 
     }
 
-    //Updates reseachable buttons.
+
     private void UpdateResearchable()
     {
-        //Nested if statements to handle button functionality for science tab in the research tree.
-        if (!researchController.scienceLv1.IsDestroyed())
+        if (researchController.ironAmount < 100 || researchController.scienceLv1Researched == true)
         {
-            if (researchModel.GetIronAmount() < 100)
-            {
-                researchController.scienceLv1.GetComponent<Button>().enabled = false;//Button is disabled if prerequisites aren't met.
-            }
-            else
-            {
-                researchController.scienceLv1.GetComponent<Button>().enabled = true;//Otherwise the button is enabled and my be clicked.
-            }
+            researchController.scienceLv1.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            researchController.scienceLv1.GetComponent<Button>().enabled = true;
         }
 
-        if (!researchController.scienceLv2.IsDestroyed())
+        if (researchController.ironAmount < 200 || researchController.scienceLv2Researched == true || researchController.scienceLv1Researched == false)
         {
-            if (researchModel.GetIronAmount() < 200 || researchModel.GetScienceLvReseachedByIndex(1) == true || researchModel.GetScienceLvReseachedByIndex(0) == false)
-            {
-                researchController.scienceLv2.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.scienceLv2.GetComponent<Button>().enabled = true;
-            }
+            researchController.scienceLv2.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            researchController.scienceLv2.GetComponent<Button>().enabled = true;
         }
 
-        if (!researchController.scienceLv3.IsDestroyed())
+        if (researchController.ironAmount < 300 || researchController.scienceLv3Researched == true || researchController.scienceLv2Researched == false)
         {
-            if (researchModel.GetIronAmount() < 300 || researchModel.GetScienceLvReseachedByIndex(2) == true || researchModel.GetScienceLvReseachedByIndex(1) == false)
-            {
-                researchController.scienceLv3.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.scienceLv3.GetComponent<Button>().enabled = true;
-            }
+            researchController.scienceLv3.GetComponent<Button>().enabled = false;
         }
-
-        //Nested if statements to handle button functionality for combat tab in the research tree.
-        if (!researchController.combatLv1.IsDestroyed())
+        else
         {
-            if (researchModel.GetIronAmount() < 100)
-            {
-                researchController.combatLv1.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.combatLv1.GetComponent<Button>().enabled = true;
-            }
-        }
-
-        if (!researchController.combatLv2.IsDestroyed())
-        {
-            if (researchModel.GetIronAmount() < 200 || researchModel.GetCombatLvReseachedByIndex(1) == true || researchModel.GetCombatLvReseachedByIndex(0) == false)
-            {
-                researchController.combatLv2.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.combatLv2.GetComponent<Button>().enabled = true;
-            }
-        }
-
-        if (!researchController.combatLv3.IsDestroyed())
-        {
-            if (researchModel.GetIronAmount() < 300 || researchModel.GetCombatLvReseachedByIndex(2) == true || researchModel.GetCombatLvReseachedByIndex(1) == false)
-            {
-                researchController.combatLv3.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.combatLv3.GetComponent<Button>().enabled = true;
-            }
-        }
-
-        if (!researchController.enginLv1.IsDestroyed())
-        {
-            if (researchModel.GetIronAmount() < 100)
-            {
-                researchController.enginLv1.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.enginLv1.GetComponent<Button>().enabled = true;
-            }
-        }
-
-        if (!researchController.enginLv2.IsDestroyed())
-        {
-            if (researchModel.GetIronAmount() < 200 || researchModel.GetEnginLvReseachedByIndex(1) == true || researchModel.GetEnginLvReseachedByIndex(0) == false)
-            {
-                researchController.enginLv2.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.enginLv2.GetComponent<Button>().enabled = true;
-            }
-        }
-
-        if (!researchController.enginLv3.IsDestroyed())
-        {
-            if (researchModel.GetIronAmount() < 300 || researchModel.GetEnginLvReseachedByIndex(2) == true || researchModel.GetEnginLvReseachedByIndex(1) == false)
-            {
-                researchController.enginLv3.GetComponent<Button>().enabled = false;
-            }
-            else
-            {
-                researchController.enginLv3.GetComponent<Button>().enabled = true;
-            }
+            researchController.scienceLv3.GetComponent<Button>().enabled = true;
         }
     }
     

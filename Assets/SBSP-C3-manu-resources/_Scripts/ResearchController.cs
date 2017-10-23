@@ -8,6 +8,12 @@ public class ResearchController : MonoBehaviour
     private ResearchModel researchModel;
     private RechargeTimer rechargeTimer;
 
+    public int ironAmount = 600;
+    public bool scienceLv1Researched = false;
+    public bool scienceLv2Researched = false;
+    public bool scienceLv3Researched = false;
+
+
     /// <summary>
     /// /Science button references
     /// </summary>
@@ -49,74 +55,23 @@ public class ResearchController : MonoBehaviour
 
     public void ScienceLv1Upgrade()
     {
-        researchModel.SetIronAmount(100);
-        researchModel.SetScienceLvReseachedByIndex(0, true);
-        Destroy(scienceLv1.gameObject);
-        Debug.Log("scienceLv1 Called " + researchModel.GetIronAmount());
+        ironAmount -= 100;
+        scienceLv1Researched = true;
+        Debug.Log("scienceLv1 Called " + ironAmount);
     }
 
     public void ScienceLv2Upgrade()
     {
-        researchModel.SetIronAmount(200);
-        researchModel.SetScienceLvReseachedByIndex(1, true);
-        Destroy(scienceLv2.gameObject);
-        Debug.Log("scienceLv2 Called " + researchModel.GetIronAmount());
+        ironAmount -= 200;
+        scienceLv2Researched = true;
+        Debug.Log("scienceLv2 Called " + ironAmount);
     }
 
     public void ScienceLv3Upgrade()
     {
-        researchModel.SetIronAmount(300);
-        researchModel.SetScienceLvReseachedByIndex(2, true);
-        Destroy(scienceLv3.gameObject);
-        Debug.Log("scienceLv3 Called " + researchModel.GetIronAmount());
+        ironAmount -= 300;
+        scienceLv3Researched = true;
+        Debug.Log("scienceLv3 Called " + ironAmount);
 
-    }
-
-    public void CombatLv1Upgrade()
-    {
-        researchModel.SetIronAmount(100);
-        researchModel.SetCombatLvReseachedByIndex(0, true);
-        Destroy(combatLv1.gameObject);
-        Debug.Log("combatLv1 Called " + researchModel.GetIronAmount());
-    }
-
-    public void CombatLv2Upgrade()
-    {
-        researchModel.SetIronAmount(200);
-        researchModel.SetCombatLvReseachedByIndex(1, true);
-        Destroy(combatLv2.gameObject);
-        Debug.Log("combatLv2 Called " + researchModel.GetIronAmount());
-    }
-
-    public void CombatLv3Upgrade()
-    {
-        researchModel.SetIronAmount(300);
-        researchModel.SetCombatLvReseachedByIndex(2, true);
-        Destroy(combatLv3.gameObject);
-        Debug.Log("combatLv3 Called " + researchModel.GetIronAmount());
-    }
-
-    public void EnginLv1Upgrade()
-    {
-        researchModel.SetIronAmount(100);//reduce iron amout
-        researchModel.SetEnginLvReseachedByIndex(0, true);
-        Destroy(enginLv1.gameObject);
-        Debug.Log("enginLv1 Called " + researchModel.GetIronAmount());
-    }
-
-    public void EnginLv2Upgrade()
-    {
-        researchModel.SetIronAmount(200);
-        researchModel.SetEnginLvReseachedByIndex(1, true);
-        Destroy(enginLv2.gameObject);
-        Debug.Log("enginLv2 Called " + researchModel.GetIronAmount());
-    }
-
-    public void EnginLv3Upgrade()
-    {
-        researchModel.SetIronAmount(300);
-        researchModel.SetEnginLvReseachedByIndex(2, true);
-        Destroy(enginLv3.gameObject);
-        Debug.Log("enginLv3 Called " + researchModel.GetIronAmount());
     }
 }
