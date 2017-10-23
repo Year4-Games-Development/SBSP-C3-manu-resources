@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class ResearchModel
 {
+    private int ironAmount = 2400;
+    private bool[] scienceLvReseached = { false, false, false };
+    private bool[] combatLvReseached = { false, false, false };
+    private bool[] enginLvResearched = { false, false, false };
     /// <summary>
     /// science branch variables 
     /// </summary>
@@ -11,7 +15,6 @@ public class ResearchModel
     private string scienceLevel2 = "Larger Droids Area";
     private string scienceLevel3 = "Extra Droids";
 
-  
     /// <summary>
     /// combat branch variables
     /// </summary>
@@ -19,13 +22,14 @@ public class ResearchModel
     private string combatLevel1 = "More Damage";
     private string combatLevel2 = "Better Shields";
     private string combatLevel3 = "More efficient";
+
     /// <summary>
     /// engineering branch variables
     /// </summary>
     private string enginText = "Engineering";
     private string enginLevel1 = "Better engins";
     private string enginLevel2 = "Better reactor";
-    private string enginLevel3 = "Unknown";
+    private string enginLevel3 = "Better Speed";
     
     /// <summary>
     /// research time for each level 
@@ -33,7 +37,6 @@ public class ResearchModel
     private float researchTimeLv1 = 10;
     private float researchTimeLv3 = 20;
     private float researchTimeLv2 = 30;
-
 
     /// <summary>
     /// science getter methods 
@@ -121,6 +124,45 @@ public class ResearchModel
     public float GetResearchTimeLv3()
     {
         return researchTimeLv3;
+    }
+    public bool GetScienceLvReseachedByIndex(int i)
+    {
+        return scienceLvReseached[i];
+    }
+    
+    public void SetScienceLvReseachedByIndex(int i, bool researchComplete)
+    {
+        scienceLvReseached[i] = researchComplete;
+    }
+
+    public bool GetCombatLvReseachedByIndex(int i)
+    {
+        return combatLvReseached[i];
+    }
+
+    public void SetCombatLvReseachedByIndex(int i, bool researchComplete)
+    {
+        combatLvReseached[i] = researchComplete;
+    }
+
+    public bool GetEnginLvReseachedByIndex(int i)
+    {
+        return enginLvResearched[i];
+    }
+
+    public void SetEnginLvReseachedByIndex(int i, bool researchComplete)
+    {
+        enginLvResearched[i] = researchComplete;
+    }
+
+    public int GetIronAmount()
+    {
+        return ironAmount;
+    }
+
+    public void SetIronAmount(int amount)
+    {
+        ironAmount -= amount;
     }
 
 }
