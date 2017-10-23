@@ -26,6 +26,15 @@ public class ItemDatabase : MonoBehaviour {
         return null;
     }
 
+    public Item FetchItemByTitle(string title)
+    {
+        for (int i = 0; i < database.Count; i++)
+            if (database[i].Title == title)
+                return database[i];
+
+        return null;
+    }
+
     void ConstructItemDatabase()
     {
         for(int i =0; i < itemData.Count; i++)

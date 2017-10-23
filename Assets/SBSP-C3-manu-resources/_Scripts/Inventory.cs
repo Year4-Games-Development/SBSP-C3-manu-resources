@@ -29,23 +29,20 @@ public class Inventory : MonoBehaviour {
             slots[i].transform.SetParent(slotPanel.transform);
         }
 
-        AddItem(0);
-        AddItem(1);
-        AddItem(1);
-        AddItem(1);
-        AddItem(2);
-        AddItem(2);
+        AddItem("Diamond");
+        AddItem("Iron");
+        AddItem("Gold");
 
     }
 
-    public void AddItem(int id)
+    public void AddItem(string title)
     {
-        Item itemToAdd = database.FetchItemByID(id);
+        Item itemToAdd = database.FetchItemByTitle(title);
         if (itemToAdd.Stackable && CheckItemInInventory(itemToAdd))
         {
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].ID == id)
+                if (items[i].Title == title)
                 {
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
@@ -54,7 +51,7 @@ public class Inventory : MonoBehaviour {
                 }
             }
         }
-        else
+        else 
         {
             for (int i = 0; i < items.Count; i++)
             {
@@ -75,10 +72,15 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    public void RemoveItem()
+    {
+
+    }
+
     bool CheckItemInInventory(Item item)
     {
        for(int i=0; i<items.Count; i++)
-            if (items[i].ID == item.ID)
+            if (items[i].Title == item.Title)
                 return true;  
                 return false;
     }
