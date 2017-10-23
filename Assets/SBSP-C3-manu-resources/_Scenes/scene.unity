@@ -1774,7 +1774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251, y: 287}
+  m_AnchoredPosition: {x: -250, y: 287}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826690162
@@ -2428,6 +2428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf541cf77c540a459b438fb3d8c7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ironAmount: 600
+  scienceLv1Researched: 0
+  scienceLv2Researched: 0
+  scienceLv3Researched: 0
   scienceLv1: {fileID: 537093524}
   scienceLv2: {fileID: 1047465958}
   scienceLv3: {fileID: 664890025}
