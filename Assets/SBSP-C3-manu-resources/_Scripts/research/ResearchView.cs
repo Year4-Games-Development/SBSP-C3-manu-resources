@@ -31,7 +31,7 @@ public class ResearchView : MonoBehaviour
 
     private ResearchController researchController;
     private ResearchModel researchModel;
-   // private RechargeTimer rechargeTimer; not in use till research timer is implemented 
+    private RechargeTimer rechargeTimer;
 
     void Awake()
     {
@@ -42,7 +42,6 @@ public class ResearchView : MonoBehaviour
     void Start ()
     {
         researchModel = researchController.GetResearchModel();
-        //rechargeTimer = researchController.GetRechargeTimer();
         UpdateViews();
     }
 
@@ -60,8 +59,7 @@ public class ResearchView : MonoBehaviour
         scienceLevel1.text = researchModel.GetScienceLevel1();//text on the buttons 
         scienceLevel2.text = researchModel.GetScienceLevel2();//text on the buttons 
         scienceLevel3.text = researchModel.GetScienceLevel3();//text on the buttons 
-        //timer needs to be added to each button. (using hover over pop up maybe )
-        //material needed needs to be added to the buttons. (using hover over pop up maybe )
+     
 
         ///combat setters
         combatText.text = researchModel.GetCombatText();//text on each branch of the research tree

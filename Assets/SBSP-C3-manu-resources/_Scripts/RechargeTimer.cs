@@ -2,8 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RechargeTimer
+public class RechargeTimer :MonoBehaviour
 {
+    private ResearchModel researchModel;
+
+    void Awake()
+    {
+        researchModel = new ResearchModel();
+    }
+
+    public ResearchModel GetResearchModel()
+    {
+        return researchModel;
+    }
 
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
@@ -37,4 +48,32 @@ public class RechargeTimer
         float proportionLeft = (float)GetSecondsRemaining() / (float)GetTotalSeconds();
         return proportionLeft;
     }
+
+    //Research timers 
+    public IEnumerator ScienceLv1Time()
+    {
+        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv1()));
+    }
+
+    public IEnumerator ScienceLv2Time()
+    {
+        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv2()));
+    }
+
+    public IEnumerator ScienceLv3Time()
+    {
+        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv3()));
+    }
+
+     IEnumerator WaitForSecounds(float waitTime)
+    {
+        int i = 0;
+
+        while(i>0)
+        {
+            yield return new WaitForSeconds(waitTime);
+            i--;
+        }
+    }
+    
 }

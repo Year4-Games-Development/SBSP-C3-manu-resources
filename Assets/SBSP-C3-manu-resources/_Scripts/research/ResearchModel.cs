@@ -11,33 +11,32 @@ public class ResearchModel
     /// science branch variables 
     /// </summary>
     private string scienceText = "Science";
-    private string scienceLevel1 = "Faster Mining Rate";
-    private string scienceLevel2 = "Larger Droids Area";
-    private string scienceLevel3 = "Extra Droids";
+    private string scienceLevel1 = "Faster Mining Rate, Research time 10 secounds";
+    private string scienceLevel2 = "Larger Droids Area, Research time 20 secounds";
+    private string scienceLevel3 = "Extra Droids, Research time 30 secounds";
 
     /// <summary>
     /// combat branch variables
     /// </summary>
     private string combatText = "Combat";
-    private string combatLevel1 = "More Damage";
-    private string combatLevel2 = "Better Shields";
-    private string combatLevel3 = "More efficient";
+    private string combatLevel1 = "More Damage, Research time 10 secounds";
+    private string combatLevel2 = "Better Shields, Research time 20 secounds";
+    private string combatLevel3 = "More efficient, Research time 30 secounds";
 
     /// <summary>
     /// engineering branch variables
     /// </summary>
     private string enginText = "Engineering";
-    private string enginLevel1 = "Better engins";
-    private string enginLevel2 = "Better reactor";
-    private string enginLevel3 = "Better Speed";
+    private string enginLevel1 = "Better engins, Research time 10 secounds";
+    private string enginLevel2 = "Better reactor, Research time 20 secounds";
+    private string enginLevel3 = "Better Speed, Research time 30 secounds";
     
     /// <summary>
     /// research time for each level 
     /// </summary>
-    private float researchTimeLv1 = 10;
-    private float researchTimeLv3 = 20;
-    private float researchTimeLv2 = 30;
-
+    private float researchTimeLv1 = 5.0f;
+    private float researchTimeLv3 = 10.0f;
+    private float researchTimeLv2 = 15.0f;
     /// <summary>
     /// science getter methods 
     /// </summary>
@@ -99,7 +98,7 @@ public class ResearchModel
         return enginLevel3;
     }
 
-    /// <summary>
+    /// <summary>*****************************************************************************************
     /// research time for all level 1 items 
     /// </summary>
     /// <returns></returns>
@@ -125,6 +124,7 @@ public class ResearchModel
     {
         return researchTimeLv3;
     }
+    //****************************************************************************************************
     public bool GetScienceLvReseachedByIndex(int i)
     {
         return scienceLvReseached[i];
