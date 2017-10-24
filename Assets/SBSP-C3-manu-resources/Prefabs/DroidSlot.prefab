@@ -459,7 +459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: Ready
 --- !u!114 &114569812331494740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,6 +651,8 @@ MonoBehaviour:
   deployButton: {fileID: 114670056162367696}
   upgradeButton: {fileID: 114674109675805574}
   removeButton: {fileID: 114569812331494740}
+  timerText: {fileID: 114492637039232556}
+  droidImage: {fileID: 114345472542514052}
 --- !u!114 &114850253639093698
 MonoBehaviour:
   m_ObjectHideFlags: 1
