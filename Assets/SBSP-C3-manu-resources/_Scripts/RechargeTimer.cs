@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RechargeTimer :MonoBehaviour
+public class RechargeTimer
 {
+<<<<<<< HEAD
+=======
 
+>>>>>>> upstream/master
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
     private int seconds;

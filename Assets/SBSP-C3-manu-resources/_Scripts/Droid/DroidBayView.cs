@@ -27,6 +27,20 @@ public class DroidBayView{
 
     }
 
+    public Button GetUpgradeButton()
+    {
+
+        return _upgradeButton;
+
+    }
+
+    public Button GetRemoveButton()
+    {
+
+        return _removeButton;
+
+    }
+
     public Text GetTimerText()
     {
 

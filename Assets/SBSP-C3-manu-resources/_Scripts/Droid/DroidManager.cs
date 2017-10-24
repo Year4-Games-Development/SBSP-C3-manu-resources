@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DroidManager : MonoBehaviour {
 
     public Button createBayButton;
+    public Text maxBayText;
     public GameObject bayPrefab;
 
     private DroidManagerModel _droidManagerModel;
@@ -16,7 +17,14 @@ public class DroidManager : MonoBehaviour {
 
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
-        _droidManagerView = new DroidManagerView(createBayButton);
+        _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
+
+    }
+
+    void Start()
+    {
+
+        _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
 
     }
 
