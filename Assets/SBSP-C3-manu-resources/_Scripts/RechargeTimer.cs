@@ -3,20 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RechargeTimer :MonoBehaviour
+public class RechargeTimer
 {
-    private ResearchModel researchModel;
-
-    void Awake()
-    {
-        researchModel = new ResearchModel();
-    }
-
-    public ResearchModel GetResearchModel()
-    {
-        return researchModel;
-    }
-
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
     private int seconds;
