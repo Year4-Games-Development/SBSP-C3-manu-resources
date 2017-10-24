@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ResearchModel
 {
+    //ItemData.Quantity(Metal);
+
     private int ironAmount = 2400;
     private bool[] scienceLvReseached = { false, false, false };
     private bool[] combatLvReseached = { false, false, false };
@@ -11,25 +13,25 @@ public class ResearchModel
     /// science branch variables 
     /// </summary>
     private string scienceText = "Science";
-    private string scienceLevel1 = "Faster Mining Rate, Research time 10 secounds";
-    private string scienceLevel2 = "Larger Droids Area, Research time 20 secounds";
-    private string scienceLevel3 = "Extra Droids, Research time 30 secounds";
+    private string scienceLevel1 = "Faster Mining Rate, Research time 5 secounds";
+    private string scienceLevel2 = "Larger Droids Area, Research time 10 secounds";
+    private string scienceLevel3 = "Extra Droids, Research time 15 secounds";
 
     /// <summary>
     /// combat branch variables
     /// </summary>
     private string combatText = "Combat";
-    private string combatLevel1 = "More Damage, Research time 10 secounds";
-    private string combatLevel2 = "Better Shields, Research time 20 secounds";
-    private string combatLevel3 = "More efficient, Research time 30 secounds";
+    private string combatLevel1 = "More Damage, Research time 5 secounds";
+    private string combatLevel2 = "Better Shields, Research time 10 secounds";
+    private string combatLevel3 = "More efficient, Research time 15 secounds";
 
     /// <summary>
     /// engineering branch variables
     /// </summary>
     private string enginText = "Engineering";
-    private string enginLevel1 = "Better engins, Research time 10 secounds";
-    private string enginLevel2 = "Better reactor, Research time 20 secounds";
-    private string enginLevel3 = "Better Speed, Research time 30 secounds";
+    private string enginLevel1 = "Better engins, Research time 5 secounds";
+    private string enginLevel2 = "Better reactor, Research time 10 secounds";
+    private string enginLevel3 = "Better Speed, Research time 15 secounds";
     
     /// <summary>
     /// research time for each level 

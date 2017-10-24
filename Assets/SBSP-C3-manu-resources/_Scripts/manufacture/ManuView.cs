@@ -18,8 +18,7 @@ public class ManuView : MonoBehaviour
 
     void Awake()
     {
-        manuController = GetComponent<ManuController>();
-        
+        manuController = GetComponent<ManuController>();     
     }
 
     // Use this for initialization

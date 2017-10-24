@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class RechargeTimer
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
     private int seconds;
