@@ -22,7 +22,6 @@ public class DroidManager : MonoBehaviour {
 
     public void CreateNewBay()
     {
-
         if (_droidManagerModel.GetCurrentSize() < _droidManagerModel.GetMaxBaySize()) {
 
             GameObject newBayGameObject = Instantiate(bayPrefab);
