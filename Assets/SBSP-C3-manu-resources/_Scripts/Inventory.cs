@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour {
         AddItem("Diamond");
         AddItem("Iron");
         AddItem("Gold");
-        RemoveItem("Gold");
+       // RemoveItem("Gold");
 
     }
 
