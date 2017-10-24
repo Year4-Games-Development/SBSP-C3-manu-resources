@@ -2386,9 +2386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2e53215f77264d88aadae8518ca44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotsPanel: {fileID: 0}
-  slot: {fileID: 0}
-  slotItem: {fileID: 0}
+  slotsPanel: {fileID: 559408028}
+  slot: {fileID: 1650873212087490, guid: a82d45d2022544846b38235208d802c9, type: 2}
+  slotItem: {fileID: 1304116706102710, guid: 55e182a171bc8384baff9bc1228b9da0, type: 2}
   slotsList: []
 --- !u!114 &810149826
 MonoBehaviour:
@@ -3861,7 +3861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000091552734}
+  m_AnchoredPosition: {x: 0.000061035156, y: 257.0999}
   m_SizeDelta: {x: 600, y: 857.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1169808005
@@ -4316,8 +4316,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 638272551}
   m_HandleRect: {fileID: 638272550}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.70003504
+  m_Value: 0
+  m_Size: 0.7000351
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

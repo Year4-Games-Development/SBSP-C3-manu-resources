@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ManuController : MonoBehaviour {
 
     private ManuModel manuModel;
+
+    public Button fuelBtn;
+    public Button rocketBtn;
+    public Button ammoBtn;
+    string item;
 
     // Use this for initialization
     void Awake()
@@ -16,5 +22,22 @@ public class ManuController : MonoBehaviour {
     {
         return manuModel;
     }
+
+    public void fuelManu()
+    {
+        item = "Fuel";
+        InventoryManager.AddItem(item);
+    }
+    /*-----------------------------not being used till other teams call
+    public void rocketManu()
+    {
+      
+    }
+
+    public void ammoManu()
+    {
+     
+    }
+    */
 
 }

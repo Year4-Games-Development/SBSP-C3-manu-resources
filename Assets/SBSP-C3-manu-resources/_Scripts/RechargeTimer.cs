@@ -5,17 +5,6 @@ using UnityEngine;
 
 public class RechargeTimer :MonoBehaviour
 {
-    private ResearchModel researchModel;
-
-    void Awake()
-    {
-        researchModel = new ResearchModel();
-    }
-
-    public ResearchModel GetResearchModel()
-    {
-        return researchModel;
-    }
 
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
