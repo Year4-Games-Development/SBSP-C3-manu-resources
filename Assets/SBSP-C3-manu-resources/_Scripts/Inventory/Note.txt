@@ -1,0 +1,11 @@
+*******Fix by Charles John*******
+
+*Restructure inventory system.
+*Moved scripts to inventory folder.
+*Deleted plugin folder.
+*Created a simple script for calling json file.
+*Adding item method.
+*Remove item method.
+*Collectible items script.
+*Commenting.
+*Check if inventory is full method.

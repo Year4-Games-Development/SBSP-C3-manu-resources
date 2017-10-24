@@ -1,0 +1,54 @@
+{	"ItemClass":
+	[
+		{
+		"name" : "Diamond",
+		"value" : 5,
+		"quantity" : 0,
+		"defence": 9,
+		"power" : 8,
+		"weight" : 5,
+		"description": "Mined Diamond is stronger than metal",
+		"stackable" : false,
+		"rarity" : 10,
+		"spriteName": "Diamond"
+		},
+		{
+		"name" : "Fuel",
+		"value" : 5,
+		"quantity" : 0,
+		"defence": 9,
+		"power" : 8,
+		"weight" : 5,
+		"description": "Needed For Engines",
+		"stackable" : false,
+		"rarity" : 10,
+		"spriteName": "Fuel"
+		},
+
+		{
+		"name" : "Metal",
+		"value" : 2,
+		"quantity" : 0,
+		"defence" : 5,
+		"power" : 6,
+		"weight" : 7,
+		"description" : "Mined Iron is stronger than bronze",
+		"stackable" : true,
+		"rarity" : 6,
+		"spriteName": "Metal"
+		},
+
+		{
+		"name" : "Gold",
+		"value" : 2,
+		"quantity" : 0,
+		"defence" : 3,
+		"power" : 9,
+		"weight" : 10,
+		"description" : "Gold is valuable",
+		"stackable" : false,
+		"rarity" : 10,
+		"spriteName": "Gold"
+		}
+	]
+}
