@@ -31,9 +31,6 @@ public class Item
         this.Slug = slug;
 
         this.Sprite = Resources.Load<Sprite>("Sprites/Items/" + slug);
-
-
-
     }
 
     public Item()

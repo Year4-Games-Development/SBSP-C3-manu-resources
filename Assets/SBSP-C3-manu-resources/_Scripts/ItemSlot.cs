@@ -33,6 +33,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             droppedItem.slot = id;
             droppedItem.transform.SetParent(this.transform);
             droppedItem.transform.position = this.transform.position;
+          
 
             inv.items[droppedItem.slot] = item.GetComponent<ItemData>().item;
             inv.items[id] = droppedItem.item;

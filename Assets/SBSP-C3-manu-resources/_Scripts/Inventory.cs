@@ -32,6 +32,7 @@ public class Inventory : MonoBehaviour {
         AddItem("Diamond");
         AddItem("Iron");
         AddItem("Gold");
+        RemoveItem("Gold");
 
     }
 
@@ -72,9 +73,46 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public void RemoveItem()
+    public void RemoveItem(string title)
     {
+        Item itemToRemove = database.FetchItemByTitle(title);
+        if(itemToRemove.Stackable && CheckItemInInventory(itemToRemove))
+        {
+          
+            for(int j=0; j < items.Count; j++)
+            {
+                if (items[j].Title == title)
+                {
+                    ItemData data = slots[j].transform.GetChild(0).GetComponent<ItemData>();
+                    data.amount--;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    if (data.amount == 0)
+                    {
+                        Destroy(slots[j].transform.GetChild(0).gameObject);
+                        items[j] = new Item();
+                        break;
+                    }
+                    if(data.amount == 1)
+                    {
+                        slots[j].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "";
+                        break;
+                    }
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].Title == null && items[i].Title == title)
+                {
+                    Destroy(slots[i].transform.GetChild(0).gameObject); items[i] = new Item();
+                    break;
+                }
+            }
 
+        }
     }
 
     bool CheckItemInInventory(Item item)

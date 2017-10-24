@@ -9,7 +9,7 @@
 		"weight" : 5
 		},
 	"description": "Mined Diamond is stronger than metal",
-	"stackable" : false,
+	"stackable" : true,
 	"rarity" : 10,
 	"slug": "diamond"
 	},
@@ -24,7 +24,7 @@
 		"weight" : 7
 	},
 	"description" : "Mined Iron is stronger than bronze",
-	"stackable" : false,
+	"stackable" : true,
 	"rarity" : 6,
 	"slug" : "Metal"
 	},
@@ -39,7 +39,7 @@
 		"weight" : 10
 	},
 	"description" : "Gold is valuable",
-	"stackable" : false,
+	"stackable" : true,
 	"rarity" : 10,
 	"slug" : "Gold"
 	}
