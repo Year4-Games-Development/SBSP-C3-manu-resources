@@ -565,6 +565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8610ebb8502593b429dcc7d99d37d011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelBtn: {fileID: 1312110510}
+  rocketBtn: {fileID: 1172545524}
+  ammoBtn: {fileID: 1227857708}
 --- !u!4 &148730815
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,8 +2851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df99dca96694a0841bdf82ced6139245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createBayButton: {fileID: 826690162}
-  bayPrefab: {fileID: 1312467379416522, guid: 4f4163d6f6a62464184f1abd5db9b162, type: 2}
+  createBayButton: {fileID: 0}
+  maxBayText: {fileID: 0}
+  bayPrefab: {fileID: 0}
 --- !u!1 &913273400
 GameObject:
   m_ObjectHideFlags: 0
