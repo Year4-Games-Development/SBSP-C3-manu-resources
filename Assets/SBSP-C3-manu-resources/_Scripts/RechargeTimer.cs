@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,21 @@ public class RechargeTimer :MonoBehaviour
 
     private float countdownTimerStartTime;
     private int countdownTimerDuration;
+    private int seconds;
+
+    private IEnumerator couroutine;
+
+    public RechargeTimer()
+    {
+
+    }
+
+    public RechargeTimer(int timer)
+    {
+
+        countdownTimerDuration = timer;
+
+    }
     
     public int GetTotalSeconds()
     {
@@ -49,31 +65,43 @@ public class RechargeTimer :MonoBehaviour
         return proportionLeft;
     }
 
-    //Research timers 
-    public IEnumerator ScienceLv1Time()
+    private IEnumerator DecrementTimer(int seconds, ITimeable callback)
     {
-        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv1()));
-    }
 
-    public IEnumerator ScienceLv2Time()
-    {
-        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv2()));
-    }
+        this.seconds = seconds;
 
-    public IEnumerator ScienceLv3Time()
-    {
-        yield return StartCoroutine(WaitForSecounds(researchModel.GetResearchTimeLv3()));
-    }
+        callback.OnStartTimer();
 
-     IEnumerator WaitForSecounds(float waitTime)
-    {
-        int i = 0;
-
-        while(i>0)
+        while (this.seconds > 0)
         {
-            yield return new WaitForSeconds(waitTime);
-            i--;
+            yield return new WaitForSeconds(1f);
+            this.seconds--;
+            callback.OnIncrementTimer();
         }
+
+        callback.OnFinishTimer();
+
     }
-    
+
+    public IEnumerator GetCurrentCouroutine()
+    {
+        return couroutine;
+    }
+
+    public IEnumerator StartTimerCouroutine(int seconds, ITimeable callback)
+    {
+
+        couroutine = DecrementTimer(seconds, callback);
+
+        return couroutine;
+
+    }
+
+    public int GetRemainingSeconds()
+    {
+
+        return seconds;
+
+    }
+
 }
