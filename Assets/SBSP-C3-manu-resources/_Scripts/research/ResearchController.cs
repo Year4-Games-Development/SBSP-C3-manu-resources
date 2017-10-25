@@ -56,7 +56,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv1Upgrade()
     {
-        scienceLv1.interactable = false;
         researchLevel = 0;
         branch = "science";
         startResearsh();
@@ -64,7 +63,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv2Upgrade()
     {
-        scienceLv2.interactable = false;
         researchLevel = 1;
         branch = "science";
         startResearsh();
@@ -72,7 +70,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv3Upgrade()
     {
-        scienceLv3.interactable = false;
         researchLevel = 2;
         branch = "science";
         startResearsh();
@@ -80,7 +77,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv1Upgrade()
     {
-        combatLv1.interactable = false;
         researchLevel = 0;
         branch = "combat";
         startResearsh();
@@ -88,7 +84,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv2Upgrade()
     {
-        combatLv2.interactable = false;
         researchLevel = 1;
         branch = "combat";
         startResearsh();
@@ -96,7 +91,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv3Upgrade()
     {
-        combatLv3.interactable = false;
+
         researchLevel = 2;
         branch = "combat";
         startResearsh();
@@ -104,7 +99,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void EnginLv1Upgrade()
     {
-        enginLv1.interactable = false;
         researchLevel = 0;
         branch = "engineering";
         startResearsh();
@@ -112,7 +106,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void EnginLv2Upgrade()
     {
-        enginLv2.interactable = false;
         researchLevel = 1;
         branch = "engineering";
         startResearsh();
@@ -137,7 +130,7 @@ public class ResearchController : MonoBehaviour, ITimeable
             StartCoroutine(rechargeTimer.StartTimerCouroutine(10, this));
         }
         if (researchLevel == 2)
-        {
+        {           
             StartCoroutine(rechargeTimer.StartTimerCouroutine(15, this));
         }
     }
@@ -148,7 +141,6 @@ public class ResearchController : MonoBehaviour, ITimeable
         if (researchLevel == 0)
         {
             researchModel.SetIronAmount(100);//reduce iron amout
-
         }
         if (researchLevel == 1)
         {
