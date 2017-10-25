@@ -12,11 +12,10 @@
 		"rarity" : 10,
 		"spriteName": "Diamond"
 		},
-
 		{
 		"name" : "Fuel",
 		"value" : 0,
-		"quantity" : 50,
+		"quantity" : 0,
 		"defence": 0,
 		"power" : 0,
 		"weight" : 0,
@@ -25,7 +24,30 @@
 		"rarity" : 0,
 		"spriteName": "Fuel"
 		},
-
+		{
+		"name" : "Rocket",
+		"value" : 0,
+		"quantity" : 0,
+		"defence": 0,
+		"power" : 0,
+		"weight" : 0,
+		"description": "Needed For Weapons",
+		"stackable" : true,
+		"rarity" : 0,
+		"spriteName": "Rocket"
+		},
+		{
+		"name" : "Ammo",
+		"value" : 0,
+		"quantity" : 0,
+		"defence": 0,
+		"power" : 0,
+		"weight" : 0,
+		"description": "Needed For Weapons",
+		"stackable" : true,
+		"rarity" : 0,
+		"spriteName": "Ammo"
+		},
 		{
 		"name" : "Metal",
 		"value" : 2,
