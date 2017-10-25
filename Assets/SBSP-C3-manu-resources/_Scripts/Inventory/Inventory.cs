@@ -38,8 +38,10 @@ public class Inventory : MonoBehaviour {
         AddItem("Diamond");
         AddItem("Diamond");
         AddItem("Diamond");
-       
-
+        AddItem("Iron");
+        AddItem("Gold");
+        AddItem("Fuel2");
+        RemoveItem("Diamond");
     }
 
     public void AddItem(string title)
