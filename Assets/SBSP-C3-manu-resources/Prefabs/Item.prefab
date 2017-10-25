@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 224745798039642074}
   - component: {fileID: 222209426833177712}
   - component: {fileID: 114078067926432652}
-  - component: {fileID: 114436274757911092}
-  - component: {fileID: 114682653270676762}
+  - component: {fileID: 114020433783097142}
+  - component: {fileID: 225912888833475142}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -48,6 +48,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114020433783097142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304116706102710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1da0f8bf815f046a636fa37b25688d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  slot: 0
 --- !u!114 &114074451422778710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,17 +102,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114436274757911092
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304116706102710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1242136694fe2ab41945c99310dd4d24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114441248590140394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,18 +134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
---- !u!114 &114682653270676762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304116706102710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28eee659f323c954f9b68b6b76098930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Text: 
 --- !u!222 &222209426833177712
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -193,3 +184,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0.6, y: 0.6}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 1, y: 0}
+--- !u!225 &225912888833475142
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304116706102710}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

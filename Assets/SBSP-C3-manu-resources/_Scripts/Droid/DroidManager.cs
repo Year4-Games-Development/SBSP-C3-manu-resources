@@ -44,6 +44,8 @@ public class DroidManager : MonoBehaviour {
             _droidManagerModel.AddNewBay(newBay);
             _droidManagerModel.SetBaySize(_droidManagerModel.GetCurrentSize() + 1);
 
+            _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
+
         }
 
     }
