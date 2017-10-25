@@ -84,7 +84,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv2Upgrade()
     {
-        combatLv2.interactable = false;
         researchLevel = 1;
         branch = "combat";
         startResearsh();
@@ -106,7 +105,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void EnginLv2Upgrade()
     {
-        enginLv2.interactable = false;
+        
         researchLevel = 1;
         branch = "engineering";
         startResearsh();
