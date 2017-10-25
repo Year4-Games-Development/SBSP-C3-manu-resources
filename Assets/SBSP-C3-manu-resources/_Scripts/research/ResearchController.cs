@@ -91,6 +91,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv3Upgrade()
     {
+
         researchLevel = 2;
         branch = "combat";
         startResearsh();
@@ -105,7 +106,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void EnginLv2Upgrade()
     {
-        
         researchLevel = 1;
         branch = "engineering";
         startResearsh();
@@ -113,6 +113,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void EnginLv3Upgrade()
     {
+        enginLv3.interactable = false;
         researchLevel = 2;
         branch = "engineering";
         startResearsh();
@@ -140,7 +141,6 @@ public class ResearchController : MonoBehaviour, ITimeable
         if (researchLevel == 0)
         {
             researchModel.SetIronAmount(100);//reduce iron amout
-            
         }
         if (researchLevel == 1)
         {

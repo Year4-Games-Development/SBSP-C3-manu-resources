@@ -23,12 +23,12 @@ public class RechargeTimer
         countdownTimerDuration = timer;
 
     }
-    
+
     public int GetTotalSeconds()
     {
         return countdownTimerDuration;
     }
-    
+
     public void ResetTimer(int seconds)
     {
         countdownTimerStartTime = Time.time;
