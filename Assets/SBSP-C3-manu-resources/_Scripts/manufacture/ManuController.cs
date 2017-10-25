@@ -26,7 +26,7 @@ public class ManuController : MonoBehaviour {
     public void fuelManu()
     {
         item = "Fuel";
-        InventoryManager.AddItem(item);
+      //  InventoryManager.AddItem(item);
     }
     /*-----------------------------not being used till other teams call
     public void rocketManu()
