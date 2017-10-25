@@ -11,7 +11,7 @@
 	"description": "Mined Diamond is stronger than metal",
 	"stackable" : true,
 	"rarity" : 10,
-	"slug": "diamond"
+	"slug": "Diamond"
 	},
 
 	{
@@ -34,13 +34,30 @@
 	"title" : "Gold",
 	"value" : 2,
 	"stats":{
-		"defence" : 3,
-		"power" : 9,
-		"weight" : 10
+		"defence" : 0,
+		"power" : 0,
+		"weight" : 0
 	},
 	"description" : "Gold is valuable",
 	"stackable" : true,
 	"rarity" : 10,
 	"slug" : "Gold"
+	},
+
+	{
+	"id" : 3,
+	"title" : "Fuel2",
+	"value" : 2,
+	"stats":{
+		"defence" : 0,
+		"power" : 0,
+		"weight" : 0
+		},
+	"description" : "Fuel is needed for ship engines",
+	"stackable" : true,
+	"rarity" : 2,
+	"slug" : "Fuel2"
 	}
+
+
 ]

@@ -33,11 +33,11 @@ public class ResearchController : MonoBehaviour, ITimeable
     public Button enginLv3;
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         researchModel = new ResearchModel();
         rechargeTimer = new RechargeTimer();
-	}
+    }
 
     public ResearchModel GetResearchModel()
     {
@@ -56,150 +56,87 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv1Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(100);
-        //rechargeTimer.ScienceLv1Time();//this makes system wait 10 ecounds 
-        researchModel.SetScienceLvReseachedByIndex(0, true);
-        Destroy(scienceLv1.gameObject);
-        Debug.Log("scienceLv1 Called " + researchModel.GetIronAmount());
-=======
+        scienceLv1.interactable = false;
         researchLevel = 0;
         branch = "science";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void ScienceLv2Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(200);
-        //rechargeTimer.ScienceLv2Time();//this makes system wait 20 ecounds 
-        researchModel.SetScienceLvReseachedByIndex(1, true);
-        Destroy(scienceLv2.gameObject);
-        Debug.Log("scienceLv2 Called " + researchModel.GetIronAmount());
-=======
+        scienceLv2.interactable = false;
         researchLevel = 1;
         branch = "science";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void ScienceLv3Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(300);
-        //rechargeTimer.ScienceLv3Time();//this makes system wait 30 ecounds 
-        researchModel.SetScienceLvReseachedByIndex(2, true);
-        Destroy(scienceLv3.gameObject);
-        Debug.Log("scienceLv3 Called " + researchModel.GetIronAmount());
-
-=======
+        scienceLv3.interactable = false;
         researchLevel = 2;
         branch = "science";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void CombatLv1Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(100);
-        //rechargeTimer.ScienceLv1Time();//this makes system wait 10 ecounds 
-        researchModel.SetCombatLvReseachedByIndex(0, true);
-        Destroy(combatLv1.gameObject);
-        Debug.Log("combatLv1 Called " + researchModel.GetIronAmount());
-=======
+        combatLv1.interactable = false;
         researchLevel = 0;
         branch = "combat";
         startResearsh();
-
->>>>>>> upstream/master
     }
 
     public void CombatLv2Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(200);
-        //rechargeTimer.ScienceLv2Time();//this makes system wait 20 ecounds 
-        researchModel.SetCombatLvReseachedByIndex(1, true);
-        Destroy(combatLv2.gameObject);
-        Debug.Log("combatLv2 Called " + researchModel.GetIronAmount());
-=======
+        combatLv2.interactable = false;
         researchLevel = 1;
         branch = "combat";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void CombatLv3Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(300);
-        //rechargeTimer.ScienceLv3Time();//this makes system wait 30 ecounds 
-        researchModel.SetCombatLvReseachedByIndex(2, true);
-        Destroy(combatLv3.gameObject);
-        Debug.Log("combatLv3 Called " + researchModel.GetIronAmount());
-=======
+        combatLv3.interactable = false;
         researchLevel = 2;
         branch = "combat";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void EnginLv1Upgrade()
     {
-<<<<<<< HEAD
-        researchModel.SetIronAmount(100);//reduce iron amout
-        //rechargeTimer.ScienceLv1Time();//this makes system wait 10 ecounds 
-        researchModel.SetEnginLvReseachedByIndex(0, true);
-        Destroy(enginLv1.gameObject);
-        Debug.Log("enginLv1 Called " + researchModel.GetIronAmount());
-=======
+        enginLv1.interactable = false;
         researchLevel = 0;
         branch = "engineering";
         startResearsh();
->>>>>>> upstream/master
     }
 
     public void EnginLv2Upgrade()
     {
+        enginLv2.interactable = false;
         researchLevel = 1;
         branch = "engineering";
-        researchModel.SetIronAmount(200);
-<<<<<<< HEAD
-        //rechargeTimer.ScienceLv2Time();//this makes system wait 20 ecounds 
-        researchModel.SetEnginLvReseachedByIndex(1, true);
-        Destroy(enginLv2.gameObject);
-        Debug.Log("enginLv2 Called " + researchModel.GetIronAmount());
-=======
-       
->>>>>>> upstream/master
+        startResearsh();
     }
 
     public void EnginLv3Upgrade()
     {
+        enginLv3.interactable = false;
         researchLevel = 2;
         branch = "engineering";
-        researchModel.SetIronAmount(300);
-<<<<<<< HEAD
-        //rechargeTimer.ScienceLv3Time();//this makes system wait 30 ecounds 
-        researchModel.SetEnginLvReseachedByIndex(2, true);
-        Destroy(enginLv3.gameObject);
-        Debug.Log("enginLv3 Called " + researchModel.GetIronAmount());
-=======
+        startResearsh();
     }
 
     public void startResearsh()
-    {      
-        if(researchLevel==0)
+    {
+        if (researchLevel == 0)
         {
             StartCoroutine(rechargeTimer.StartTimerCouroutine(5, this));
         }
-        if(researchLevel==1)
+        if (researchLevel == 1)
         {
             StartCoroutine(rechargeTimer.StartTimerCouroutine(10, this));
         }
-        if(researchLevel==2)
+        if (researchLevel == 2)
         {
             StartCoroutine(rechargeTimer.StartTimerCouroutine(15, this));
         }
@@ -211,7 +148,7 @@ public class ResearchController : MonoBehaviour, ITimeable
         if (researchLevel == 0)
         {
             researchModel.SetIronAmount(100);//reduce iron amout
-       
+
         }
         if (researchLevel == 1)
         {
@@ -222,10 +159,10 @@ public class ResearchController : MonoBehaviour, ITimeable
             researchModel.SetIronAmount(300);//reduce iron amout
         }
     }
-     
+
     public void OnIncrementTimer()
     {
-        
+
     }
 
     public void OnFinishTimer()
@@ -273,7 +210,6 @@ public class ResearchController : MonoBehaviour, ITimeable
                 Destroy(combatLv2.gameObject);
                 Debug.Log("combatLv2 Called " + researchModel.GetIronAmount());
             }
-
         }
         if (researchLevel == 2)
         {
@@ -296,6 +232,5 @@ public class ResearchController : MonoBehaviour, ITimeable
                 Debug.Log("combatLv3 Called " + researchModel.GetIronAmount());
             }
         }
->>>>>>> upstream/master
     }
 }
