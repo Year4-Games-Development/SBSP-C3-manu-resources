@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
-    GameObject inventoryPanel;
-    GameObject inven;
-    GameObject slotMask;
+    //GameObject inventoryPanel;
+   // GameObject inven;
+    //GameObject slotMask;
     GameObject background;
     GameObject slotPanel;
     ItemDatabase database;
@@ -22,9 +22,9 @@ public class Inventory : MonoBehaviour {
         database = GetComponent<ItemDatabase>();
 
         slotAmount = 25;
-        inventoryPanel = GameObject.Find("InventoryPanel");
-        inven = GameObject.Find("Inventory");
-        slotMask = GameObject.Find("SlotPanel_Mask_ScrollRect");
+        //inventoryPanel = GameObject.Find("InventoryPanel");
+        //inven = GameObject.Find("Inventory");
+        //slotMask = GameObject.Find("SlotPanel_Mask_ScrollRect");
         background = GameObject.Find("SlotBackgroundPanel");
         slotPanel = background.transform.Find("SlotPanel").gameObject;
         for (int i = 0; i < slotAmount; i++)
@@ -124,11 +124,11 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    bool CheckItemInInventory(Item item)
-    {
-       for(int i=0; i<items.Count; i++)
-            if (items[i].Title == item.Title)
-                return true;  
-                return false;
-    }
+        public bool CheckItemInInventory(Item item)
+        {
+           for(int i=0; i<items.Count; i++)
+                if (items[i].Title == item.Title)
+                    return true;  
+                    return false;
+        }
 }
