@@ -33,11 +33,11 @@ public class ResearchController : MonoBehaviour, ITimeable
     public Button enginLv3;
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         researchModel = new ResearchModel();
         rechargeTimer = new RechargeTimer();
-	}
+    }
 
     public ResearchModel GetResearchModel()
     {
@@ -56,11 +56,17 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv1Upgrade()
     {
+<<<<<<< HEAD
 
         researchLevel = 0;
         branch = "science";
         startResearsh();
 
+=======
+        researchLevel = 0;
+        branch = "science";
+        startResearsh();
+>>>>>>> upstream/master
     }
 
     public void ScienceLv2Upgrade()
@@ -68,35 +74,56 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 1;
         branch = "science";
         startResearsh();
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     }
 
     public void ScienceLv3Upgrade()
     {
+<<<<<<< HEAD
 
         researchLevel = 2;
         branch = "science";
         startResearsh();
 
+=======
+        researchLevel = 2;
+        branch = "science";
+        startResearsh();
+>>>>>>> upstream/master
     }
 
     public void CombatLv1Upgrade()
     {
+<<<<<<< HEAD
 
         researchLevel = 0;
         branch = "combat";
         startResearsh();
 
 
+=======
+        researchLevel = 0;
+        branch = "combat";
+        startResearsh();
+>>>>>>> upstream/master
     }
 
     public void CombatLv2Upgrade()
     {
+<<<<<<< HEAD
 
         researchLevel = 1;
         branch = "combat";
         startResearsh();
 
+=======
+        researchLevel = 1;
+        branch = "combat";
+        startResearsh();
+>>>>>>> upstream/master
     }
 
     public void CombatLv3Upgrade()
@@ -105,16 +132,25 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 2;
         branch = "combat";
         startResearsh();
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     }
 
     public void EnginLv1Upgrade()
     {
+<<<<<<< HEAD
 
         researchLevel = 0;
         branch = "engineering";
         startResearsh();
 
+=======
+        researchLevel = 0;
+        branch = "engineering";
+        startResearsh();
+>>>>>>> upstream/master
     }
 
     public void EnginLv2Upgrade()
@@ -122,29 +158,36 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 1;
         branch = "engineering";
         startResearsh();
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     }
 
     public void EnginLv3Upgrade()
     {
+        enginLv3.interactable = false;
         researchLevel = 2;
         branch = "engineering";
         startResearsh();
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     }
 
     public void startResearsh()
-    {      
-        if(researchLevel==0)
+    {
+        if (researchLevel == 0)
         {
             StartCoroutine(rechargeTimer.StartTimerCouroutine(5, this));
         }
-        if(researchLevel==1)
+        if (researchLevel == 1)
         {
             StartCoroutine(rechargeTimer.StartTimerCouroutine(10, this));
         }
-        if(researchLevel==2)
-        {
+        if (researchLevel == 2)
+        {           
             StartCoroutine(rechargeTimer.StartTimerCouroutine(15, this));
         }
     }
@@ -155,7 +198,6 @@ public class ResearchController : MonoBehaviour, ITimeable
         if (researchLevel == 0)
         {
             researchModel.SetIronAmount(100);//reduce iron amout
-       
         }
         if (researchLevel == 1)
         {
@@ -166,10 +208,10 @@ public class ResearchController : MonoBehaviour, ITimeable
             researchModel.SetIronAmount(300);//reduce iron amout
         }
     }
-     
+
     public void OnIncrementTimer()
     {
-        
+
     }
 
     public void OnFinishTimer()
@@ -217,7 +259,6 @@ public class ResearchController : MonoBehaviour, ITimeable
                 Destroy(combatLv2.gameObject);
                 Debug.Log("combatLv2 Called " + researchModel.GetIronAmount());
             }
-
         }
         if (researchLevel == 2)
         {

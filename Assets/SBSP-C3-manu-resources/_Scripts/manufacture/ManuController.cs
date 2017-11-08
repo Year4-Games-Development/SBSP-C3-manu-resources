@@ -26,9 +26,12 @@ public class ManuController : MonoBehaviour {
     public void fuelManu()
     {
         item = "Fuel";
+<<<<<<< HEAD
         //InventoryManager.AddItem(item);
+=======
+      //  InventoryManager.AddItem(item);
+>>>>>>> upstream/master
     }
-    /*-----------------------------not being used till other teams call
     public void rocketManu()
     {
       
@@ -38,6 +41,4 @@ public class ManuController : MonoBehaviour {
     {
      
     }
-    */
-
 }

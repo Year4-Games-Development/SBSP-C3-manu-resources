@@ -21,10 +21,8 @@ GameObject:
   - component: {fileID: 224889245999293974}
   - component: {fileID: 222232716982310514}
   - component: {fileID: 114224329729226318}
-  - component: {fileID: 114791117515158524}
   - component: {fileID: 114910575993046712}
-  - component: {fileID: 114317373616576964}
-  - component: {fileID: 114091309112758248}
+  - component: {fileID: 114507818528578696}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -32,36 +30,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114091309112758248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650873212087490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114317373616576964}
-          m_MethodName: UseItem
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &114224329729226318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +57,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114317373616576964
+--- !u!114 &114507818528578696
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,22 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650873212087490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867775ae454b1ec4c825a64e41c36169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114791117515158524
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650873212087490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8840804f1f20cda44884d39bdf51acb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 98be4fd55f49ec644a9e51ab40b74da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  occupied: 0
 --- !u!114 &114910575993046712
 MonoBehaviour:
   m_ObjectHideFlags: 1
