@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
-public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class ItemData : MonoBehaviour,  IPointerEnterHandler, IPointerExitHandler
 {
     public Item item;
     public int amount;
@@ -18,32 +18,6 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         inv = GameObject.Find("InventoryObject").GetComponent<Inventory>();
         toolTip = inv.GetComponent<ToolTip>();
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (item.ID != -1)
-        {
-            offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);
-            this.transform.SetParent(this.transform.parent.parent);
-            this.transform.position = eventData.position - offset;
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
-        }
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (item.ID != -1)
-        {
-            this.transform.position = eventData.position - offset;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        this.transform.SetParent(inv.slots[slot].transform);
-        this.transform.position = inv.slots[slot].transform.position;
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

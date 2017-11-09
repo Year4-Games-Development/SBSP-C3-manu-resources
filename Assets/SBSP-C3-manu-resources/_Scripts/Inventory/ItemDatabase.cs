@@ -13,7 +13,7 @@ public class ItemDatabase : MonoBehaviour {
     {
 
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/SBSP-C3-manu-resources/StreamingAssets/Items.json"));
-
+        
         ConstructItemDatabase();
     }
 
@@ -23,15 +23,6 @@ public class ItemDatabase : MonoBehaviour {
             if (database[i].ID == id)
                 return database[i];
         
-        return null;
-    }
-
-    public Item FetchItemByTitle(string title)
-    {
-        for (int i = 0; i < database.Count; i++)
-            if (database[i].Title == title)
-                return database[i];
-
         return null;
     }
 
