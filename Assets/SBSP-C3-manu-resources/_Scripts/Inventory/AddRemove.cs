@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ * Controller class used to handle the logic and functionality of the inventory system
+ **/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

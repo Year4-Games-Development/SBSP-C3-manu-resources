@@ -1955,10 +1955,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4915d2aea1e9994fb73e786997588a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  slotPanel: {fileID: 0}
   inventorySlot: {fileID: 1650873212087490, guid: a82d45d2022544846b38235208d802c9,
     type: 2}
   inventoryItem: {fileID: 1304116706102710, guid: 55e182a171bc8384baff9bc1228b9da0,
     type: 2}
+  slotAmount: 0
   slots: []
 --- !u!114 &810149827
 MonoBehaviour:
@@ -1968,14 +1971,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 810149823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b36b352b4433a40bdfa4a4037352d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a5a75aeba3e5014ab1c90d769cc1bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlot: {fileID: 1650873212087490, guid: a82d45d2022544846b38235208d802c9,
-    type: 2}
-  inventoryItem: {fileID: 1304116706102710, guid: 55e182a171bc8384baff9bc1228b9da0,
-    type: 2}
-  slots: []
 --- !u!4 &810149828
 Transform:
   m_ObjectHideFlags: 0

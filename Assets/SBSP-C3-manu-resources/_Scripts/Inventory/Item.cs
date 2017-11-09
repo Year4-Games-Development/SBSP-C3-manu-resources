@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ * Model class used to handle and store variables
+ **/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,8 @@
 ﻿using System.Collections;
+/**
+ * View class, used to handle the User Interface
+ **/
+
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
