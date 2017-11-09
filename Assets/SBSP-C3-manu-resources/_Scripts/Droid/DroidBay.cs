@@ -6,28 +6,33 @@ using UnityEngine.UI;
 
 public class DroidBay : MonoBehaviour, ITimeable
 {
+
     public Button deployButton;
     public Button upgradeButton;
     public Button removeButton;
-    public Text timerText;
+    public Button rechargeButton;
+    public Button repairButton;
+    public Text statusText;
+    public Text droidTypeText;
+    public Text deployTimeText;
+    public Text droidHealthText;
+    public Text droidEnergyText;
     public Image droidImage;
 
+    [SerializeField]
     private DroidBayModel _droidBayModel;
-    private DroidBayView _droidBayView;
-
-    private RechargeTimer timer;
-
 
     void Awake()
     {
-        _droidBayModel = new DroidBayModel();
-        timer = new RechargeTimer();
 
-        deployButton.onClick.AddListener(DeployDroid);
-        upgradeButton.onClick.AddListener(UpgradeDroid);
-        removeButton.onClick.AddListener(RemoveDroid);
+        _droidBayModel.GetDroidBayView().GetDeployButton().onClick.AddListener(DeployDroid);
+        _droidBayModel.GetDroidBayView().GetUpgradeButton().onClick.AddListener(UpgradeDroid);
+        _droidBayModel.GetDroidBayView().GetRemoveButton().onClick.AddListener(RemoveDroid);
 
-        _droidBayView = new DroidBayView(deployButton, upgradeButton, removeButton, timerText, droidImage);
+        _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton,rechargeButton,repairButton, statusText,droidTypeText,deployTimeText, droidImage, droidHealthText, droidEnergyText);
+
+        
+
     }
 
     public DroidBayModel GetDroidBayModel()
@@ -35,57 +40,46 @@ public class DroidBay : MonoBehaviour, ITimeable
         return _droidBayModel;
     }
 
-    public DroidBayView GetDroidView()
-    {
-        return _droidBayView;
-    }
-
     public void DeployDroid()
     {
 
-        StartCoroutine(timer.StartTimerCouroutine(10, this));
+        StartCoroutine(_droidBayModel.GetTimer().StartTimerCouroutine(10, this));
 
     }
 
     public void UpgradeDroid()
     {
 
-        Debug.Log("Upgrading from: " + _droidBayModel.GetBayIndex());
+        AddDroidToBay(DroidFactory.instance.CreateDroid(0));
 
     }
 
     public void RemoveDroid()
     {
 
-        Debug.Log("Removing from: " + _droidBayModel.GetBayIndex());
 
     }
 
     public void OnStartTimer()
     {
-        Debug.Log("Started Timer");
-
-        _droidBayView.GetDeployButton().gameObject.SetActive(false);
-        _droidBayView.GetTimerText().text = "10";
-        _droidBayView.GetDroidImage().gameObject.SetActive(false);
+        _droidBayModel.OnStartTimer();
     }
 
     public void OnIncrementTimer()
     {
-        Debug.Log("Decrementing");
-
-        _droidBayView.GetTimerText().text = "" + timer.GetRemainingSeconds();
-
-
+        _droidBayModel.OnIncrementTimer();
     }
 
     public void OnFinishTimer()
     {
-        Debug.Log("Finished");
+        _droidBayModel.OnFinishTimer();
+        StopCoroutine(_droidBayModel.GetTimer().GetCurrentCouroutine());
+    }
 
-        StopCoroutine(timer.GetCurrentCouroutine());
-        _droidBayView.GetDeployButton().gameObject.SetActive(true);
-        _droidBayView.GetTimerText().text = "Ready";
-        _droidBayView.GetDroidImage().gameObject.SetActive(true);
+    public void AddDroidToBay(Droid droid)
+    {
+
+        _droidBayModel.SetDroid(droid);
+
     }
 }

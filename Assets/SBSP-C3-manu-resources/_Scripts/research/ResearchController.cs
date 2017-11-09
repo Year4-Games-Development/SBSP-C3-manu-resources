@@ -56,17 +56,11 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void ScienceLv1Upgrade()
     {
-<<<<<<< HEAD
 
         researchLevel = 0;
         branch = "science";
         startResearsh();
 
-=======
-        researchLevel = 0;
-        branch = "science";
-        startResearsh();
->>>>>>> upstream/master
     }
 
     public void ScienceLv2Upgrade()
@@ -74,56 +68,32 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 1;
         branch = "science";
         startResearsh();
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/master
     }
 
     public void ScienceLv3Upgrade()
     {
-<<<<<<< HEAD
 
         researchLevel = 2;
         branch = "science";
         startResearsh();
 
-=======
-        researchLevel = 2;
-        branch = "science";
-        startResearsh();
->>>>>>> upstream/master
     }
 
     public void CombatLv1Upgrade()
     {
-<<<<<<< HEAD
-
         researchLevel = 0;
         branch = "combat";
         startResearsh();
-
-
-=======
-        researchLevel = 0;
-        branch = "combat";
-        startResearsh();
->>>>>>> upstream/master
     }
 
     public void CombatLv2Upgrade()
     {
-<<<<<<< HEAD
 
         researchLevel = 1;
         branch = "combat";
         startResearsh();
 
-=======
-        researchLevel = 1;
-        branch = "combat";
-        startResearsh();
->>>>>>> upstream/master
     }
 
     public void CombatLv3Upgrade()
@@ -132,25 +102,16 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 2;
         branch = "combat";
         startResearsh();
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/master
     }
 
     public void EnginLv1Upgrade()
     {
-<<<<<<< HEAD
 
         researchLevel = 0;
         branch = "engineering";
         startResearsh();
 
-=======
-        researchLevel = 0;
-        branch = "engineering";
-        startResearsh();
->>>>>>> upstream/master
     }
 
     public void EnginLv2Upgrade()
@@ -158,10 +119,7 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 1;
         branch = "engineering";
         startResearsh();
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/master
     }
 
     public void EnginLv3Upgrade()
@@ -170,10 +128,6 @@ public class ResearchController : MonoBehaviour, ITimeable
         researchLevel = 2;
         branch = "engineering";
         startResearsh();
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
     }
 
     public void startResearsh()

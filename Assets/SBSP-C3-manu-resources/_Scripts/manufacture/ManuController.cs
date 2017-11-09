@@ -26,11 +26,10 @@ public class ManuController : MonoBehaviour {
     public void fuelManu()
     {
         item = "Fuel";
-<<<<<<< HEAD
         //InventoryManager.AddItem(item);
-=======
+
       //  InventoryManager.AddItem(item);
->>>>>>> upstream/master
+
     }
     public void rocketManu()
     {
