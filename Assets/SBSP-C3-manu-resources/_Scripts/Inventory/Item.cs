@@ -6,7 +6,6 @@ public class Item
 {
     public int ID { get; set; }
     public string Title { get; set; }
-    public int Value { get; set; }
     public int Power { get; set; }
     public int Defence { get; set; }
     public int Weight { get; set; }
@@ -16,12 +15,11 @@ public class Item
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
 
-    public Item(int id, string title, int value, int power, int defence, int weight, string description,
+    public Item(int id, string title, int power, int defence, int weight, string description,
         bool stackable, int rarity, string slug)
     {
         this.ID = id;
         this.Title = title;
-        this.Value = value;
         this.Power = power;
         this.Defence = defence;
         this.Weight = weight;

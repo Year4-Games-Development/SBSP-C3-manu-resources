@@ -7,7 +7,6 @@ using System;
 
 public class ItemSlot : MonoBehaviour{
     public int id;
-   // private Inventory inv;
     private AddRemove ar;
 
     void Start()

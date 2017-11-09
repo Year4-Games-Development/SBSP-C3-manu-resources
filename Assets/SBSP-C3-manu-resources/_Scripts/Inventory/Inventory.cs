@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
 
     public GameObject background;
     public GameObject slotPanel;
@@ -13,18 +14,18 @@ public class Inventory : MonoBehaviour {
     public GameObject inventoryItem;
     public int slotAmount;
 
-    public enum type {diamond = 0, iron = 1, gold = 2, fuel = 3};
+    public enum type { diamond = 0, iron = 1, gold = 2, fuel = 3 };
 
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
     private void Start()
     {
-        
+
         addRemove = GetComponent<AddRemove>();
 
-       
-        addRemove.AddItem((int)type.diamond);   
+
+        addRemove.AddItem((int)type.diamond);
         addRemove.AddItem((int)type.diamond);
         addRemove.AddItem((int)type.diamond);
         addRemove.AddItem((int)type.iron);

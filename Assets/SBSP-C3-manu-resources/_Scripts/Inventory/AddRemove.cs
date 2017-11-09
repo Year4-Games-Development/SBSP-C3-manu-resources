@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AddRemove : MonoBehaviour {
+public class AddRemove : MonoBehaviour
+{
 
     Inventory inv;
     ItemDatabase database;
-   
+
 
 
     private void Start()
@@ -77,7 +78,7 @@ public class AddRemove : MonoBehaviour {
                 {
                     ItemData data = inv.slots[j].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount--;
-                 //   data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    //   data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
                     if (data.amount == 0)
                     {
                         Destroy(inv.slots[j].transform.GetChild(0).gameObject);
@@ -86,7 +87,7 @@ public class AddRemove : MonoBehaviour {
                     }
                     if (data.amount == 1)
                     {
-                       // slots[j].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "";
+                        // slots[j].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "";
                         break;
                     }
                     break;
