@@ -7,10 +7,10 @@ using System;
 
 public class ItemSlot : MonoBehaviour{
     public int id;
-    private AddRemove ar;
+    private InventoryController inventoryController;
 
     void Start()
     {
-        ar = GameObject.Find("InventoryObject").GetComponent<AddRemove>();
+        inventoryController = GameObject.Find("InventoryObject").GetComponent<InventoryController>();
     }
 }

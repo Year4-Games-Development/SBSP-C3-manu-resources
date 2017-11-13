@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+public class InventoryModel
 {
     public int ID { get; set; }
     public string Title { get; set; }
@@ -19,7 +19,7 @@ public class Item
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
 
-    public Item(int id, string title, int power, int defence, int weight, string description,
+    public InventoryModel(int id, string title, int power, int defence, int weight, string description,
         bool stackable, int rarity, string slug)
     {
         this.ID = id;
@@ -35,7 +35,7 @@ public class Item
         this.Sprite = Resources.Load<Sprite>("Sprites/Items/" + slug);
     }
 
-    public Item()
+    public InventoryModel()
     {
         this.ID = -1;
     }

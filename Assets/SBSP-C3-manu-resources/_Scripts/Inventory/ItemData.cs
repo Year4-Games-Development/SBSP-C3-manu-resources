@@ -6,7 +6,7 @@ using System;
 
 public class ItemData : MonoBehaviour,  IPointerEnterHandler, IPointerExitHandler
 {
-    public Item item;
+    public InventoryModel inventoryModel;
     public int amount;
     public int slot;
 
@@ -22,7 +22,7 @@ public class ItemData : MonoBehaviour,  IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        toolTip.Activate(item);
+        toolTip.Activate(inventoryModel);
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -13,28 +13,28 @@ public class Inventory : MonoBehaviour
     public GameObject background;
     public GameObject slotPanel;
     ItemDatabase database;
-    AddRemove addRemove;
+    InventoryController inventoryController;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     public int slotAmount;
 
     public enum type { diamond = 0, iron = 1, gold = 2, fuel = 3 };
 
-    public List<Item> items = new List<Item>();
+    public List<InventoryModel> items = new List<InventoryModel>();
     public List<GameObject> slots = new List<GameObject>();
 
     private void Start()
     {
 
-        addRemove = GetComponent<AddRemove>();
+        inventoryController = GetComponent<InventoryController>();
 
 
-        addRemove.AddItem((int)type.diamond);
-        addRemove.AddItem((int)type.diamond);
-        addRemove.AddItem((int)type.diamond);
-        addRemove.AddItem((int)type.iron);
-        addRemove.AddItem((int)type.gold);
-        addRemove.AddItem((int)type.fuel);
-        addRemove.RemoveItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.iron);
+        inventoryController.AddItem((int)type.gold);
+        inventoryController.AddItem((int)type.fuel);
+        inventoryController.RemoveItem((int)type.diamond);
     }
 }

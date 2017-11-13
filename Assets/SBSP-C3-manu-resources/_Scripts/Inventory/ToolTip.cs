@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ToolTip : MonoBehaviour {
-    private Item item;
+    private InventoryModel inventoryModel;
     private string data;
     private GameObject toolTip;
 
@@ -22,9 +22,9 @@ public class ToolTip : MonoBehaviour {
         }
     }
 
-    public void Activate(Item item)
+    public void Activate(InventoryModel inventoryModel)
     {
-        this.item = item;
+        this.inventoryModel = inventoryModel;
         ConstructDataString();
         toolTip.SetActive(true);
     }
@@ -36,7 +36,7 @@ public class ToolTip : MonoBehaviour {
 
     public void ConstructDataString()
     {
-        data = "<color=#FFFFFF><b>" + item.Title + "</b></color>\n\n" + item.Description ;
+        data = "<color=#FFFFFF><b>" + inventoryModel.Title + "</b></color>\n\n" + inventoryModel.Description ;
         toolTip.transform.GetChild(0).GetComponent<Text>().text=data;
     }
 }
