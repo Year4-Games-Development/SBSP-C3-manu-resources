@@ -33,8 +33,7 @@ public class ItemDatabase : MonoBehaviour
         for (int i = 0; i < itemData.Count; i++)
         {
             database.Add(new InventoryModel((int)itemData[i]["id"], itemData[i]["title"].ToString(),
-                (int)itemData[i]["stats"]["power"], (int)itemData[i]["stats"]["defence"], (int)itemData[i]["stats"]["weight"],
-                itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"],
+                itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"],
                 itemData[i]["slug"].ToString()
                 ));
         }

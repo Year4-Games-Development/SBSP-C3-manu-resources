@@ -12,6 +12,7 @@ public class InventoryController : MonoBehaviour
 
     Inventory inv;
     ItemDatabase database;
+    public int maxSize = 64;
 
     private void Awake()
     {
@@ -107,6 +108,29 @@ public class InventoryController : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    public void FullItem(int id)
+    {
+        InventoryModel itemIsFull = database.FetchItemByID(id);
+        if (itemIsFull.Stackable && CheckItemInInventory(itemIsFull))
+        {
+            for (int y = 0; y < inv.items.Count; y++)
+            {
+                if (inv.items[y].ID == id)
+                {
+                    ItemData data = inv.slots[y].transform.GetChild(0).GetComponent<ItemData>();
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+
+                    if (data.amount > maxSize)
+                    {
+                        inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "64";
+                        break;
+                    }
+                }
+
+            }
         }
     }
 

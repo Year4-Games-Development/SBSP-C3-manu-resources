@@ -12,7 +12,6 @@ public class Inventory : MonoBehaviour
 
     public GameObject background;
     public GameObject slotPanel;
-    ItemDatabase database;
     InventoryController inventoryController;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
@@ -32,9 +31,11 @@ public class Inventory : MonoBehaviour
         inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.iron);
         inventoryController.AddItem((int)type.gold);
         inventoryController.AddItem((int)type.fuel);
-        inventoryController.RemoveItem((int)type.diamond);
+
+        inventoryController.FullItem((int)type.diamond);
     }
 }
