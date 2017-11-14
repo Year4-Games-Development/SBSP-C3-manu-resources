@@ -2,16 +2,6 @@
 
     private DroidModel _droidModel;
 
-    private DroidState _droidState;
-
-    public Droid()
-    {
-
-        _droidModel = new DroidModel();
-        _droidState = DroidState.Ready;
-
-    }
-
     public DroidModel GetDroidModel()
     {
 
@@ -19,20 +9,17 @@
 
     }
 
-
-    public bool ChangeDroidState(DroidState state)
+    public void SetDroidModel(DroidModel model)
     {
 
-        _droidState = state;
-
-        return true;
+        _droidModel = model;
 
     }
 
-    public string GetDroidStateString()
+    public virtual void PerformDroidAction()
     {
 
-        return _droidState.ToString();
+
 
     }
 	
@@ -44,4 +31,10 @@ public enum DroidState
     Deployed,
     Charging,
     Repairing
+}
+
+public enum DroidType
+{
+    SearchDroid,
+    RepairDroid
 }

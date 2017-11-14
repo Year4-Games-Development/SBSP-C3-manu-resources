@@ -7,5 +7,4 @@ public class FactoryManager : MonoBehaviour {
 
     public DroidFactory droidFactory;
 
-
 }

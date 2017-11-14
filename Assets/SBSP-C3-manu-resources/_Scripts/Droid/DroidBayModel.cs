@@ -59,10 +59,20 @@ public class DroidBayModel : ITimeable
     public bool SetDroid(Droid droid)
     {
 
-        _currentDroid = droid;
-        _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
+        if (_currentDroid == null)
+        {
 
-        return true;
+            _currentDroid = droid;
+            _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
+            _droidBayView.EnableDroidImage();
+
+            _droidBayView.UpdateViewFromNewDroid(_currentDroid);
+
+            return true;
+
+        }
+
+        return false;
 
     }
 
@@ -83,5 +93,6 @@ public class DroidBayModel : ITimeable
         _droidBayView.EnableDeployButton();
         _droidBayView.UpdateStatusText("Ready");
         _droidBayView.EnableDroidImage();
+
     }
 }

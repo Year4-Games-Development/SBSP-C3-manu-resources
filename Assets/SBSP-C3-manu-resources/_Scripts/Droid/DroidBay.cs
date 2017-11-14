@@ -25,13 +25,11 @@ public class DroidBay : MonoBehaviour, ITimeable
     void Awake()
     {
 
+        _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton,rechargeButton,repairButton, statusText,droidTypeText,deployTimeText, droidImage, droidHealthText, droidEnergyText);
+
         _droidBayModel.GetDroidBayView().GetDeployButton().onClick.AddListener(DeployDroid);
         _droidBayModel.GetDroidBayView().GetUpgradeButton().onClick.AddListener(UpgradeDroid);
         _droidBayModel.GetDroidBayView().GetRemoveButton().onClick.AddListener(RemoveDroid);
-
-        _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton,rechargeButton,repairButton, statusText,droidTypeText,deployTimeText, droidImage, droidHealthText, droidEnergyText);
-
-        
 
     }
 
@@ -42,21 +40,25 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public void DeployDroid()
     {
+        if (_droidBayModel.GetDroid() != null)
+        {
 
-        StartCoroutine(_droidBayModel.GetTimer().StartTimerCouroutine(10, this));
+            StartCoroutine(_droidBayModel.GetTimer().StartTimerCouroutine(_droidBayModel.GetDroid().GetDroidModel().GetDroidDeployTime(), this));
 
+        }
     }
 
     public void UpgradeDroid()
     {
-
-        AddDroidToBay(DroidFactory.instance.CreateDroid(0));
+        if (_droidBayModel.GetDroid() == null)
+            AddDroidToBay(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
 
     }
 
     public void RemoveDroid()
     {
 
+        //if (_droidBayModel.GetDroid() != null)
 
     }
 
@@ -76,10 +78,13 @@ public class DroidBay : MonoBehaviour, ITimeable
         StopCoroutine(_droidBayModel.GetTimer().GetCurrentCouroutine());
     }
 
-    public void AddDroidToBay(Droid droid)
+    public bool AddDroidToBay(Droid droid)
     {
 
-        _droidBayModel.SetDroid(droid);
+        if (!_droidBayModel.SetDroid(droid))
+            return false;
+
+        return true;
 
     }
 }

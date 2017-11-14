@@ -15,13 +15,30 @@ public class DroidFactory{
 
     }
 
-    public Droid CreateDroid(int type)
+    public Droid CreateDroid(DroidType type)
     {
 
-        Droid droid = new Droid();
-        droid.GetDroidModel().GetDroidView().SetDroidSprite(repairDroidImage);
+        if (type == DroidType.SearchDroid)
+        {
 
-        return droid;
+            Droid droid = new SearchDroid();
+            droid.GetDroidModel().GetDroidView().SetDroidSprite(gatherDroidImage);
+
+            return droid;
+
+        }
+
+        if (type == DroidType.RepairDroid)
+        {
+
+            Droid droid = new RepairDroid();
+            droid.GetDroidModel().GetDroidView().SetDroidSprite(repairDroidImage);
+
+            return droid;
+
+        }
+
+        return null;
 
     }
 

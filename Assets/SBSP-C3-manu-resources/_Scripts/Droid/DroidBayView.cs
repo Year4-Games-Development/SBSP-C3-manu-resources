@@ -31,6 +31,8 @@ public class DroidBayView{
         _droidHealthText = droidHealthText;
         _droidEnergyText = droidEnergyText;
 
+        _droidImage.gameObject.SetActive(false);
+
     }
 
     public Button GetDeployButton()
@@ -120,5 +122,75 @@ public class DroidBayView{
 
         _statusText.text = value;
 
+    }
+
+    //private Text _statusText;
+    //private Text _droidTypeText;
+    //private Text _droidDeployTimeText;
+    //public Text _droidHealthText;
+    //public Text _droidEnergyText;
+
+    public Text GetDroidTypeText()
+    {
+
+        return _droidTypeText;
+
+    }
+
+    public Text GetDroidDeployTimeText()
+    {
+
+        return _droidDeployTimeText;
+
+    }
+
+    public Text GetDroidHealthText()
+    {
+
+        return _droidHealthText;
+
+    }
+
+    public Text GetDroidEnergyText()
+    {
+
+        return _droidEnergyText;
+
+    }
+
+    public void SetDroidTypeText(Droid droid)
+    {
+
+        _droidTypeText.text = droid.GetDroidModel().GetDroidTypeString();
+
+    }
+
+    public void SetDroidDeployTimeText(Droid droid)
+    {
+
+        _droidDeployTimeText.text = droid.GetDroidModel().GetDroidDeployTime() + " secs";
+
+    }
+
+    public void SetDroidHealthText(Droid droid)
+    {
+
+        _droidHealthText.text = droid.GetDroidModel().GetDroidCurrentHealth() + "/" + droid.GetDroidModel().GetDroidMaxHealth();
+
+    }
+
+    public void SetDroidEnergyText(Droid droid)
+    {
+
+        _droidEnergyText.text = droid.GetDroidModel().GetDroidCurrentEnergy() + "/" + droid.GetDroidModel().GetDroidMaxEnergy();
+
+    }
+
+    public void UpdateViewFromNewDroid(Droid droid)
+    {
+        SetDroidTypeText(droid);
+        SetDroidDeployTimeText(droid);
+        SetDroidHealthText(droid);
+        SetDroidEnergyText(droid);
     }
 }
