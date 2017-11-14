@@ -6,7 +6,7 @@ public class DroidManagerModel{
 
     //current and max size of bays
     private int _baySize;
-    private int _maxBaySize = 3;
+    private int _maxBaySize = 2;
 
     private DroidBay[] _droidBayArray;
 

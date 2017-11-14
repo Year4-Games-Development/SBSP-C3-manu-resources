@@ -1,22 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-//Droid controller that has the reference to DroidView and DroidModel objects;
-
-public class Droid{
-
+﻿public class Droid{
 
     private DroidModel _droidModel;
-    private DroidView _droidView;
-
-    public Droid()
-    {
-
-        _droidModel = new DroidModel();
-        _droidView = new DroidView();
-
-    }
 
     public DroidModel GetDroidModel()
     {
@@ -25,11 +9,32 @@ public class Droid{
 
     }
 
-    public DroidView GetDroidView()
+    public void SetDroidModel(DroidModel model)
     {
 
-        return _droidView;
+        _droidModel = model;
+
+    }
+
+    public virtual void PerformDroidAction()
+    {
+
+
 
     }
 	
+}
+
+public enum DroidState
+{
+    Ready,
+    Deployed,
+    Charging,
+    Repairing
+}
+
+public enum DroidType
+{
+    SearchDroid,
+    RepairDroid
 }
