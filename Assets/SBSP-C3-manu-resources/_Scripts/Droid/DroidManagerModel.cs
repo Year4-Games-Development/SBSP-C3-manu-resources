@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroidManagerModel{
+public class DroidManagerModel
+{
 
     private MainResourceController _mainController;
 

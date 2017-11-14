@@ -14,8 +14,7 @@ public class DroidManager : MonoBehaviour{
     private DroidManagerView _droidManagerView;
 
     void Awake()
-    {
-        
+    {    
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
