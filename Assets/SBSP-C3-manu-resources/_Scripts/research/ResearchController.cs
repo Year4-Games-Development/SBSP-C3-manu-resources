@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ResearchController : MonoBehaviour, ITimeable{
 
     public Text researchName;
@@ -14,6 +13,7 @@ public class ResearchController : MonoBehaviour, ITimeable{
     private ResearchModel _researchModel;
 
     void Awake()
+
     {
         _researchModel = new ResearchModel(researchName, description, researchButton, timeText);
 
@@ -31,8 +31,11 @@ public class ResearchController : MonoBehaviour, ITimeable{
     public void LearnResearch()
     {
 
+
         Debug.Log("Learning: " + _researchModel.GetResearch().GetName());
         StartCoroutine(_researchModel.GetTimer().StartTimerCouroutine(_researchModel.GetResearch().GetTime(), this));
+    }
+
 
     }
 
@@ -46,9 +49,7 @@ public class ResearchController : MonoBehaviour, ITimeable{
 
     public void OnIncrementTimer()
     {
-
         _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
-
     }
 
     public void OnFinishTimer()

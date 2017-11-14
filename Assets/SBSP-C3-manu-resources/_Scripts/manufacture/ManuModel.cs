@@ -2,14 +2,10 @@
 
 public class ManuModel
 {
-
     /// <summary>
     /// items that can be manufactured 
     /// </summary>
-    private string manufactureText = "Manufacture";
-    private string rockets = "Bang Bang Pew Pew ";
-    private string fuel = "Stuff for flying";
-    private string ammo = "Bang Bang ";
+    private string[] ManufactureBtnText = {"Manufacture", "Produce Rockets For Weapans", "Produce Fuel", "Produce Ammo For Weapons"};
 
     /// <summary>
     /// setters for manu facture items 
@@ -17,19 +13,18 @@ public class ManuModel
     /// <returns></returns>
     public string GetManufactureText()
     {
-        return manufactureText;
+        return ManufactureBtnText[0];
     }
     public string GetRocketText()
     {
-        return rockets;
+        return ManufactureBtnText[1];
     }
     public string GetFuelText()
     {   
-        return fuel;
-
+        return ManufactureBtnText[2];
     }
     public string GetAmmoText()
     {
-        return ammo;
+        return ManufactureBtnText[3];
     }
 }

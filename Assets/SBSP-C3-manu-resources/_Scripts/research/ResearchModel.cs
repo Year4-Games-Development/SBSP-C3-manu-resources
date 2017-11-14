@@ -1,7 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class ResearchModel{
 
@@ -12,13 +13,13 @@ public class ResearchModel{
 
     public ResearchModel(Text name, Text description, Button button, Text timerText)
     {
-
         _researchView = new ResearchView(name, description, button, timerText);
         _timer = new RechargeTimer();
-
     }
 
+
     public void SetResearch(Research research)
+
     {
 
         _research = research;
@@ -28,7 +29,6 @@ public class ResearchModel{
         _researchView.SetName(_research.GetName());
         _researchView.SetDescription(_research.GetDescription());
         _researchView.SetTimerText("Time to learn: " + _research.GetTime());
-
     }
 
     public ResearchView GetResearchView()
