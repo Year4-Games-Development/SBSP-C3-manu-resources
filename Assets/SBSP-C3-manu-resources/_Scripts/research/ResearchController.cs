@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ResearchController : MonoBehaviour, ITimeable
 {
+
     private ResearchModel researchModel;
     private RechargeTimer rechargeTimer;
 
@@ -17,20 +18,13 @@ public class ResearchController : MonoBehaviour, ITimeable
     public Button scienceLv1;
     public Button scienceLv2;
     public Button scienceLv3;
-
-    /// <summary>
-    /// /Combat button references
-    /// </summary>
     public Button combatLv1;
     public Button combatLv2;
     public Button combatLv3;
-
-    /// <summary>
-    /// /Engin button reference
-    /// </summary>
     public Button enginLv1;
     public Button enginLv2;
     public Button enginLv3;
+    public Text Research_timer;
 
     // Use this for initialization
     void Awake()
@@ -39,11 +33,33 @@ public class ResearchController : MonoBehaviour, ITimeable
         rechargeTimer = new RechargeTimer();
     }
 
+    void Start()
+    {
+        Blueprint[] bp = new Blueprint[5];
+
+        for(int i =0;i<4;i++)
+        {
+            bp[i] = new Blueprint();
+
+            bp[i] = researchModel.BlueprintName[i];
+            bp[i] = researchModel.Blueprintcost[i];
+            bp[i] = researchModel.BlueprintResearchTime[i];
+            bp[i] = researchModel.BlueprintLevel[i];
+        }
+    }
+
+    public class Blueprint
+    {
+        string name;
+        int cost;
+        int researchTime;
+        int level;
+    }
+
     public ResearchModel GetResearchModel()
     {
         return researchModel;
     }
-
 
     public RechargeTimer GetRechargeTimer()
     {
@@ -91,7 +107,6 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void CombatLv3Upgrade()
     {
-
         researchLevel = 2;
         branch = "combat";
         startResearsh();
@@ -154,7 +169,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     public void OnIncrementTimer()
     {
-
+       // Research_timer = "" + rechargeTimer.GetSecondsRemaining();
     }
 
     public void OnFinishTimer()

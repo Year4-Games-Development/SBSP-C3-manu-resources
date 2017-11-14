@@ -1,29 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ResearchView : MonoBehaviour
 {
     /// <summary>
-    /// /science upgrades
+    /// upgrades
     /// </summary>
     public Text scienceText;
     public Text scienceLevel1;
     public Text scienceLevel2;
     public Text scienceLevel3;
-
-    /// <summary>
-    /// /combat updrades
-    /// </summary>
+    //combat texts
     public Text combatText;
     public Text combatLevel1;
     public Text combatLevel2;
     public Text combatLevel3;
-  
-    /// <summary>
-    /// /engineering updrades
-    /// </summary>
+    //engineering texts
     public Text enginText;
     public Text enginLevel1;
     public Text enginLevel2;
@@ -31,7 +23,7 @@ public class ResearchView : MonoBehaviour
 
     private ResearchController researchController;
     private ResearchModel researchModel;
-    private RechargeTimer rechargeTimer;
+    //private RechargeTimer rechargeTimer;
 
     void Awake()
     {
@@ -54,30 +46,30 @@ public class ResearchView : MonoBehaviour
      
     private void UpdateViews()
     {
-        ///science setters 
+        ///science
         scienceText.text = researchModel.GetScienceText();//text on each branch of the research tree
         scienceLevel1.text = researchModel.GetScienceLevel1();//text on the buttons 
         scienceLevel2.text = researchModel.GetScienceLevel2();//text on the buttons 
         scienceLevel3.text = researchModel.GetScienceLevel3();//text on the buttons 
-     
 
-        ///combat setters
+        ///combat 
         combatText.text = researchModel.GetCombatText();//text on each branch of the research tree
         combatLevel1.text = researchModel.GetCombatLevel1();//text on the buttons 
         combatLevel2.text = researchModel.GetCombatLevel2();//text on the buttons 
         combatLevel3.text = researchModel.GetCombatLevel3();//text on the buttons 
 
-        ///engineering setters
+        ///engineering
         enginText.text = researchModel.GetEnginText();//text on each branch of the research tree
         enginLevel1.text = researchModel.GetEnginLevel1();//text on the buttons 
         enginLevel2.text = researchModel.GetEnginLevel2();//text on the buttons 
         enginLevel3.text = researchModel.GetEnginLevel3();//text on the buttons 
+
     }
 
     //Updates reseachable buttons.
     private void UpdateResearchable()
     {
-        //Nested if statements to handle button functionality for science tab in the research tree.
+        //Nested if statements to handle button functionality for science buttons in the research tree.
         if (!researchController.scienceLv1.IsDestroyed())
         {
             if (researchModel.GetIronAmount() < 100)
@@ -114,7 +106,7 @@ public class ResearchView : MonoBehaviour
             }
         }
 
-        //Nested if statements to handle button functionality for combat tab in the research tree.
+        //Nested if statements to handle button functionality for combat buttons in the research tree.
         if (!researchController.combatLv1.IsDestroyed())
         {
             if (researchModel.GetIronAmount() < 100)
@@ -151,6 +143,7 @@ public class ResearchView : MonoBehaviour
             }
         }
 
+        //Nested if statements to handle button functionality for engineering buttons in the research tree.
         if (!researchController.enginLv1.IsDestroyed())
         {
             if (researchModel.GetIronAmount() < 100)

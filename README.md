@@ -7,7 +7,9 @@ All scripts in folders relating to their function.
 
 No dev branch, all work done in master.
 
-Inventory scene in main scene being used, any other scenes that appear are test scenes.
+*************************************dev branch to be created to allow for numerical version system on master 
+
+Inventory added to "scene.unity"any other scenes that appear are test scenes.
 
 Currently there is an inventory tab, a droid bay tab, a research development tab, and a manufacturing tab.
 
