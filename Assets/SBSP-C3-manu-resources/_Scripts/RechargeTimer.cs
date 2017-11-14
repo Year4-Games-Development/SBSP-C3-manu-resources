@@ -86,10 +86,17 @@ public class RechargeTimer
 
     }
 
-    public int GetRemainingSeconds()
+    public int GetRemainingSecondsInt()
     {
 
         return seconds;
+
+    }
+
+    public string GetRemainingSecondsString()
+    {
+
+        return seconds + "";
 
     }
 

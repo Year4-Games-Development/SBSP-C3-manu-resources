@@ -38,6 +38,6 @@ public class ToolTip : MonoBehaviour {
     public void ConstructDataString()
     {
         data = "<color=#FFFFFF><b>" + item.Title + "</b></color>\n\n" + item.Description ;
-        toolTip.transform.GetChild(0).GetComponent<Text>().text=data;
+       // toolTip.transform.GetChild(0).GetComponent<Text>().text=data;
     }
 }

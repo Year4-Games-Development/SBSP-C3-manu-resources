@@ -1,132 +1,54 @@
-﻿
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ResearchModel
-{
 
-    private int ironAmount = 2400;
-    private bool[] scienceLvReseached = { false, false, false };
-    private bool[] combatLvReseached = { false, false, false };
-    private bool[] enginLvResearched = { false, false, false };
+public class ResearchModel{
 
-    public string GetResearchTime()
-    {
-        return researchTime;
-    }
+    private Research _research;
 
-    private string[] scienceLevels = { "Science", "Faster Mining Rate", "Larger Droid Area", "Extra Droids" };
-    private string[] combatLevels = { "Combat", "More Damage", "Better Sheids", "More Efficient"};
-    private string[] enginLevels = { "Engineering", "Better Engins", "Better Reactor", "Better Speed"};
+    private ResearchView _researchView;
+    private RechargeTimer _timer;
 
-    private int[] BlueprintCost = { };
-    private int[] BlueprintLevel = { };
-    private int[] BlueprintResearchTime = { };
-
-    private string[] BlueprintName = { };
-
-    string researchTime = "not researching";
-
-    /// <summary>
-    /// science getter methods 
-    /// </summary>
-    /// <returns></returns>
-    public string GetScienceText()
+    public ResearchModel(Text name, Text description, Button button, Text timerText)
     {
-        return scienceLevels[0];
-    }
-    public string GetScienceLevel1()
-    {
-        return scienceLevels[1];
-    }
-    public string GetScienceLevel2()
-    {
-        return scienceLevels[2];
-    }
-    public string GetScienceLevel3()
-    {
-        return scienceLevels[3];
-    }
-    /// <summary>
-    /// combat getter methods
-    /// </summary>
-    /// <returns></returns>
-    public string GetCombatText()
-    {
-        return combatLevels[0];
-    }
-    public string GetCombatLevel1()
-    {
-        return combatLevels[1];
-    }
-    public string GetCombatLevel2()
-    {
-        return combatLevels[2];
-    }
-    public string GetCombatLevel3()
-    {
-        return combatLevels[3];
+        _researchView = new ResearchView(name, description, button, timerText);
+        _timer = new RechargeTimer();
     }
 
-    /// <summary>
-    /// engineering getter methods 
-    /// </summary>
-    /// <returns></returns>
-    public string GetEnginText()
+
+    public void SetResearch(Research research)
+
     {
-        return enginLevels[0];
-    }
-    public string GetEnginLevel1()
-    {
-        return enginLevels[1];
-    }
-    public string GetEnginLevel2()
-    {
-        return enginLevels[2];
-    }
-    public string GetEnginLevel3()
-    {
-        return enginLevels[3];
-    }
-    //************************************
-    public bool GetScienceLvReseachedByIndex(int i)
-    {
-        return scienceLvReseached[i];
-    }
-    
-    public void SetScienceLvReseachedByIndex(int i, bool researchComplete)
-    {
-        scienceLvReseached[i] = researchComplete;
+
+        _research = research;
+
+        //update the view when research is added
+
+        _researchView.SetName(_research.GetName());
+        _researchView.SetDescription(_research.GetDescription());
+        _researchView.SetTimerText("Time to learn: " + _research.GetTime());
     }
 
-    public bool GetCombatLvReseachedByIndex(int i)
+    public ResearchView GetResearchView()
     {
-        return combatLvReseached[i];
+
+        return _researchView;
+
     }
 
-    public void SetCombatLvReseachedByIndex(int i, bool researchComplete)
+    public RechargeTimer GetTimer()
     {
-        combatLvReseached[i] = researchComplete;
-    }
-    
-    public bool GetEnginLvReseachedByIndex(int i)
-    {
-        return enginLvResearched[i];
+
+        return _timer;
+
     }
 
-    public void SetEnginLvReseachedByIndex(int i, bool researchComplete)
+    public Research GetResearch()
     {
-        enginLvResearched[i] = researchComplete;
-    }
 
-    public int GetIronAmount()
-    {
-        return ironAmount;
-    }
+        return _research;
 
-    public void SetIronAmount(int amount)
-    {
-        ironAmount -= amount;
     }
-    //changing file so git recognizes it 
-
 }

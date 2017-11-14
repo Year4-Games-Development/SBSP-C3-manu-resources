@@ -25,8 +25,10 @@ public class ManuController : MonoBehaviour {
 
     public void FuelManu()
     {
+
       item = "Fuel2";
       inven.AddItem(item);//add item to the inventory using inventory class 
+
     }
     public void RocketManu()
     {
