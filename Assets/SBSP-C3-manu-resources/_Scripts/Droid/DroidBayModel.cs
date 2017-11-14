@@ -7,6 +7,7 @@ public class DroidBayModel : ITimeable
 
     private int _bayIndex;
     private Droid _currentDroid;
+    private DroidManager _droidManager;
 
     //when model is updated, it will update view as well
     [SerializeField]
@@ -22,6 +23,21 @@ public class DroidBayModel : ITimeable
         repair, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, droidEnergyText);
 
     }
+
+    public void SetDroidManager(DroidManager manager)
+    {
+
+        _droidManager = manager;
+
+    }
+
+    public DroidManager GetDroidManager()
+    {
+
+        return _droidManager;
+
+    }
+
 
     public RechargeTimer GetTimer()
     {

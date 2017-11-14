@@ -412,9 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8610ebb8502593b429dcc7d99d37d011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelBtn: {fileID: 1312110510}
-  rocketBtn: {fileID: 1172545524}
-  ammoBtn: {fileID: 1227857708}
+  manuBtn: {fileID: 0}
 --- !u!4 &148730815
 Transform:
   m_ObjectHideFlags: 0
@@ -2635,7 +2633,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 638272551}
   m_HandleRect: {fileID: 638272550}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 0.00000011869929
   m_Size: 0.7000351
   m_NumberOfSteps: 0
   m_OnValueChanged:
