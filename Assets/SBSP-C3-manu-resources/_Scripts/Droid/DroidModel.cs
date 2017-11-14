@@ -10,13 +10,28 @@
 
     protected DroidState _droidState;
     protected DroidType _droidType;
+
+    private DroidBay _currentDroidBay;
     
 
     public DroidModel()
     {
-
         _droidView = new DroidView();
         _droidState = DroidState.Ready;
+
+    }
+
+    public void SetCurrentDroidBay(DroidBay bay)
+    {
+
+        _currentDroidBay = bay;
+
+    }
+
+    public DroidBay GetCurrentDroidBay()
+    {
+
+        return _currentDroidBay;
 
     }
 

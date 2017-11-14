@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DroidBay : MonoBehaviour, ITimeable
+public class DroidBay : MonoBehaviour, ITimeable, IResearchEvent
 {
 
     public Button deployButton;
@@ -51,7 +51,14 @@ public class DroidBay : MonoBehaviour, ITimeable
     public void UpgradeDroid()
     {
         if (_droidBayModel.GetDroid() == null)
-            AddDroidToBay(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
+        {
+
+            Droid newDroid = DroidFactory.instance.CreateDroid(DroidType.SearchDroid);
+            newDroid.GetDroidModel().SetCurrentDroidBay(this);
+
+            AddDroidToBay(newDroid);
+
+        }
 
     }
 
@@ -86,5 +93,18 @@ public class DroidBay : MonoBehaviour, ITimeable
 
         return true;
 
+    }
+
+    public void OnResearchLearned()
+    {
+        Debug.Log("Research learned, called from: " + this);
+        //if correct research learned
+    }
+
+    public void SuscribeToResearchEvent(ResearchPanelController controller)
+    {
+
+        controller.onFinished += OnResearchLearned;
+        
     }
 }

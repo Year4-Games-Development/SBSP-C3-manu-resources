@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResearchPanelController : MonoBehaviour {
+public class ResearchPanelController : MonoBehaviour{
 
     public GameObject researchPrefab;
 
     private List<Research> _researches;
+    private MainResourceController _mainController;
+
+    public delegate void OnResearchFinished();
+    public event OnResearchFinished onFinished;
 
     void Awake()
     {
@@ -26,6 +30,20 @@ public class ResearchPanelController : MonoBehaviour {
 
     }
 
+    public void SetMainController(MainResourceController controller)
+    {
+
+        _mainController = controller;
+
+    }
+
+    public MainResourceController GetMainController()
+    {
+
+        return _mainController;
+
+    }
+
     private void GenerateResearches()
     {
 
@@ -38,8 +56,17 @@ public class ResearchPanelController : MonoBehaviour {
 
             ResearchController researchController = newResearchGameObject.GetComponent<ResearchController>();
             researchController.GetResearchModel().SetResearch(_researches[i]);
+            researchController.GetResearchModel().SetPanelController(this);
 
         }
+    }
+
+    public void OnResearchFinishedEvent()
+    {
+
+        if(onFinished != null)
+        onFinished();
+
     }
 
 }
