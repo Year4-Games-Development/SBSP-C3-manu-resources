@@ -7,6 +7,7 @@ public class ManuController : MonoBehaviour {
 
     private ManuModel manuModel;
     private Inventory inven;
+    public GameObject manuBtn;
 
     string item;
 
@@ -38,4 +39,6 @@ public class ManuController : MonoBehaviour {
         item = "Ammo";
         inven.AddItem(item);//add item to the inventory using inventory class 
     }
+
+ 
 }

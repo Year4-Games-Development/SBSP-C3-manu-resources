@@ -35,25 +35,7 @@ public class ResearchController : MonoBehaviour, ITimeable
 
     void Start()
     {
-        Blueprint[] bp = new Blueprint[5];
-
-        for(int i =0;i<4;i++)
-        {
-            bp[i] = new Blueprint();
-
-            bp[i] = researchModel.BlueprintName[i];
-            bp[i] = researchModel.Blueprintcost[i];
-            bp[i] = researchModel.BlueprintResearchTime[i];
-            bp[i] = researchModel.BlueprintLevel[i];
-        }
-    }
-
-    public class Blueprint
-    {
-        string name;
-        int cost;
-        int researchTime;
-        int level;
+ 
     }
 
     public ResearchModel GetResearchModel()
