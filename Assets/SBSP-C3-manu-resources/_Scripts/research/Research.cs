@@ -16,7 +16,6 @@
         _description = description;
         _thisResearch = research;
         _isLearned = false;
-
         _timeToLearn = time;
 
     }

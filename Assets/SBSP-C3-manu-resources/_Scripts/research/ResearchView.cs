@@ -8,7 +8,6 @@ public class ResearchView{
     private Text _timeText;
 
     public ResearchView(Text name, Text description, Button button, Text timer)
-
     {
         _researchName = name;
         _description = description;
