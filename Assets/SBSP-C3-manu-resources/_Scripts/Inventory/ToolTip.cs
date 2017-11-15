@@ -10,16 +10,17 @@ public class ToolTip : MonoBehaviour {
 
     void Start()
     {
-        toolTip = GameObject.Find("ToolTip");
-        toolTip.SetActive(false);
+      
     }
 
     void Update()
     {
+        /*
        if(toolTip.activeSelf)
         {
             toolTip.transform.position = Input.mousePosition;
         }
+        */
     }
 
     public void Activate(InventoryModel inventoryModel)
@@ -38,5 +39,6 @@ public class ToolTip : MonoBehaviour {
     {
         data = "<color=#FFFFFF><b>" + inventoryModel.Title + "</b></color>\n\n" + inventoryModel.Description ;
         toolTip.transform.GetChild(0).GetComponent<Text>().text=data;
+
     }
 }

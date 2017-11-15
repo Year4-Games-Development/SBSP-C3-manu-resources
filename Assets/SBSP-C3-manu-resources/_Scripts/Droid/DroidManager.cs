@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DroidManager : MonoBehaviour {
+public class DroidManager : MonoBehaviour{
 
     public Button createBayButton;
     public Text maxBayText;
@@ -13,8 +14,7 @@ public class DroidManager : MonoBehaviour {
     private DroidManagerView _droidManagerView;
 
     void Awake()
-    {
-
+    {    
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
@@ -28,9 +28,13 @@ public class DroidManager : MonoBehaviour {
 
     }
 
+    public DroidManagerModel GetDroidManagerModel()
+    {
+        return _droidManagerModel;
+    }
+
     public void CreateNewBay()
     {
-
         if (_droidManagerModel.GetCurrentSize() < _droidManagerModel.GetMaxBaySize()) {
 
             GameObject newBayGameObject = Instantiate(bayPrefab);
@@ -38,6 +42,7 @@ public class DroidManager : MonoBehaviour {
             newBayGameObject.transform.localScale = new Vector3(1, 1, 1);
 
             DroidBay newBay = newBayGameObject.GetComponent<DroidBay>();
+            newBay.GetDroidBayModel().SetDroidManager(this);
             newBay.GetDroidBayModel().SetBayIndex(_droidManagerModel.GetCurrentSize());
             newBay.gameObject.name = "DroidBay_" + newBay.GetDroidBayModel().GetBayIndex();
 
@@ -46,11 +51,12 @@ public class DroidManager : MonoBehaviour {
 
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
 
+            //suscribe to research event
+
+            newBay.SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
+
         }
 
     }
-
-
-
 
 }
