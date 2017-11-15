@@ -12,7 +12,7 @@ public class InventoryController : MonoBehaviour
 
     Inventory inv;
     ItemDatabase database;
-    public int maxSize = 3;
+    public int maxSize = 64;
 
     private void Awake()
     {
@@ -126,8 +126,8 @@ public class InventoryController : MonoBehaviour
 
                     if (data.amount >= maxSize)
                     {
-                        inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "3";
-                        data.amount = 3;
+                        inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "64";
+                        data.amount = 64;
                         Debug.Log(data.amount);
                         break;
                     }
