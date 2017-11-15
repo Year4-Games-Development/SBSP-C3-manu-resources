@@ -35,6 +35,6 @@ public class Inventory : MonoBehaviour
         inventoryController.AddItem((int)type.gold);
         inventoryController.AddItem((int)type.fuel);
 
-       inventoryController.FullItem((int)type.diamond);
+       inventoryController.IsFull((int)type.diamond);
     }
 }

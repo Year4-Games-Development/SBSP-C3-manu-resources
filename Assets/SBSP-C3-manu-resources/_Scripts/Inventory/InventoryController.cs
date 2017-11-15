@@ -112,7 +112,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void FullItem(int id)
+    public void IsFull(int id)
     {
         InventoryModel itemIsFull = database.FetchItemByID(id);
         if (itemIsFull.Stackable && CheckItemInInventory(itemIsFull))
