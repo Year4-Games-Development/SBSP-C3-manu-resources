@@ -24,7 +24,7 @@
 		"weight" : 7
 	},
 	"description" : "Mined Iron is stronger than bronze",
-	"stackable" : true,
+	"stackable" : false,
 	"rarity" : 6,
 	"slug" : "Metal"
 	},
@@ -39,7 +39,7 @@
 		"weight" : 0
 	},
 	"description" : "Gold is valuable",
-	"stackable" : true,
+	"stackable" : false,
 	"rarity" : 10,
 	"slug" : "Gold"
 	},

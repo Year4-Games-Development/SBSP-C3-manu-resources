@@ -12,7 +12,7 @@ public class InventoryController : MonoBehaviour
 
     Inventory inv;
     ItemDatabase database;
-    public int maxSize = 64;
+    public int maxSize = 3;
 
     private void Awake()
     {
@@ -40,14 +40,15 @@ public class InventoryController : MonoBehaviour
             {
                 if (inv.items[i].ID == id)
                 {
+
                     ItemData data = inv.slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                    Debug.Log(id);
                     break;
                 }
             }
         }
+
         else
         {
             for (int i = 0; i < inv.items.Count; i++)
@@ -123,13 +124,14 @@ public class InventoryController : MonoBehaviour
                     ItemData data = inv.slots[y].transform.GetChild(0).GetComponent<ItemData>();
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
 
-                    if (data.amount > maxSize)
+                    if (data.amount >= maxSize)
                     {
-                        inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "64";
+                        inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "3";
+                        data.amount = 3;
+                        Debug.Log(data.amount);
                         break;
                     }
                 }
-
             }
         }
     }

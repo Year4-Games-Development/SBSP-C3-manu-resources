@@ -27,15 +27,14 @@ public class Inventory : MonoBehaviour
 
         inventoryController = GetComponent<InventoryController>();
 
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
 
-        inventoryController.AddItem((int)type.diamond);
-        inventoryController.AddItem((int)type.diamond);
-        inventoryController.AddItem((int)type.diamond);
-        inventoryController.AddItem((int)type.diamond);
-        inventoryController.AddItem((int)type.iron);
         inventoryController.AddItem((int)type.gold);
         inventoryController.AddItem((int)type.fuel);
 
-        inventoryController.FullItem((int)type.diamond);
+       inventoryController.FullItem((int)type.diamond);
     }
 }
