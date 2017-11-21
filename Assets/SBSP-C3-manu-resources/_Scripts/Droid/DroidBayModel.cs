@@ -22,6 +22,8 @@ public class DroidBayModel : ITimeable
         _droidBayView = new DroidBayView(deploy,upgrade,remove,recharge,
         repair, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, droidEnergyText);
 
+        _droidBayView.CleanBay();
+
     }
 
     public void SetDroidManager(DroidManager manager)
@@ -77,15 +79,26 @@ public class DroidBayModel : ITimeable
 
         if (_currentDroid == null)
         {
+            
+            if (droid != null)
+            { 
+                _currentDroid = droid;
+                _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
+                _droidBayView.EnableDroidImage();
 
-            _currentDroid = droid;
-            _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
-            _droidBayView.EnableDroidImage();
+                _currentDroid.GetDroidModel().SetCurrentDroidBay(GetDroidManager().GetDroidManagerModel().GetDroidBay(_bayIndex));
 
-            _droidBayView.UpdateViewFromNewDroid(_currentDroid);
+                _droidBayView.UpdateViewFromNewDroid(_currentDroid);
+            }
 
             return true;
 
+        }
+
+        else if (_currentDroid != null && droid == null)
+        {
+                _currentDroid = null;
+                _droidBayView.CleanBay();
         }
 
         return false;

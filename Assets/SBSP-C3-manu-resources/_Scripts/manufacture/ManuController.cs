@@ -12,6 +12,7 @@ public class ManuController : MonoBehaviour {
 
     void Awake()
     {
+
         _manuModel = new ManuModel(name, description, button, cost);
         _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing);
     }
@@ -29,24 +30,4 @@ public class ManuController : MonoBehaviour {
         */
     }
 
-
-    /*
-    public void OnStartTimer()
-    {
-        _manuModel.GetManuView().DisableResearchButton();
-        _manuModel.GetManuView().GetTimeButton().text = "Time left: " + _ManuModel.GetTimer().GetRemainingSecondsInt();
-    }
-
-    public void OnIncrementTimer()
-    {
-        _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
-    }
-
-    public void OnFinishTimer()
-    {
-        _researchModel.GetResearchView().GetTimeButton().text = "Researched";
-        _researchModel.GetResearch().SetLearned(true);
-        _researchModel.GetMainController().OnResearchFinishedEvent();
-    }
-    */
 }

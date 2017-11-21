@@ -52,6 +52,32 @@ public class ResearchPanelController : MonoBehaviour{
         }
     }
 
+    public bool IsResearchLearned(AllResearches research)
+    {
+
+        for (int i = 0; i < _researches.Count; i++)
+        {
+
+            if (_researches[i].GetResearch() == research)
+            {
+
+                if (_researches[i].IsLearned())
+                {
+
+                    return true;
+
+                }
+
+                return false;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
     public void OnResearchFinishedEvent()
     {
         if(onFinished != null)

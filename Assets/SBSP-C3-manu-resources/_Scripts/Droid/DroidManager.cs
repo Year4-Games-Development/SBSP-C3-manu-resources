@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DroidManager : MonoBehaviour{
+public class DroidManager : MonoBehaviour, IResearchEvent
+{
 
     public Button createBayButton;
     public Text maxBayText;
@@ -19,12 +20,14 @@ public class DroidManager : MonoBehaviour{
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
 
+
     }
 
     void Start()
     {
 
         _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
+        SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
 
     }
 
@@ -53,10 +56,44 @@ public class DroidManager : MonoBehaviour{
 
             //suscribe to research event
 
-            newBay.SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
-
         }
 
     }
 
+    public bool AddDroidToBay(Droid droid)
+    {
+
+        for (int i = 0; i < _droidManagerModel.GetCurrentSize(); i++)
+        {
+
+            if (_droidManagerModel.GetDroidBay(i).AddDroidToBay(droid))
+            {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public void OnResearchLearned()
+    {
+        if (_droidManagerModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.More_Bays))
+        {
+
+            _droidManagerModel.SetMaxBaySize(4);
+            _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
+
+        }
+    }
+
+    public void SuscribeToResearchEvent(ResearchPanelController controller)
+    {
+
+        controller.onFinished += OnResearchLearned;
+
+    }
 }
