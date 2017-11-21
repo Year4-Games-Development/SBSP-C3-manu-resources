@@ -1913,8 +1913,8 @@ GameObject:
   - component: {fileID: 810149828}
   - component: {fileID: 810149826}
   - component: {fileID: 810149825}
-  - component: {fileID: 810149824}
   - component: {fileID: 810149827}
+  - component: {fileID: 810149824}
   m_Layer: 0
   m_Name: InventoryObject
   m_TagString: Untagged
@@ -1974,6 +1974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2961c917870d97e4192020492830e8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSize: 64
 --- !u!4 &810149828
 Transform:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class InventoryController : MonoBehaviour
     {
         database = GetComponent<ItemDatabase>();
         inv = GetComponent<Inventory>();
-
+   
         inv.slotAmount = 25;
         inv.background = GameObject.Find("SlotBackgroundPanel");
         inv.slotPanel = inv.background.transform.Find("SlotPanel").gameObject;
@@ -40,7 +40,6 @@ public class InventoryController : MonoBehaviour
             {
                 if (inv.items[i].ID == id)
                 {
-
                     ItemData data = inv.slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
@@ -124,7 +123,7 @@ public class InventoryController : MonoBehaviour
                     ItemData data = inv.slots[y].transform.GetChild(0).GetComponent<ItemData>();
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
 
-                    if (data.amount >= maxSize)
+                    if (data.amount > maxSize)
                     {
                         inv.slots[y].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "64";
                         data.amount = 64;

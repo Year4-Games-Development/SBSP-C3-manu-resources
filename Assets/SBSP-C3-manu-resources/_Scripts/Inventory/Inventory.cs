@@ -31,7 +31,10 @@ public class Inventory : MonoBehaviour
         inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.diamond);
-
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
+        inventoryController.AddItem((int)type.diamond);
         inventoryController.AddItem((int)type.gold);
         inventoryController.AddItem((int)type.fuel);
 
