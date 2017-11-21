@@ -52,9 +52,9 @@ public class ManuPanelController : MonoBehaviour
                 newManuGameObject.transform.SetParent(gameObject.transform);
                 newManuGameObject.transform.localScale = new Vector3(1, 1, 1);
 
-                ManuController manuController = newManuGameObject.GetComponent<ManuController>();
-                manuController.GetManuModel().SetManufacture(_manufacture[i]);
-                manuController.GetManuModel().SetManufacturePanelController(this);
+                //ManuController manuController = newManuGameObject.GetComponent<ManuController>();
+               // manuController.GetManuModel().SetManufacture(_manufacture[i]);
+               // manuController.GetManuModel().SetManufacturePanelController(this);
             }
         }
     }
