@@ -29,21 +29,16 @@ public class ResearchPanelController : MonoBehaviour{
 
     public void SetMainController(MainResourceController controller)
     {
-
         _mainController = controller;
-
     }
 
     public MainResourceController GetMainController()
     {
-
         return _mainController;
-
     }
 
     private void GenerateResearches()
     {
-
         for (int i = 0; i < _researches.Count; i++)
         {
 
@@ -54,16 +49,13 @@ public class ResearchPanelController : MonoBehaviour{
             ResearchController researchController = newResearchGameObject.GetComponent<ResearchController>();
             researchController.GetResearchModel().SetResearch(_researches[i]);
             researchController.GetResearchModel().SetPanelController(this);
-
         }
     }
 
     public void OnResearchFinishedEvent()
     {
-
         if(onFinished != null)
         onFinished();
-
     }
 
 }

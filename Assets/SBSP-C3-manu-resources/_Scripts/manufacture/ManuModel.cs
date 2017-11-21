@@ -1,32 +1,48 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
 
 public class ManuModel
 {
-    /// <summary>
-    /// items that can be manufactured 
-    /// </summary>
-    private string[] ManufactureBtnText = {"Manufacture", "Produce Rockets For Weapans", "Produce Fuel", "Produce Ammo For Weapons"};
 
-    /// <summary>
-    /// setters for manu facture items 
-    /// </summary>
-    /// <returns></returns>
-    public string GetManufactureText()
+    private ManuPanelController manuPanelController;
+    private ResearchPanelController researchPanelController;
+    private Manufacture _manufacture;
+
+    private RechargeTimer _timer;
+    private ManuView _view;
+
+    public ManuModel(Text name,Text description, Button button,Text cost)
     {
-        return ManufactureBtnText[0];
-    }
-    public string GetRocketText()
-    {
-        return ManufactureBtnText[1];
-    }
-    public string GetFuelText()
-    {   
-        return ManufactureBtnText[2];
-    }
-    public string GetAmmoText()
-    {
-        return ManufactureBtnText[3];
+        _view = new ManuView(name, description, button, cost);
+        _timer = new RechargeTimer();
     }
 
+    public void SetManufacture(Manufacture manufacture)
+    {
+        _manufacture = manufacture;
 
+        _view.SetName(_manufacture.GetName());
+        _view.SetDescription(_manufacture.GetDescription());
+        _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
+    }
+
+    public void SetManufacturePanelController(ManuPanelController controller)
+    {
+        manuPanelController = controller;
+    }
+
+    public ManuView GetManuView()
+    {
+        return _view;
+    }
+
+    public Manufacture GetManufacture()
+    {
+        return _manufacture;
+    }
+
+
+    public RechargeTimer GetTimer()
+    {
+        return _timer;
+    }
 }

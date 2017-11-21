@@ -1,46 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ManuController : MonoBehaviour {
 
-    private ManuModel manuModel;
-    private Inventory inven;
-    public GameObject manuBtn;
+    public Text name;
+    public Text description;
+    public Button button;
+    public Text cost;
 
-    string item;
+    private ManuModel _manuModel;
 
-    // Use this for initialization
     void Awake()
     {
-        manuModel = new ManuModel();
-        inven = new Inventory();
+        _manuModel = new ManuModel(name, description, button, cost);
+        _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing);
     }
 
     public ManuModel GetManuModel()
     {
-        return manuModel;
+        return _manuModel;
     }
 
-    public void FuelManu()
+    public void Manufactureing()
     {
-
-      item = "Fuel2";
-      inven.AddItem(item);//add item to the inventory using inventory class 
-
+        Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
+        /* undecided
+        StartCoroutine(_manuModel.GetTimer().StartTimerCouroutine(_manuModel.GetManufacture().GeTimeTOManufacture(), this));
+        */
     }
-    public void RocketManu()
+
+
+    /*
+    public void OnStartTimer()
     {
-        item = "Rocket";
-        inven.AddItem(item);//add item to the inventory using inventory class 
+        _manuModel.GetManuView().DisableResearchButton();
+        _manuModel.GetManuView().GetTimeButton().text = "Time left: " + _ManuModel.GetTimer().GetRemainingSecondsInt();
     }
 
-    public void AmmoManu()
+    public void OnIncrementTimer()
     {
-        item = "Ammo";
-        inven.AddItem(item);//add item to the inventory using inventory class 
+        _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
     }
 
- 
+    public void OnFinishTimer()
+    {
+        _researchModel.GetResearchView().GetTimeButton().text = "Researched";
+        _researchModel.GetResearch().SetLearned(true);
+        _researchModel.GetMainController().OnResearchFinishedEvent();
+    }
+    */
 }
