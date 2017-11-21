@@ -56,6 +56,20 @@ public class DroidBayView{
 
     }
 
+    public Button GetRepairButton()
+    {
+
+        return _repairButton;
+
+    }
+
+    public Button GetRechargeButton()
+    {
+
+        return _rechargeButton;
+
+    }
+
     public Text GetStatusText()
     {
 
@@ -124,12 +138,6 @@ public class DroidBayView{
 
     }
 
-    //private Text _statusText;
-    //private Text _droidTypeText;
-    //private Text _droidDeployTimeText;
-    //public Text _droidHealthText;
-    //public Text _droidEnergyText;
-
     public Text GetDroidTypeText()
     {
 
@@ -192,5 +200,27 @@ public class DroidBayView{
         SetDroidDeployTimeText(droid);
         SetDroidHealthText(droid);
         SetDroidEnergyText(droid);
+
+        _deployButton.interactable = true;
+        _upgradeButton.interactable = true;
+        _removeButton.interactable = true;
+        _rechargeButton.interactable = true;
+        _repairButton.interactable = true;
+        _droidTypeText.gameObject.SetActive(true);
     }
+
+    public void CleanBay()
+    {
+
+
+        _deployButton.interactable = false;
+        _upgradeButton.interactable = false;
+        _removeButton.interactable = false;
+        _rechargeButton.interactable = false;
+        _repairButton.interactable = false;
+        _droidTypeText.gameObject.SetActive(false);
+        _droidImage.gameObject.SetActive(false);
+
+    }
+
 }

@@ -11,13 +11,13 @@ public class DroidManagerModel
     private int _baySize;
     private int _maxBaySize = 2;
 
-    private DroidBay[] _droidBayArray;
+    private List<DroidBay> _droidBayArray;
 
     public DroidManagerModel()
     {
 
         _baySize = 0;
-        _droidBayArray = new DroidBay[_maxBaySize];
+        _droidBayArray = new List<DroidBay>();
 
     }
 
@@ -45,7 +45,7 @@ public class DroidManagerModel
     public void AddNewBay(DroidBay newBay)
     {
 
-        _droidBayArray[_baySize] = newBay;
+        _droidBayArray.Add(newBay);
 
     }
 
@@ -60,6 +60,20 @@ public class DroidManagerModel
     {
 
         return _maxBaySize;
+
+    }
+
+    public void SetMaxBaySize(int value)
+    {
+
+        _maxBaySize = value;
+
+    }
+
+    public DroidBay GetDroidBay(int value)
+    {
+
+        return _droidBayArray[value];
 
     }
 	
