@@ -750,8 +750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droidFactory:
-    gatherDroidImage: {fileID: 21300000, guid: dc907e339e9956d49a1d1111dc1efe28, type: 3}
-    repairDroidImage: {fileID: 21300000, guid: 2616feecefdeb664fa166686a2733a23, type: 3}
+    gatherDroidImage: {fileID: 0}
+    repairDroidImage: {fileID: 0}
 --- !u!4 &604398156
 Transform:
   m_ObjectHideFlags: 0
@@ -1261,10 +1261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4915d2aea1e9994fb73e786997588a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  slotPanel: {fileID: 0}
   inventorySlot: {fileID: 1650873212087490, guid: a82d45d2022544846b38235208d802c9,
     type: 2}
   inventoryItem: {fileID: 1304116706102710, guid: 55e182a171bc8384baff9bc1228b9da0,
     type: 2}
+  slotAmount: 0
   slots: []
 --- !u!4 &810149828
 Transform:
