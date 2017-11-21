@@ -1,10 +1,13 @@
-﻿public class DroidModel{
+﻿using System.Collections.Generic;
+
+public class DroidModel{
 
     protected int _maxHealth;
     protected int _maxEnergy;
     protected int _currentHealth;
     protected int _currentEnergy;
     protected int _deployTime;
+    protected int _energyConsuption;
 
     protected DroidView _droidView;
 
@@ -18,13 +21,19 @@
     {
         _droidView = new DroidView();
         _droidState = DroidState.Ready;
-
     }
 
     public void SetCurrentDroidBay(DroidBay bay)
     {
 
         _currentDroidBay = bay;
+
+    }
+
+    public int GetEnergyConsumption()
+    {
+
+        return _energyConsuption;
 
     }
 
@@ -48,6 +57,20 @@
         _droidState = state;
 
         return true;
+
+    }
+
+    public DroidState GetDroidState()
+    {
+
+        return _droidState;
+
+    }
+
+    public void SetDroidState(DroidState state)
+    {
+
+        _droidState = state;
 
     }
 
@@ -98,6 +121,11 @@
 
         return _deployTime;
 
+    }
+
+    public void SetDroidCurrentEnergy(int value)
+    {
+        _currentEnergy = value;
     }
 
 

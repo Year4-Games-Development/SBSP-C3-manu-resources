@@ -17,8 +17,6 @@ public class RepairDroidModel : DroidModel
         _currentEnergy = _maxEnergy;
 
         _droidType = DroidType.RepairDroid;
-
-        DroidFactory.instance.CreateDroid(DroidType.RepairDroid);
     }
 
 }
