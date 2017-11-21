@@ -10,7 +10,8 @@ public class ToolTip : MonoBehaviour {
 
     void Start()
     {
-      
+        toolTip = GameObject.Find("ToolTip");
+        toolTip.SetActive(false);
     }
 
     void Update()
