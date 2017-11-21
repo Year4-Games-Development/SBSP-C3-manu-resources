@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ManuController : MonoBehaviour {
 
     private ManuModel manuModel;
-    private Inventory inven;
+    //private Inventory inven;
 
     string item;
 
@@ -14,7 +14,7 @@ public class ManuController : MonoBehaviour {
     void Awake()
     {
         manuModel = new ManuModel();
-        inven = new Inventory();
+        //inven = new Inventory();
     }
 
     public ManuModel GetManuModel()
@@ -26,18 +26,18 @@ public class ManuController : MonoBehaviour {
     {
 
       item = "Fuel2";
-      inven.AddItem(item);//add item to the inventory using inventory class 
+      //inven.AddItem(item);//add item to the inventory using inventory class 
 
     }
     public void RocketManu()
     {
         item = "Rocket";
-        inven.AddItem(item);//add item to the inventory using inventory class 
+        //inven.AddItem(item);//add item to the inventory using inventory class 
     }
 
     public void AmmoManu()
     {
         item = "Ammo";
-        inven.AddItem(item);//add item to the inventory using inventory class 
+        //inven.AddItem(item);//add item to the inventory using inventory class 
     }
 }

@@ -22,7 +22,11 @@ public class DroidFactory{
         {
 
             Droid droid = new SearchDroid();
+            droid.SetItemType(ItemType.Droid);
+            droid.SetItemName("Search Droid");
             droid.GetDroidModel().GetDroidView().SetDroidSprite(gatherDroidImage);
+            droid.AddItemImage(gatherDroidImage);
+            droid.SetStackable(1);
 
             return droid;
 
@@ -32,7 +36,11 @@ public class DroidFactory{
         {
 
             Droid droid = new RepairDroid();
+            droid.SetItemType(ItemType.Droid);
+            droid.SetItemName("Repair droid");
             droid.GetDroidModel().GetDroidView().SetDroidSprite(repairDroidImage);
+            droid.AddItemImage(repairDroidImage);
+            droid.SetStackable(1);
 
             return droid;
 
