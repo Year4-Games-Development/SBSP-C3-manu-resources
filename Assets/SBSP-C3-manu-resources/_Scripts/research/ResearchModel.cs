@@ -1,171 +1,69 @@
-﻿
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ResearchModel
-{
-    //ItemData.Quantity(Metal);
 
-    private int ironAmount = 2400;
-    private bool[] scienceLvReseached = { false, false, false };
-    private bool[] combatLvReseached = { false, false, false };
-    private bool[] enginLvResearched = { false, false, false };
-    /// <summary>
-    /// science branch variables 
-    /// </summary>
-    private string scienceText = "Science";
-    private string scienceLevel1 = "Faster Mining Rate, Research time 5 secounds";
-    private string scienceLevel2 = "Larger Droids Area, Research time 10 secounds";
-    private string scienceLevel3 = "Extra Droids, Research time 15 secounds";
+public class ResearchModel{
 
-    /// <summary>
-    /// combat branch variables
-    /// </summary>
-    private string combatText = "Combat";
-    private string combatLevel1 = "More Damage, Research time 5 secounds";
-    private string combatLevel2 = "Better Shields, Research time 10 secounds";
-    private string combatLevel3 = "More efficient, Research time 15 secounds";
+    private ResearchPanelController _panelController;
+    private Research _research;
 
-    /// <summary>
-    /// engineering branch variables
-    /// </summary>
-    private string enginText = "Engineering";
-    private string enginLevel1 = "Better engins, Research time 5 secounds";
-    private string enginLevel2 = "Better reactor, Research time 10 secounds";
-    private string enginLevel3 = "Better Speed, Research time 15 secounds";
-    
-    /// <summary>
-    /// research time for each level 
-    /// </summary>
-    private float researchTimeLv1 = 5.0f;
-    private float researchTimeLv3 = 10.0f;
-    private float researchTimeLv2 = 15.0f;
-    /// <summary>
-    /// science getter methods 
-    /// </summary>
-    /// <returns></returns>
-    public string GetScienceText()
+    private ResearchView _researchView;
+    private RechargeTimer _timer;
+
+    public ResearchModel(Text name, Text description, Button button, Text timerText)
     {
-        return scienceText;
-    }
-    public string GetScienceLevel1()
-    {
-        return scienceLevel1;
-    }
-    public string GetScienceLevel2()
-    {
-        return scienceLevel2;
-    }
-    public string GetScienceLevel3()
-    {
-        return scienceLevel3;
-    }
-    /// <summary>
-    /// combat getter methods
-    /// </summary>
-    /// <returns></returns>
-    public string GetCombatText()
-    {
-        return combatText;
-    }
-    public string GetCombatLevel1()
-    {
-        return combatLevel1;
-    }
-    public string GetCombatLevel2()
-    {
-        return combatLevel2;
-    }
-    public string GetCombatLevel3()
-    {
-        return combatLevel3;
-    }
-    /// <summary>
-    /// engineering getter methods 
-    /// </summary>
-    /// <returns></returns>
-    public string GetEnginText()
-    {
-        return enginText;
-    }
-    public string GetEnginLevel1()
-    {
-        return enginLevel1;
-    }
-    public string GetEnginLevel2()
-    {
-        return enginLevel2;
-    }
-    public string GetEnginLevel3()
-    {
-        return enginLevel3;
+        _researchView = new ResearchView(name, description, button, timerText);
+        _timer = new RechargeTimer();
     }
 
-    /// <summary>*****************************************************************************************
-    /// research time for all level 1 items 
-    /// </summary>
-    /// <returns></returns>
-    public float GetResearchTimeLv1()
+
+    public void SetResearch(Research research)
+
     {
-        return researchTimeLv1;
+
+        _research = research;
+
+        //update the view when research is added
+
+        _researchView.SetName(_research.GetName());
+        _researchView.SetDescription(_research.GetDescription());
+        _researchView.SetTimerText("Time to learn: " + _research.GetTime());
     }
 
-    /// <summary>
-    /// research time for all level 2 items 
-    /// </summary>
-    /// <returns></returns>
-    public float GetResearchTimeLv2()
+    public void SetPanelController(ResearchPanelController controller)
     {
-        return researchTimeLv2;
+
+        _panelController = controller;
+
     }
 
-    /// <summary>
-    /// research time for all level 3 items 
-    /// </summary>
-    /// <returns></returns>
-    public float GetResearchTimeLv3()
+    public ResearchPanelController GetMainController()
     {
-        return researchTimeLv3;
-    }
-    //****************************************************************************************************
-    public bool GetScienceLvReseachedByIndex(int i)
-    {
-        return scienceLvReseached[i];
-    }
-    
-    public void SetScienceLvReseachedByIndex(int i, bool researchComplete)
-    {
-        scienceLvReseached[i] = researchComplete;
+
+        return _panelController;
+
     }
 
-    public bool GetCombatLvReseachedByIndex(int i)
+    public ResearchView GetResearchView()
     {
-        return combatLvReseached[i];
+
+        return _researchView;
+
     }
 
-    public void SetCombatLvReseachedByIndex(int i, bool researchComplete)
+    public RechargeTimer GetTimer()
     {
-        combatLvReseached[i] = researchComplete;
+
+        return _timer;
+
     }
 
-    public bool GetEnginLvReseachedByIndex(int i)
+    public Research GetResearch()
     {
-        return enginLvResearched[i];
-    }
 
-    public void SetEnginLvReseachedByIndex(int i, bool researchComplete)
-    {
-        enginLvResearched[i] = researchComplete;
-    }
+        return _research;
 
-    public int GetIronAmount()
-    {
-        return ironAmount;
     }
-
-    public void SetIronAmount(int amount)
-    {
-        ironAmount -= amount;
-    }
-    //changing file so git recognizes it 
-
 }
