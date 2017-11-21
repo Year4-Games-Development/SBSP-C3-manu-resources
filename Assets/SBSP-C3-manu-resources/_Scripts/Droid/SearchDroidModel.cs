@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SearchDroidModel : DroidModel {
 
+    protected List<Item> _droidStorage;
+    protected int _droidStorageCapacity;
+
     public SearchDroidModel()
     {
 
@@ -15,6 +18,33 @@ public class SearchDroidModel : DroidModel {
         _currentEnergy = _maxEnergy;
 
         _droidType = DroidType.SearchDroid;
+
+        _droidStorage = new List<Item>();
+        _droidStorageCapacity = 10;
+
+        _energyConsuption = 3;
+
+    }
+
+    public List<Item> GetDroidStorage()
+    {
+
+        return _droidStorage;
+
+    }
+
+
+    public void SetDroidStorage(List<Item> newStorage)
+    {
+
+        _droidStorage = newStorage;
+
+    }
+
+    public int GetDroidStorageCapacity()
+    {
+
+        return _droidStorageCapacity;
 
     }
 

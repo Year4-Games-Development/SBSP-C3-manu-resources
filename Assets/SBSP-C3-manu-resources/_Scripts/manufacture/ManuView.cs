@@ -1,44 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
-public class ManuView : MonoBehaviour
+public class ManuView 
 {
-    /// <summary>
-    /// /science upgrades
-    /// </summary>
-    public Text manufactureText;
-    public Text fuelBtn;
-    public Text rocketBtn;
-    public Text ammoBtn;
+    private Text _name;
+    private Text _description;
+    private Text _cost;
+    private Button _manufactureButton;
 
-    private ManuController manuController;
-    private ManuModel manuModel;
-
-    void Awake()
+    public ManuView(Text name,Text description, Button button,Text cost)
     {
-        manuController = GetComponent<ManuController>();     
+        _name = name;
+        _description = description;
+        _manufactureButton = button;
+        _cost = cost;
     }
 
-    // Use this for initialization
-    void Start()
+    public void SetName(string name)
     {
-        manuModel = manuController.GetManuModel();
-        UpdateViews();
+        _name.text = name;
     }
 
-    void Update()
+    public void SetDescription(string description)
     {
-        UpdateViews();
+        _description.text = description;
     }
 
-    private void UpdateViews()
+    public void SetCost(string cost)
     {
-        ///manufacture button text 
-        manufactureText.text = manuModel.GetManufactureText();
-        fuelBtn.text = manuModel.GetFuelText();
-        rocketBtn.text = manuModel.GetRocketText();
-        ammoBtn.text = manuModel.GetAmmoText();
+        _cost.text = cost;
+    }
+
+    public Text GetManufacturNutton()
+    {
+        return _cost;
+    }
+
+    public Button GetManufactureButton()
+    {
+        return _manufactureButton;
+    }
+
+    public void DisableResearchButton()
+    {
+        _manufactureButton.gameObject.SetActive(false);
+    }
+
+    public void EnableResearchButton()
+    {
+        _manufactureButton.gameObject.SetActive(true);
     }
 }

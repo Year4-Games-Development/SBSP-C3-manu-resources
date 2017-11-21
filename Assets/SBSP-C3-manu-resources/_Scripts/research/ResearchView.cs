@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 
-public class ResearchView{
-
+public class ResearchView
+{
     private Text _researchName;
     private Text _description;
     private Button _researchButton;
@@ -22,9 +22,7 @@ public class ResearchView{
 
     public void SetDescription(string description)
     {
-
         _description.text = description;
-
     }
 
     public Button GetResearchButton()
