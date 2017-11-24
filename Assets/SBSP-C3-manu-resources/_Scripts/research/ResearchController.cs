@@ -8,6 +8,7 @@ public class ResearchController : MonoBehaviour, ITimeable
     public Text timeText;
 
     private ResearchModel _researchModel;
+    private ManuModel _manuModel;
 
     void Awake()
     {
@@ -41,6 +42,7 @@ public class ResearchController : MonoBehaviour, ITimeable
     {
         _researchModel.GetResearchView().GetTimeButton().text = "Researched";
         _researchModel.GetResearch().SetLearned(true);
+        _manuModel.GetManufacture().SetLearned(true);
         _researchModel.GetMainController().OnResearchFinishedEvent();
     }
 

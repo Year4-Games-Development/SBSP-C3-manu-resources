@@ -9,6 +9,8 @@ public class ManuModel
 
     private RechargeTimer _timer;
     private ManuView _view;
+    private int _numberOfProducts;
+
 
     public ManuModel(Text name,Text description, Button button,Text cost)
     {
@@ -39,7 +41,6 @@ public class ManuModel
     {
         return _manufacture;
     }
-
 
     public RechargeTimer GetTimer()
     {

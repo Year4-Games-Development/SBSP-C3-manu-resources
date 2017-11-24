@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
 
 public class ResearchPanelController : MonoBehaviour{
 
@@ -16,9 +13,9 @@ public class ResearchPanelController : MonoBehaviour{
     void Awake()
     {
         _researches = new List<Research>();
-        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 20));
-        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 15));
-        _researches.Add(new Research("Rockets", "Learn to make rockets", AllResearches.Rockets, 60));
+        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 10));
+        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 5));
+        _researches.Add(new Research("Rockets", "Learn to make rockets", AllResearches.Rockets,15));
     }
 
     void Start()

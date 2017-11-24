@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ManuPanelController : MonoBehaviour
@@ -7,6 +6,7 @@ public class ManuPanelController : MonoBehaviour
     public GameObject maufacturePrefab;
     private List<Manufacture> _manufacture;
     private MainResourceController mainController;
+    private ManuModel _manuModel;
 
     //private ManuModel _manufactureModel;
     //private ManuController manuController;
@@ -25,7 +25,7 @@ public class ManuPanelController : MonoBehaviour
 	// Update is called once per frame
 	void Start()
     {
-        GenerateButtons();
+        GenerateProducts();
     }
 
     public void SetMainController(MainResourceController controller)
@@ -38,31 +38,46 @@ public class ManuPanelController : MonoBehaviour
         return mainController;
     }
 
-    private void GenerateButtons()
+    private void GenerateProducts()
     {
-        if (_manufacture.Count<1)
-        {
-            // print in text nothing to manufacture 
-        }
-        else
-        {
-            for (int i = 0; i < _manufacture.Count; i++)// && _researches[i].IsLearned()==true
+            for (int i = 0; i < _manufacture.Count; i++)
             {
-                GameObject newManuGameObject = Instantiate(maufacturePrefab);
-                newManuGameObject.transform.SetParent(gameObject.transform);
-                newManuGameObject.transform.localScale = new Vector3(1, 1, 1);
+                if(_manufacture[i].IsLearned()== true )
+                {   
+                    GameObject newManuGameObject = Instantiate(maufacturePrefab);
+                    newManuGameObject.transform.SetParent(gameObject.transform);
+                    newManuGameObject.transform.localScale = new Vector3(1, 1, 1);
 
-                //ManuController manuController = newManuGameObject.GetComponent<ManuController>();
-               // manuController.GetManuModel().SetManufacture(_manufacture[i]);
-               // manuController.GetManuModel().SetManufacturePanelController(this);
+                    ManuController manuController = newManuGameObject.GetComponent<ManuController>();
+                    manuController.GetManuModel().SetManufacture(_manufacture[i]);
+                    manuController.GetManuModel().SetManufacturePanelController(this);
+                }
+              
             }
-        }
     }
 
+    public bool IsResearchLearned(AllResearches research)
+    {
+
+        for (int i = 0; i < _manufacture.Count; i++)
+        {
+
+            if (_manufacture[i].GetResearch() == research)
+            {
+
+                if (_manufacture[i].IsLearned())
+                {
+                    return true;
+                }         
+                    return false;
+            }
+        }//end of forloop 
+
+        return false;
+    }
 
     public void OnManufactureFinishedEvent()
     {
-
         //needs to be rewrote 
         if (onFinished != null)
             onFinished();
