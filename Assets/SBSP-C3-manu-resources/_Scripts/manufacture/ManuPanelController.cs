@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ManuPanelController : MonoBehaviour
@@ -21,11 +21,11 @@ public class ManuPanelController : MonoBehaviour
         _manufacture.Add(new Manufacture("Rockets", "Make rockets", AllManufacture.Rockets, 10));
         _manufacture.Add(new Manufacture("Fuel", "Make fuel for engines", AllManufacture.Fuel, 2));
     }
-	
-	// Update is called once per frame
-	void Start()
+
+    // Update is called once per frame
+    void Start()
     {
-       
+
     }
 
     public void SetMainController(MainResourceController controller)
@@ -63,8 +63,8 @@ public class ManuPanelController : MonoBehaviour
                 if (_manufacture[i].IsLearned())
                 {
                     return true;
-                }         
-                    return false;
+                }
+                return false;
             }
         }//end of forloop 
 

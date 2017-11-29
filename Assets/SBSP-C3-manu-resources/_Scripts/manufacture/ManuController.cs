@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ManuController : MonoBehaviour, IResearchEvent
@@ -28,20 +28,20 @@ public class ManuController : MonoBehaviour, IResearchEvent
     {
         _manuModel.GetManufacture().SetLearned(true);
 
-        if(_manuModel.GetManufacture().GetName() == "Fuel")
+        if (_manuModel.GetManufacture().GetName() == "Fuel")
         {
             _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
 
-        if(_manuModel.GetManufacture().GetName() == "Ammo")
+        if (_manuModel.GetManufacture().GetName() == "Ammo")
         {
             _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
 
         }
-        
-      
+
+
         /* undecided
         StartCoroutine(_manuModel.GetTimer().StartTimerCouroutine(_manuModel.GetManufacture().GeTimeTOManufacture(), this));
         */
@@ -54,12 +54,10 @@ public class ManuController : MonoBehaviour, IResearchEvent
         _manuModel.GetManuView().DisableResearchButton();
         _manuModel.GetManuView().GetTimeButton().text = "Time left: " + _ManuModel.GetTimer().GetRemainingSecondsInt();
     }
-
     public void OnIncrementTimer()
     {
         _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
     }
-
     public void OnFinishTimer()
     {
         _
@@ -68,16 +66,16 @@ public class ManuController : MonoBehaviour, IResearchEvent
 
     public void OnResearchLearned()
     {
-        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
+        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
         {
             Debug.Log("Manufacture Rockets prefab ");
             _manuModel.GetManuPanelController().GenerateProducts();
         }
-        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
+        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
         {
             Debug.Log("Manufacture Fuel prefab");
             _manuModel.GetManuPanelController().GenerateProducts();
-        }   
+        }
     }
 
     public void SuscribeToResearchEvent(ResearchPanelController controller)

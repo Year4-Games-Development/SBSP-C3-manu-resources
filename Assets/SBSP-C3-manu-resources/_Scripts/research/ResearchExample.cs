@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResearchExample : MonoBehaviour {
+public class ResearchExample : MonoBehaviour
+{
 
     private List<Research> _researches;
 
@@ -11,8 +12,8 @@ public class ResearchExample : MonoBehaviour {
 
         _researches = new List<Research>();
 
-        _researches.Add(new Research("More Bays","You can build more bays",AllResearches.More_Bays,10));
-        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun,10));
+        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 10));
+        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 10));
 
     }
 
@@ -28,10 +29,10 @@ public class ResearchExample : MonoBehaviour {
     public bool IsResearchLearned(AllResearches research)
     {
 
-        for(int i = 0; i < _researches.Count; i++)
+        for (int i = 0; i < _researches.Count; i++)
         {
 
-            if(_researches[i].GetResearch() == research)
+            if (_researches[i].GetResearch() == research)
             {
 
                 if (_researches[i].IsLearned())
@@ -77,5 +78,5 @@ public class ResearchExample : MonoBehaviour {
 
     }
 
-	
+
 }

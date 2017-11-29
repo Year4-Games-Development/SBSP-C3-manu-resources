@@ -42,6 +42,8 @@ public class InventoryManager : MonoBehaviour {
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
 
+        AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+
         AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
         //AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
         AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));

@@ -90,5 +90,4 @@ public enum ItemType
     Fuel,
     Droid,
     Ammo
-
 }

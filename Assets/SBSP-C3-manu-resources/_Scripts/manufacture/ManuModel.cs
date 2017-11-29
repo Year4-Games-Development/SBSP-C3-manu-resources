@@ -1,4 +1,4 @@
-﻿using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class ManuModel
 {
@@ -12,7 +12,7 @@ public class ManuModel
     private ManuView _view;
     private int _numberOfProducts;
 
-    public ManuModel(Text name,Text description, Button button,Text cost)
+    public ManuModel(Text name, Text description, Button button, Text cost)
     {
         _view = new ManuView(name, description, button, cost);
         _timer = new RechargeTimer();
