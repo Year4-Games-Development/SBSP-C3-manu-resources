@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public class ToolTip : MonoBehaviour {
     private InventoryModel inventoryModel;
     private string data;
@@ -42,4 +42,4 @@ public class ToolTip : MonoBehaviour {
         toolTip.transform.GetChild(0).GetComponent<Text>().text=data;
 
     }
-}
+}*/

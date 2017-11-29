@@ -7,7 +7,7 @@
     private int _timeToLearn;
 
     AllResearches _thisResearch;
-    
+
     public Research(string name, string description, AllResearches research, int time)
     {
         _researchName = name;
@@ -67,5 +67,6 @@ public enum AllResearches
 {
     More_Bays,
     Machinegun,
-    Rockets
+    Rockets,
+    Fuel
 }

@@ -3,14 +3,16 @@
 public class ManuModel
 {
 
-    private ManuPanelController manuPanelController;
+    private ManuPanelController _manuPanelController;
+    private MainResourceController _mainController;
     private ResearchPanelController researchPanelController;
     private Manufacture _manufacture;
 
     private RechargeTimer _timer;
     private ManuView _view;
+    private int _numberOfProducts;
 
-    public ManuModel(Text name,Text description, Button button,Text cost)
+    public ManuModel(Text name, Text description, Button button, Text cost)
     {
         _view = new ManuView(name, description, button, cost);
         _timer = new RechargeTimer();
@@ -27,7 +29,7 @@ public class ManuModel
 
     public void SetManufacturePanelController(ManuPanelController controller)
     {
-        manuPanelController = controller;
+        _manuPanelController = controller;
     }
 
     public ManuView GetManuView()
@@ -40,9 +42,17 @@ public class ManuModel
         return _manufacture;
     }
 
-
     public RechargeTimer GetTimer()
     {
         return _timer;
+    }
+    public ManuPanelController GetManuPanelController()
+    {
+        return _manuPanelController;
+    }
+
+    public MainResourceController GetMainController()
+    {
+        return _mainController;
     }
 }

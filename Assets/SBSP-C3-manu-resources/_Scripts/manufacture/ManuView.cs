@@ -1,13 +1,14 @@
 ﻿using UnityEngine.UI;
 
-public class ManuView 
+public class ManuView
 {
     private Text _name;
     private Text _description;
     private Text _cost;
     private Button _manufactureButton;
 
-    public ManuView(Text name,Text description, Button button,Text cost)
+
+    public ManuView(Text name, Text description, Button button, Text cost)
     {
         _name = name;
         _description = description;
