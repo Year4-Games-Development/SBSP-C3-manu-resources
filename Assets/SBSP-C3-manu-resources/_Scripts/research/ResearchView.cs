@@ -25,6 +25,16 @@ public class ResearchView
         _description.text = description;
     }
 
+    public void SetTimerText(string value)
+    {
+        _timeText.text = value;
+    }
+
+    public Text GetTimeButton()
+    {
+        return _timeText;
+    }
+
     public Button GetResearchButton()
     {
         return _researchButton;
@@ -39,15 +49,4 @@ public class ResearchView
     {
        _researchButton.gameObject.SetActive(true);
     }
-
-    public void SetTimerText(string value)
-    {
-        _timeText.text = value;
-    }
-
-    public Text GetTimeButton()
-    {
-        return _timeText;
-    }
-	
 }

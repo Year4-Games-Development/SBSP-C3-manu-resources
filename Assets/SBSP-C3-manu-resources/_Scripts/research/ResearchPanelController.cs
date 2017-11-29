@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
 
 public class ResearchPanelController : MonoBehaviour{
 
@@ -16,9 +13,10 @@ public class ResearchPanelController : MonoBehaviour{
     void Awake()
     {
         _researches = new List<Research>();
-        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 20));
-        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 15));
-        _researches.Add(new Research("Rockets", "Learn to make rockets", AllResearches.Rockets, 60));
+        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 10));
+        _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 5));
+        _researches.Add(new Research("Rockets", "Learn to make rockets", AllResearches.Rockets,15));
+        _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 2));
     }
 
     void Start()
@@ -41,7 +39,6 @@ public class ResearchPanelController : MonoBehaviour{
     {
         for (int i = 0; i < _researches.Count; i++)
         {
-
             GameObject newResearchGameObject = Instantiate(researchPrefab);
             newResearchGameObject.transform.SetParent(gameObject.transform);
             newResearchGameObject.transform.localScale = new Vector3(1, 1, 1);
@@ -54,28 +51,18 @@ public class ResearchPanelController : MonoBehaviour{
 
     public bool IsResearchLearned(AllResearches research)
     {
-
         for (int i = 0; i < _researches.Count; i++)
         {
-
             if (_researches[i].GetResearch() == research)
             {
-
                 if (_researches[i].IsLearned())
                 {
-
                     return true;
-
                 }
-
                 return false;
-
             }
-
         }
-
         return false;
-
     }
 
     public void OnResearchFinishedEvent()

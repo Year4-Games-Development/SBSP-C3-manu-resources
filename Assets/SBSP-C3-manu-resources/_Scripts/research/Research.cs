@@ -67,5 +67,6 @@ public enum AllResearches
 {
     More_Bays,
     Machinegun,
-    Rockets
+    Rockets,
+    Fuel
 }
