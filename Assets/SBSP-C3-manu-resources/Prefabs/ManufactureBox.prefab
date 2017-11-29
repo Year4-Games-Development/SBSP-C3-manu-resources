@@ -270,6 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c74cfc1dcc50594f878c80496bdb0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: {fileID: 114143248052962304}
+  description: {fileID: 114523752406038650}
+  button: {fileID: 114798534785227436}
+  cost: {fileID: 0}
+  maufacturePrefab: {fileID: 1877967010850818}
 --- !u!114 &114941321487351386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 443.63998, y: 277.09995}
+  m_AnchoredPosition: {x: 422.9881, y: 281.83163}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224052588559043436

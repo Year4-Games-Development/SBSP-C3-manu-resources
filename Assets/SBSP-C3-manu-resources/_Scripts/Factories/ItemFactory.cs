@@ -10,12 +10,11 @@ public class ItemFactory{
     public Sprite ironImage;
     public Sprite goldImage;
     public Sprite fuelImage;
+    public Sprite ammoImage;
 
     public ItemFactory()
     {
-
         instance = this;
-
     }
 
     public Item CreateItem(ItemType type)
@@ -57,6 +56,18 @@ public class ItemFactory{
 
             return fuel;
 
+        }
+
+        if(type == ItemType.Ammo)
+        {
+
+            Item ammo = new Item();
+            ammo.SetItemName("Ammo");
+            ammo.SetItemType(ItemType.Ammo);
+            ammo.AddItemImage(ammoImage);
+            ammo.SetStackable(2);
+
+            return ammo;
         }
 
         return null;

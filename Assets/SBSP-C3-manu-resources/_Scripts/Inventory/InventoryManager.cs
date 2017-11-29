@@ -19,13 +19,6 @@ public class InventoryManager : MonoBehaviour {
     {
 
         CreateInventory();
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
 
         AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
 
@@ -42,7 +35,6 @@ public class InventoryManager : MonoBehaviour {
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
 
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
 
         AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
         //AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
@@ -50,6 +42,8 @@ public class InventoryManager : MonoBehaviour {
 
         AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
         AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
+
+        AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
 
     }
 
