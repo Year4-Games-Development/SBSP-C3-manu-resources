@@ -38,21 +38,20 @@ public class ManuController : MonoBehaviour, IResearchEvent
     {
         _manuModel.GetManufacture().SetLearned(true);
 
-        if(_manuModel.GetManufacture().GetName() == "Fuel")
+        if (_manuModel.GetManufacture().GetName() == "Fuel")
         {
             _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
 
-        if(_manuModel.GetManufacture().GetName() == "Ammo")
+        if (_manuModel.GetManufacture().GetName() == "Ammo")
         {
-            _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+            //_inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
 
         }
-          
-        /************************************STUFF FOR TIMING 
-        //undecided
+
+        /* undecided
         StartCoroutine(_manuModel.GetTimer().StartTimerCouroutine(_manuModel.GetManufacture().GeTimeTOManufacture(), this));
         */
     }
@@ -99,22 +98,24 @@ public class ManuController : MonoBehaviour, IResearchEvent
 
     public void OnResearchLearned()
     {
-        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
+        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
         {
             Debug.Log("Manufacture Rockets prefab ");
             GenerateProducts();
         }
-        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
+        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
         {
             Debug.Log("Manufacture Fuel prefab");
            GenerateProducts();
         }   
+
     }
 
     public void SuscribeToResearchEvent(ResearchPanelController controller)
     {
         controller.onFinished += OnResearchLearned;
     }
+
 
     /************************************CODE TO IMPLIMENT TIMEING NOT SURE IF IT IS BEING USED YET ****
     //not sure if timing is going to be used on manufacture 

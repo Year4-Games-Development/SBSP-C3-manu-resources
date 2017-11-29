@@ -1,4 +1,3 @@
-﻿
 public class Manufacture
 {
     private string _name;
@@ -64,7 +63,7 @@ public class Manufacture
     {
         return _cost;
     }
-    
+
     public AllResearches GetResearch()
     {
         return _thisResearch;
@@ -75,7 +74,6 @@ public class Manufacture
     {
         _timeToManufacture = time;
     }
-
     public int GeTimeTOManufacture()
     {
         return _timeToManufacture;

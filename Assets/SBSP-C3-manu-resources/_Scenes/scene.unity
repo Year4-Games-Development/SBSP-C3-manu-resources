@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &148730813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,9 +432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c74cfc1dcc50594f878c80496bdb0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 0}
-  description: {fileID: 0}
-  button: {fileID: 0}
+  name: {fileID: 114143248052962304, guid: e059b6afe6a50cd48a8b714e6d438aaa, type: 2}
+  description: {fileID: 114523752406038650, guid: e059b6afe6a50cd48a8b714e6d438aaa,
+    type: 2}
+  button: {fileID: 114798534785227436, guid: e059b6afe6a50cd48a8b714e6d438aaa, type: 2}
   cost: {fileID: 0}
   maufacturePrefab: {fileID: 1877967010850818, guid: e059b6afe6a50cd48a8b714e6d438aaa,
     type: 2}
@@ -472,6 +473,7 @@ MonoBehaviour:
     ironImage: {fileID: 21300000, guid: 39ad4db32d4554d47ade6d92f027dece, type: 3}
     goldImage: {fileID: 21300000, guid: 41037ff79ae34f24ba23e2cbe266872a, type: 3}
     fuelImage: {fileID: 21300000, guid: 92335e82d352a3543ac3c4eac4674414, type: 3}
+    ammoImage: {fileID: 21300000, guid: 9d2a62dc5e8f90746b1e3a237e00e108, type: 3}
 --- !u!4 &604398156
 Transform:
   m_ObjectHideFlags: 0

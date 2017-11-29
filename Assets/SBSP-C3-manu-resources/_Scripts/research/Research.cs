@@ -1,4 +1,4 @@
-﻿public class Research
+public class Research
 {
     private string _researchName;
     private string _description;
@@ -7,7 +7,7 @@
     private int _timeToLearn;
 
     AllResearches _thisResearch;
-    
+
     public Research(string name, string description, AllResearches research, int time)
     {
         _researchName = name;
