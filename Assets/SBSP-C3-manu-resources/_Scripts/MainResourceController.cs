@@ -10,33 +10,25 @@ public class MainResourceController : MonoBehaviour {
 
     void Start()
     {
-
         droidManager.GetDroidManagerModel().SetMainController(this);
         researchController.SetMainController(this);//need to implement MC
         inventoryManager.GetInventoryManagerModel().SetMainController(this);
-
     }
     
     public DroidManager GetDroidManager()
     {
-
         return droidManager;
-
     }
 
     //change the name later of this class
     public ResearchPanelController GetResearchController()
     {
-
         return researchController;
-
     }
 
     public InventoryManager GetInventoryManager()
     {
-
         return inventoryManager;
-
     }
 
 }

@@ -42,7 +42,6 @@ public class ResearchController : MonoBehaviour, ITimeable
     {
         _researchModel.GetResearchView().GetTimeButton().text = "Researched";
         _researchModel.GetResearch().SetLearned(true);
-        _manuModel.GetManufacture().SetLearned(true);
         _researchModel.GetMainController().OnResearchFinishedEvent();
     }
 

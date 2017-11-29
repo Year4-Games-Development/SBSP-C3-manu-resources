@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ManuController : MonoBehaviour
+public class ManuController : MonoBehaviour, IResearchEvent
 {
     public Text name;
     public Text description;
@@ -9,6 +9,7 @@ public class ManuController : MonoBehaviour
     public Text cost;
 
     private ManuModel _manuModel;
+    private ManuView _manuView;
     private InventoryManager _inventoryManager;
     private string[] arrayOfProducts;
 
@@ -40,8 +41,7 @@ public class ManuController : MonoBehaviour
 
         }
         
-        
-
+      
         /* undecided
         StartCoroutine(_manuModel.GetTimer().StartTimerCouroutine(_manuModel.GetManufacture().GeTimeTOManufacture(), this));
         */
@@ -65,4 +65,23 @@ public class ManuController : MonoBehaviour
         _
     }
     */
+
+    public void OnResearchLearned()
+    {
+        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
+        {
+            Debug.Log("Manufacture Rockets prefab ");
+            _manuModel.GetManuPanelController().GenerateProducts();
+        }
+        if(_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
+        {
+            Debug.Log("Manufacture Fuel prefab");
+            _manuModel.GetManuPanelController().GenerateProducts();
+        }   
+    }
+
+    public void SuscribeToResearchEvent(ResearchPanelController controller)
+    {
+        controller.onFinished += OnResearchLearned;
+    }
 }

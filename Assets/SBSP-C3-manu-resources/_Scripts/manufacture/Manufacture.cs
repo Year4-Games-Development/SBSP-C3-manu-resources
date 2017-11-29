@@ -85,7 +85,7 @@ public class Manufacture
 
 public enum AllManufacture
 {
-    More_Bays,
     Machinegun,
-    Rockets 
+    Rockets,
+    Fuel
 }
