@@ -1,4 +1,4 @@
-﻿public class Manufacture
+public class Manufacture
 {
     private string _name;
     private string _description;

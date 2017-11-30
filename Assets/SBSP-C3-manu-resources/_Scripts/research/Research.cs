@@ -1,4 +1,4 @@
-﻿public class Research
+public class Research
 {
     private string _researchName;
     private string _description;

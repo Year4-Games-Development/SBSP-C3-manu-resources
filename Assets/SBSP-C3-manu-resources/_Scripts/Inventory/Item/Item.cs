@@ -85,12 +85,16 @@ public class Item{
 
 public enum ItemType
 {
-
     Iron,
     Gold,
     Fuel,
+<<<<<<< HEAD
     Droid, 
     Ammo,
     Diamond,
     DarkMatter
+=======
+    Droid,
+    Ammo
+>>>>>>> 767d3885f2311f2fbdc432e78cd7ee26cbea3829
 }
