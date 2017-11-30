@@ -43,6 +43,10 @@ public class InventoryManager : MonoBehaviour {
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
         AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
 
+        AddItem(ItemFactory.instance.CreateItem(ItemType.Diamond));
+
+        AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter));
+
         AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
 
         AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
@@ -90,18 +94,10 @@ public class InventoryManager : MonoBehaviour {
 
             if (_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().IsEmpty())
             {
-
                 _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().AddItemToSlot(item);
-
                 return true;
-
             }
-
-
-
         }
-
-        return false;
-
+       return false;
     }
 }

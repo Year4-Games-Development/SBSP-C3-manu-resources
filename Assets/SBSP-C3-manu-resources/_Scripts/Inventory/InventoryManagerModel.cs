@@ -9,29 +9,25 @@ public class InventoryManagerModel{
 
     [SerializeField]
     private GameObject _inventorySlotPrefab;
-    private InventorySlot[] _inventorySlots;
-    private int _slotCount;
+    public InventorySlot[] _inventorySlots;
+    public static int _slotCount;
 
     public InventoryManagerModel()
     {
-
         _slotCount = 30;
         _inventorySlots = new InventorySlot[_slotCount];
-
     }
 
     public int GetSlotCount()
     {
 
         return _slotCount;
-
     }
 
     public void SetInventorySlot(InventorySlot slot, int index)
     {
         _inventorySlots[index] = slot;
         slot.GetInventorySlotModel().GetInventorySlotView().Initialize();
-
     }
 
     public InventorySlot GetInventorySlotAtIndex(int index)
