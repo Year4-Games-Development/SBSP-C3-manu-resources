@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour{
 
     public void SetInventoryManager(InventoryManager manager)
     {
-
+    
         _inventoryManager = manager;
 
     }

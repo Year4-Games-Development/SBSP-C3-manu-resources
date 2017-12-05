@@ -15,18 +15,24 @@ public class ManuController : MonoBehaviour, IResearchEvent
     private List<Manufacture> _manufacture;
     private InventoryManager _inventoryManager;
 
-    public delegate void OnResearchFinished();
-    public event OnResearchFinished onFinished;
-
     void Awake()
     {
         _manuModel = new ManuModel(name, description, button, cost);
         _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing);
 
-        _manufacture = new List<Manufacture>();
-        _manufacture.Add(new Manufacture("Machineguns", "You can build machineguns", AllManufacture.Machinegun, 10));
-        _manufacture.Add(new Manufacture("Rockets", "Make rockets", AllManufacture.Rockets, 10));
-        _manufacture.Add(new Manufacture("Fuel", "Make fuel for engines", AllManufacture.Fuel, 2));
+        _manufacture = new List<Manufacture>
+        {
+            new Manufacture("Machineguns", "You can build machineguns", AllManufacture.Machinegun, 10),
+            new Manufacture("Ammo", "Make ammo for gun", AllManufacture.Ammo, 10),
+            new Manufacture("Fuel", "Make fuel for engines", AllManufacture.Fuel, 2),
+            new Manufacture("Search Droid", "Droid used for mining ", AllManufacture.SeaechDroid, 2),
+            new Manufacture("Repair Droid", "Droid used for repairing the ship", AllManufacture.RepairDroid, 2)
+        };
+    }
+
+    void Start()
+    {
+        SuscribeToResearchEvent(_manuModel.GetMainController().GetResearchController());
     }
 
     public ManuModel GetManuModel()
@@ -36,22 +42,45 @@ public class ManuController : MonoBehaviour, IResearchEvent
 
     public void Manufactureing()
     {
-        _manuModel.GetManufacture().SetLearned(true);
 
         if (_manuModel.GetManufacture().GetName() == "Fuel")
         {
             _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
+            _inventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
-
+        
         if (_manuModel.GetManufacture().GetName() == "Ammo")
         {
-            //_inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+            _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+            _inventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
-
         }
 
-        /* undecided
+        if (_manuModel.GetManufacture().GetName() == "Search Droid")
+        {
+            _inventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
+            _inventoryManager.RemoveItem(ItemType.Gold);
+            Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
+        }
+
+        if (_manuModel.GetManufacture().GetName() == "Repair Droid")
+        {
+            _inventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
+            _inventoryManager.RemoveItem(ItemType.Gold);
+            Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
+        }
+
+        /*
+        if (_manuModel.GetManufacture().GetName() == "Droid")
+        {
+            _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Droid));
+            _inventoryManager.RemoveItem(ItemType.Gold);
+            Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
+        }
+        */
+
+        /************STUFF FOR TIMING ON MANUFACTURE 
         StartCoroutine(_manuModel.GetTimer().StartTimerCouroutine(_manuModel.GetManufacture().GeTimeTOManufacture(), this));
         */
     }
@@ -82,33 +111,28 @@ public class ManuController : MonoBehaviour, IResearchEvent
                 {
                     return true;
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
             }
-        }//end of forloop 
-
+        }//end of for loop
         return false;
-    }
-
-    public void OnResearchFinishedEvent()
-    {
-        //needs to be rewrote 
-        if (onFinished != null)
-            onFinished();
     }
 
     public void OnResearchLearned()
     {
-        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Rockets))
+        Debug.Log("OnResearchLearned called");
+        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Ammo))
         {
             Debug.Log("Manufacture Rockets prefab ");
             GenerateProducts();
         }
         if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
         {
-            Debug.Log("Manufacture Fuel prefab");
+           Debug.Log("Manufacture Fuel prefab");
            GenerateProducts();
         }   
-
     }
 
     public void SuscribeToResearchEvent(ResearchPanelController controller)
@@ -116,23 +140,22 @@ public class ManuController : MonoBehaviour, IResearchEvent
         controller.onFinished += OnResearchLearned;
     }
 
-
     /************************************CODE TO IMPLIMENT TIMEING NOT SURE IF IT IS BEING USED YET ****
     //not sure if timing is going to be used on manufacture 
-   public void OnStartTimer()
-   {
-       _manuModel.GetManuView().DisableResearchButton();
-       _manuModel.GetManuView().GetTimeButton().text = "Time left: " + _ManuModel.GetTimer().GetRemainingSecondsInt();
-   }
+    public void OnStartTimer()
+    {
+        _manuModel.GetManuView().DisableResearchButton();
+        _manuModel.GetManuView().GetTimeButton().text = "Time left: " + _ManuModel.GetTimer().GetRemainingSecondsInt();
+    }
 
-   public void OnIncrementTimer()
-   {
-       _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
-   }
+    public void OnIncrementTimer()
+    {
+        _researchModel.GetResearchView().GetTimeButton().text = "Time left: " + _researchModel.GetTimer().GetRemainingSecondsInt();
+    }
 
-   public void OnFinishTimer()
-   {
+    public void OnFinishTimer()
+    {
        
-   }
-   */
+    }
+    */
 }

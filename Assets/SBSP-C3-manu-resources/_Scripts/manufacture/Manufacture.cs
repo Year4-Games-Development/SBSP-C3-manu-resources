@@ -85,5 +85,8 @@ public enum AllManufacture
 {
     Machinegun,
     Rockets,
+    RepairDroid,
+    SeaechDroid,
+    Ammo,
     Fuel
 }

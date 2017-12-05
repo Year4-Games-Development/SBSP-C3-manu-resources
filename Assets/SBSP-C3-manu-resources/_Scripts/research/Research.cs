@@ -67,6 +67,8 @@ public enum AllResearches
 {
     More_Bays,
     Machinegun,
-    Rockets,
+    Ammo,
+    SearchDroid,
+    RepairDroid,
     Fuel
 }
