@@ -51,8 +51,17 @@ public class ManuModel
         return _manuController;
     }
 
+    public void SetMainController(MainResourceController controller)
+    {
+
+        _mainController = controller;
+
+    }
+
     public MainResourceController GetMainController()
     {
+
         return _mainController;
+
     }
 }
