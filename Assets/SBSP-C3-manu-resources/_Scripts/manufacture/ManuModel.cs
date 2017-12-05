@@ -3,7 +3,7 @@ using UnityEngine.UI;
 public class ManuModel
 {
 
-    private ManuPanelController _manuPanelController;
+    private ManuController _manuController;
     private MainResourceController _mainController;
     private ResearchPanelController researchPanelController;
     private Manufacture _manufacture;
@@ -27,9 +27,9 @@ public class ManuModel
         _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
     }
 
-    public void SetManufacturePanelController(ManuPanelController controller)
+    public void SetManufactureController(ManuController controller)
     {
-        _manuPanelController = controller;
+        _manuController = controller;
     }
 
     public ManuView GetManuView()
@@ -46,9 +46,9 @@ public class ManuModel
     {
         return _timer;
     }
-    public ManuPanelController GetManuPanelController()
+    public ManuController GetManuController()
     {
-        return _manuPanelController;
+        return _manuController;
     }
 
     public MainResourceController GetMainController()

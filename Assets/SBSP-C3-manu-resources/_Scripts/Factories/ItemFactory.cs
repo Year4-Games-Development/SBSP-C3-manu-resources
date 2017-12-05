@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -68,7 +68,6 @@ public class ItemFactory
             ammo.SetItemType(ItemType.Ammo);
             ammo.AddItemImage(ammoImage);
             ammo.SetStackable(50);
-
             return ammo;
         }
 
@@ -93,7 +92,6 @@ public class ItemFactory
 
             return darkMatter;
         }
-
         return null;
 
     }
