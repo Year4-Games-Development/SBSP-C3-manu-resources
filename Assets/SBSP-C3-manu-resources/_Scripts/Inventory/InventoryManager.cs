@@ -17,6 +17,7 @@ public class InventoryManager : MonoBehaviour {
         CreateInventory();
         InventoryInitialisation();
 
+
     }
 
     private void CreateInventory()
@@ -57,9 +58,7 @@ public class InventoryManager : MonoBehaviour {
 
             if (_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().IsEmpty())
             {
-
                 _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().AddItemToSlot(item);
-
                 return true;
             }
         }
@@ -85,35 +84,46 @@ public class InventoryManager : MonoBehaviour {
     public void InventoryInitialisation()
     {
         int initIronAmount = 4;
-        int InitGoldAmount = 6;
-        int InitAmmoAmount = 3;
-        int InitFuelAmount = 5;
-        int InitDroidAmount = 2;
+        int initGoldAmount = 6;
+        int initAmmoAmount = 3;
+        int initFuelAmount = 5;
+        int initDroidAmount = 2;
+        int initDarkMatterAmonut = 5;
 
         for(int i =0; i<initIronAmount;i++)
         {
             AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
         }
         
-        for(int g =0; g<InitGoldAmount;g++)
+        for(int g =0; g<initGoldAmount;g++)
         {
             AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
         }
 
-        for(int f =0;f<InitFuelAmount;f++)
+        for(int f =0;f<initFuelAmount;f++)
         {
             AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
         }
 
-        for(int a =0; a<InitAmmoAmount;a++)
+        for(int a =0; a<initAmmoAmount;a++)
         {
             AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
         }
 
-        for(int d = 0; d<InitDroidAmount;d++)
+        for(int rd = 0; rd<initDroidAmount;rd++)
         {
             AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
+        }
+
+        for (int sd = 0; sd < initDroidAmount; sd++)
+        {
             AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
-        }    
+        }
+
+        for (int dm = 0; dm < initDarkMatterAmonut; dm++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter)); ;
+        }
+
     }
 }

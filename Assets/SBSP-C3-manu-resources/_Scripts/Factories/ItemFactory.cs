@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class ItemFactory{
+public class ItemFactory
+{
 
     public static ItemFactory instance;
 
@@ -9,6 +10,8 @@ public class ItemFactory{
     public Sprite goldImage;
     public Sprite fuelImage;
     public Sprite ammoImage;
+    public Sprite darkMatterImage;
+    public Sprite diamondImage;
 
     public ItemFactory()
     {
@@ -18,7 +21,7 @@ public class ItemFactory{
     public Item CreateItem(ItemType type)
     {
 
-        if(type == ItemType.Iron)
+        if (type == ItemType.Iron)
         {
             Item iron = new Item();
             iron.SetItemName("Iron");
@@ -55,18 +58,37 @@ public class ItemFactory{
 
         }
 
-        if(type == ItemType.Ammo)
+        if (type == ItemType.Ammo)
         {
-
             Item ammo = new Item();
             ammo.SetItemName("Ammo");
             ammo.SetItemType(ItemType.Ammo);
             ammo.AddItemImage(ammoImage);
-            ammo.SetStackable(2);
-
+            ammo.SetStackable(50);
             return ammo;
         }
 
+        if (type == ItemType.Diamond)
+        {
+            Item diamond = new Item();
+            diamond.SetItemName("Diamond");
+            diamond.SetItemType(ItemType.Diamond);
+            diamond.AddItemImage(diamondImage);
+            diamond.SetStackable(64);
+
+            return diamond;
+        }
+
+        if (type == ItemType.DarkMatter)
+        {
+            Item darkMatter = new Item();
+            darkMatter.SetItemName("Dark Matter");
+            darkMatter.SetItemType(ItemType.DarkMatter);
+            darkMatter.AddItemImage(darkMatterImage);
+            darkMatter.SetStackable(100);
+
+            return darkMatter;
+        }
         return null;
 
     }

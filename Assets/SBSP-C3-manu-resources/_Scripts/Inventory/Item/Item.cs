@@ -88,7 +88,9 @@ public enum ItemType
     Iron,
     Gold,
     Fuel,
+    Droid, 
     Ammo,
-    Droid
-    
+    Diamond,
+    DarkMatter
+
 }
