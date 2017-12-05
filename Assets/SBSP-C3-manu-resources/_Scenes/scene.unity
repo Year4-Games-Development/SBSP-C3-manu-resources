@@ -380,6 +380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8610ebb8502593b429dcc7d99d37d011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: {fileID: 0}
+  description: {fileID: 0}
+  button: {fileID: 0}
+  cost: {fileID: 0}
+  maufacturePrefab: {fileID: 0}
 --- !u!1 &604398154
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +420,7 @@ MonoBehaviour:
     goldImage: {fileID: 21300000, guid: 41037ff79ae34f24ba23e2cbe266872a, type: 3}
     fuelImage: {fileID: 21300000, guid: 92335e82d352a3543ac3c4eac4674414, type: 3}
     ammoImage: {fileID: 21300000, guid: 9d2a62dc5e8f90746b1e3a237e00e108, type: 3}
-    darkMatterImage: {fileID: 21300000, guid: ac7f3797e28f5744e98d9c8c5a6ed5ba, type: 3}
+    darkMatterImage: {fileID: 21300000, guid: a8909a34f4aacf74886af357ed57b5b0, type: 3}
     diamondImage: {fileID: 21300000, guid: f0b49db419273a3488d1a6e1eaa599c3, type: 3}
 --- !u!4 &604398156
 Transform:
