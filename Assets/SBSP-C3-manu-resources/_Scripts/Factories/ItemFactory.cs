@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ItemFactory{
+public class ItemFactory
+{
 
     public static ItemFactory instance;
 
@@ -22,7 +23,7 @@ public class ItemFactory{
     public Item CreateItem(ItemType type)
     {
 
-        if(type == ItemType.Iron)
+        if (type == ItemType.Iron)
         {
 
             Item iron = new Item();
@@ -82,7 +83,7 @@ public class ItemFactory{
             return diamond;
         }
 
-        if (type ==  ItemType.DarkMatter)
+        if (type == ItemType.DarkMatter)
         {
             Item darkMatter = new Item();
             darkMatter.SetItemName("Dark Matter");
