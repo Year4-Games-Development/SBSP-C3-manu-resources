@@ -28,7 +28,7 @@ public class ManufactureFactory
             return fuel;
         }
         
-        if (type == ItemType.Ammo)
+       if (type == ItemType.Ammo)
         {
 
             Item ammo = new Item();
