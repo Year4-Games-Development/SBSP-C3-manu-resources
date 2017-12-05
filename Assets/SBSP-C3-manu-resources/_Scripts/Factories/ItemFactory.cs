@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class ItemFactory
@@ -25,7 +23,6 @@ public class ItemFactory
 
         if (type == ItemType.Iron)
         {
-
             Item iron = new Item();
             iron.SetItemName("Iron");
             iron.SetItemType(ItemType.Iron);

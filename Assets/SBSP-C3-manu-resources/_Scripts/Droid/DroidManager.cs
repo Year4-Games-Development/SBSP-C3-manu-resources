@@ -96,4 +96,5 @@ public class DroidManager : MonoBehaviour, IResearchEvent
         controller.onFinished += OnResearchLearned;
 
     }
+
 }

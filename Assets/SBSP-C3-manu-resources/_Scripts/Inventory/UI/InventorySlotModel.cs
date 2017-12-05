@@ -47,6 +47,11 @@ public class InventorySlotModel{
         
     }
 
+    public void RemoveItemFromSlot()
+    {
+        _itemHolder.Pop();
+    }
+
     public bool IsEmpty()
     {
 

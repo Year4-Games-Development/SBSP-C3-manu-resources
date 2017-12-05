@@ -1,54 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
 
     [SerializeField]
     private InventoryManagerModel _inventoryManagerModel;
+    private ManuController _manuController;
 
     public InventoryManagerModel GetInventoryManagerModel()
     {
-
         return _inventoryManagerModel;
-
     }
 
     void Start()
     {
 
         CreateInventory();
+        InventoryInitialisation();
 
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Diamond));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
-        //AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
-
-        AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
-        AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
-
-        AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
 
     }
 
@@ -94,6 +62,68 @@ public class InventoryManager : MonoBehaviour {
                 return true;
             }
         }
-       return false;
+        return false;
+    }
+    
+    public bool RemoveItem(ItemType item)
+    {
+        int i;
+        for( i = 0; i < _inventoryManagerModel.GetSlotCount(); i++)
+        {
+            if(_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().GetSlotItemHolder().Peek().GetItemType() == item)
+            {
+                for(int j = 0; j < _manuController.GetManuModel().GetManufacture().GetCost() ; j++)
+                {
+                    _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().RemoveItemFromSlot();
+                }
+            }
+        }
+        return false;
+    }
+
+    public void InventoryInitialisation()
+    {
+        int initIronAmount = 4;
+        int initGoldAmount = 6;
+        int initAmmoAmount = 3;
+        int initFuelAmount = 5;
+        int initDroidAmount = 2;
+        int initDarkMatterAmonut = 5;
+
+        for(int i =0; i<initIronAmount;i++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.Iron));
+        }
+        
+        for(int g =0; g<initGoldAmount;g++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.Gold));
+        }
+
+        for(int f =0;f<initFuelAmount;f++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
+        }
+
+        for(int a =0; a<initAmmoAmount;a++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+        }
+
+        for(int rd = 0; rd<initDroidAmount;rd++)
+        {
+            AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
+        }
+
+        for (int sd = 0; sd < initDroidAmount; sd++)
+        {
+            AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
+        }
+
+        for (int dm = 0; dm < initDarkMatterAmonut; dm++)
+        {
+            AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter)); ;
+        }
+
     }
 }
