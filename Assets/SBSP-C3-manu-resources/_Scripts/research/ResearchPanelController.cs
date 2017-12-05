@@ -17,7 +17,7 @@ public class ResearchPanelController : MonoBehaviour
         _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 10));
         _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 5));
         _researches.Add(new Research("Rockets", "Learn to make rockets", AllResearches.Rockets, 15));
-        _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 2));
+        _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 10));
     }
 
     void Start()
