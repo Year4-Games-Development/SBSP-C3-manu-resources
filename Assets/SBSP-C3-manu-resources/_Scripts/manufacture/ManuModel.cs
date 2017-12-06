@@ -1,16 +1,19 @@
-﻿using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class ManuModel
 {
 
-    private ManuPanelController manuPanelController;
+    private ManuController _manuController;
+    private MainResourceController _mainController;
     private ResearchPanelController researchPanelController;
     private Manufacture _manufacture;
+    private ManuPanelController _manuPanelController;
 
     private RechargeTimer _timer;
     private ManuView _view;
+    private int _numberOfProducts;
 
-    public ManuModel(Text name,Text description, Button button,Text cost)
+    public ManuModel(Text name, Text description, Button button, Text cost)
     {
         _view = new ManuView(name, description, button, cost);
         _timer = new RechargeTimer();
@@ -22,12 +25,12 @@ public class ManuModel
 
         _view.SetName(_manufacture.GetName());
         _view.SetDescription(_manufacture.GetDescription());
-        _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
+        _view.SetCost("Cost: " + _manufacture.GetCost());
     }
 
-    public void SetManufacturePanelController(ManuPanelController controller)
+    public void SetManufactureController(ManuController controller)
     {
-        manuPanelController = controller;
+        _manuController = controller;
     }
 
     public ManuView GetManuView()
@@ -40,9 +43,36 @@ public class ManuModel
         return _manufacture;
     }
 
-
     public RechargeTimer GetTimer()
     {
         return _timer;
+    }
+    public ManuController GetManuController()
+    {
+        return _manuController;
+    }
+
+    public void SetMainController(MainResourceController controller)
+    {
+
+        _mainController = controller;
+
+    }
+
+    public MainResourceController GetMainController()
+    {
+
+        return _mainController;
+
+    }
+
+    public void SetManuPanelController(ManuPanelController controller)
+    {
+        _manuPanelController = controller;
+    }
+
+    public ManuPanelController GetManuPanelController()
+    {
+        return _manuPanelController;
     }
 }

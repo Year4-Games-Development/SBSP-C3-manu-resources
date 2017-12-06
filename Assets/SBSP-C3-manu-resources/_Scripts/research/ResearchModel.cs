@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 
 
 public class ResearchModel{
 
     private ResearchPanelController _panelController;
-    private ManuPanelController manuPanelController;
+    private ManuController manuController;
     private Research _research;
 
     private ResearchView _researchView;

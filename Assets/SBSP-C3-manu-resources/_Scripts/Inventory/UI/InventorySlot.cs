@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour{
 
     public void SetInventoryManager(InventoryManager manager)
     {
-
+    
         _inventoryManager = manager;
 
     }
@@ -45,7 +45,7 @@ public class InventorySlot : MonoBehaviour{
 
     }
 
-    private void PopAndClean()
+    public void PopAndClean()
     {
 
         _inventorySlotModel.GetSlotItemHolder().Pop();
