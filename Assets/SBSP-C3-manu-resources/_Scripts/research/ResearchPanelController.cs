@@ -14,12 +14,10 @@ public class ResearchPanelController : MonoBehaviour
     void Awake()
     {
         _researches = new List<Research>();
-        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 10));
+        _researches.Add(new Research("More Bays", "You can build more bays", AllResearches.More_Bays, 5));
         _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 5));
-        _researches.Add(new Research("Ammo", "Learn to make ammo", AllResearches.Ammo, 15));
+        _researches.Add(new Research("Ammo", "Learn to make ammo", AllResearches.Ammo, 5));
         _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 2));
-        _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 10));
-
     }
 
     void Start()

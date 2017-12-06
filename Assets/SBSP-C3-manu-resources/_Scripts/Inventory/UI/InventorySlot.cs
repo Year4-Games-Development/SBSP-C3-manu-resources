@@ -45,7 +45,7 @@ public class InventorySlot : MonoBehaviour{
 
     }
 
-    private void PopAndClean()
+    public void PopAndClean()
     {
 
         _inventorySlotModel.GetSlotItemHolder().Pop();

@@ -25,7 +25,7 @@ public class ManuModel
 
         _view.SetName(_manufacture.GetName());
         _view.SetDescription(_manufacture.GetDescription());
-        _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
+        _view.SetCost("Cost: " + _manufacture.GetCost());
     }
 
     public void SetManufactureController(ManuController controller)

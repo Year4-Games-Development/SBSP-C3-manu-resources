@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManuPanelController : MonoBehaviour
+public class ManuPanelController : MonoBehaviour, IResearchEvent
 {
     public GameObject maufacturePrefab;
     private List<Manufacture> _manufacture;
     private MainResourceController _mainController;
 
-    public delegate void OnResearchFinished();
-    public event OnResearchFinished onFinished;
 
     void Awake()
     {
@@ -21,11 +19,14 @@ public class ManuPanelController : MonoBehaviour
         _manufacture.Add(new Manufacture("Repair Droid", "Droid used for repairing the ship", AllManufacture.RepairDroid, 2));
     }
 
-	// Use this for initialization
-	void Start ()
+
+    void Start()
     {
-        GenerateProducts();
-    }
+
+        SuscribeToResearchEvent(_mainController.GetResearchController());
+
+    }   
+
 
     public void SetMainController(MainResourceController controller)
     {
@@ -39,6 +40,7 @@ public class ManuPanelController : MonoBehaviour
 
     public void GenerateProducts()
     {
+        /*
         for (int i = 0; i < _manufacture.Count; i++)
         {
             if (_manufacture[i].IsLearned() == true)
@@ -49,8 +51,12 @@ public class ManuPanelController : MonoBehaviour
                 ManuController manuController = newManuGameObject.GetComponent<ManuController>();
                 manuController.GetManuModel().SetManufacture(_manufacture[i]);
                 manuController.GetManuModel().SetManuPanelController(this);
+                manuController.SuscribeToResearchEvent(_mainController.GetResearchController());
+                manuController.GetManuModel().GetManuView().GetManufactureButton().onClick.AddListener(manuController.Manufactureing);
+                manuController.InventoryManager = _mainController.GetInventoryManager();
             }
         }
+        */
     }
 
     public bool IsResearchLearned(AllManufacture Manufacture)
@@ -72,10 +78,30 @@ public class ManuPanelController : MonoBehaviour
         return false;
     }
 
-    public void OnResearchFinishedEvent()
+    public void OnResearchLearned()
     {
-        if (onFinished != null)
-            onFinished();
+
+        Debug.Log("skdjsdjflkasjlkasjfkaSJDLKAS");
+
+        if (_mainController.GetResearchController().IsResearchLearned(AllResearches.Ammo))
+        {
+            GameObject newManuGameObject = Instantiate(maufacturePrefab);
+            newManuGameObject.transform.SetParent(gameObject.transform);
+            newManuGameObject.transform.localScale = new Vector3(1, 1, 1);
+            ManuController manuController = newManuGameObject.GetComponent<ManuController>();
+            manuController.GetManuModel().GetManuView().SetName(_manufacture[1].GetName());
+            manuController.GetManuModel().GetManuView().SetDescription(_manufacture[1].GetDescription());
+            manuController.GetManuModel().GetManuView().SetCost(_manufacture[1].GetCost() + "");
+            manuController.GetManuModel().SetManufacture(_manufacture[1]);
+            manuController.GetManuModel().SetManuPanelController(this);
+            manuController.GetManuModel().GetManuView().GetManufactureButton().onClick.AddListener(manuController.Manufactureing);
+            manuController.InventoryManager = _mainController.GetInventoryManager();
+        }
+
     }
 
+    public void SuscribeToResearchEvent(ResearchPanelController controller)
+    {
+        controller.onFinished += OnResearchLearned;
+    }
 }

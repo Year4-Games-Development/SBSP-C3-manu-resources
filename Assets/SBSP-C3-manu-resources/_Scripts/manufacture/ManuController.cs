@@ -11,18 +11,28 @@ public class ManuController : MonoBehaviour, IResearchEvent
 
     private ManuModel _manuModel;
     private ManuView _manuView;
+    [SerializeField]
     private InventoryManager _inventoryManager;
+
+    public InventoryManager InventoryManager
+    {
+        get
+        {
+            return _inventoryManager;
+        }
+
+        set
+        {
+            _inventoryManager = value;
+        }
+    }
 
     void Awake()
     {
         _manuModel = new ManuModel(itemName, description, button, cost);
-        _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing); 
+        
     }
 
-    void Start()
-    {
-        SuscribeToResearchEvent(_manuModel.GetMainController().GetResearchController());
-    }
 
     public ManuModel GetManuModel()
     {
@@ -32,31 +42,33 @@ public class ManuController : MonoBehaviour, IResearchEvent
     public void Manufactureing()
     {
 
+        Debug.Log("adasdasdasdasdasd");
+
         if (_manuModel.GetManufacture().GetName() == "Fuel")
         {
-            _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
-            _inventoryManager.RemoveItem(ItemType.Gold);
+            InventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Fuel));
+            InventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
         
         if (_manuModel.GetManufacture().GetName() == "Ammo")
         {
-            _inventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
-            _inventoryManager.RemoveItem(ItemType.Gold);
+            InventoryManager.AddItem(ItemFactory.instance.CreateItem(ItemType.Ammo));
+            InventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
 
         if (_manuModel.GetManufacture().GetName() == "Search Droid")
         {
-            _inventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
-            _inventoryManager.RemoveItem(ItemType.Gold);
+            InventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.SearchDroid));
+            InventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
 
         if (_manuModel.GetManufacture().GetName() == "Repair Droid")
         {
-            _inventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
-            _inventoryManager.RemoveItem(ItemType.Gold);
+            InventoryManager.AddItem(DroidFactory.instance.CreateDroid(DroidType.RepairDroid));
+            InventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
     }
@@ -64,6 +76,7 @@ public class ManuController : MonoBehaviour, IResearchEvent
     public void OnResearchLearned()
     {
         Debug.Log("OnResearchLearned called");
+
         if (_manuModel.GetMainController().GetManuController().IsResearchLearned(AllManufacture.Ammo))
         {
             Debug.Log("Manufacture ammo prefab ");
