@@ -17,8 +17,15 @@ namespace Tests
         [Test]
         public void TestSlotCount()
         {
-            var count = new GameObject("ItemSlot(Clone)");
-            Assert.AreEqual("ItemSlot(Clone)", count.name);
+            var count = new GameObject("ItemSlot");
+            Assert.AreEqual("ItemSlot", count.name);
+        }
+
+        [Test]
+        public void TestSlotsAreNotNull()
+        {
+            var gos = new GameObject("ItemSlot");
+            Assert.IsNotNull("ItemSlot", gos.name);
         }
     }
 }
