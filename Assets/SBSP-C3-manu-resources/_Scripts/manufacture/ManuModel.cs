@@ -7,6 +7,7 @@ public class ManuModel
     private MainResourceController _mainController;
     private ResearchPanelController researchPanelController;
     private Manufacture _manufacture;
+    private ManuPanelController _manuPanelController;
 
     private RechargeTimer _timer;
     private ManuView _view;
@@ -24,7 +25,7 @@ public class ManuModel
 
         _view.SetName(_manufacture.GetName());
         _view.SetDescription(_manufacture.GetDescription());
-        _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
+        _view.SetCost("Cost: " + _manufacture.GetCost());
     }
 
     public void SetManufactureController(ManuController controller)
@@ -51,8 +52,27 @@ public class ManuModel
         return _manuController;
     }
 
+    public void SetMainController(MainResourceController controller)
+    {
+
+        _mainController = controller;
+
+    }
+
     public MainResourceController GetMainController()
     {
+
         return _mainController;
+
+    }
+
+    public void SetManuPanelController(ManuPanelController controller)
+    {
+        _manuPanelController = controller;
+    }
+
+    public ManuPanelController GetManuPanelController()
+    {
+        return _manuPanelController;
     }
 }

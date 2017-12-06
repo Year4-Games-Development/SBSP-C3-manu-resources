@@ -1,12 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainResourceController : MonoBehaviour {
 
     public DroidManager droidManager;
     public ResearchPanelController researchController;
     public InventoryManager inventoryManager;
+    public ManuPanelController manuPanelController;
+
+    void Awake()
+    {
+
+        manuPanelController.SetMainController(this);
+
+
+    }
 
     void Start()
     {
@@ -29,6 +36,11 @@ public class MainResourceController : MonoBehaviour {
     public InventoryManager GetInventoryManager()
     {
         return inventoryManager;
+    }
+
+    public ManuPanelController GetManuController()
+    {
+        return manuPanelController;
     }
 
 }

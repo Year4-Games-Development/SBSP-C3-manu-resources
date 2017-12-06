@@ -16,8 +16,6 @@ public class InventoryManager : MonoBehaviour {
 
         CreateInventory();
         InventoryInitialisation();
-
-
     }
 
     private void CreateInventory()
@@ -67,14 +65,14 @@ public class InventoryManager : MonoBehaviour {
     
     public bool RemoveItem(ItemType item)
     {
-        int i;
-        for( i = 0; i < _inventoryManagerModel.GetSlotCount(); i++)
+        for(int i = 0; i < _inventoryManagerModel.GetSlotCount(); i++)
         {
             if(_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().GetSlotItemHolder().Peek().GetItemType() == item)
             {
-                for(int j = 0; j < _manuController.GetManuModel().GetManufacture().GetCost() ; j++)
+                if (!_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().GetSlotItemHolder().IsEmpty())
                 {
-                    _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().RemoveItemFromSlot();
+                    _inventoryManagerModel.GetInventorySlotAtIndex(i).PopAndClean();
+                    return true;
                 }
             }
         }
@@ -124,6 +122,6 @@ public class InventoryManager : MonoBehaviour {
         {
             AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter)); ;
         }
-
     }
+
 }

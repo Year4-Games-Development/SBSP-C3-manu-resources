@@ -7,7 +7,7 @@ public class Manufacture
     private int _timeToManufacture;
 
     AllManufacture _thisManufacture;
-    AllResearches _thisResearch;
+    //AllResearches _thisResearch;
 
     public Manufacture(string name, string description, AllManufacture manufacture, int cost)
     {
@@ -17,7 +17,6 @@ public class Manufacture
         _isLearned = false;
         _cost = cost;
     }
-    //_timeToManufacture = time; future work
 
     public bool IsLearned()
     {
@@ -64,21 +63,10 @@ public class Manufacture
         return _cost;
     }
 
-    public AllResearches GetResearch()
+    /*public AllResearches GetResearch()
     {
         return _thisResearch;
-    }
-
-    /* undiided if manufacture is going to use timing 
-    public void SetTimeToManufacture(int time)
-    {
-        _timeToManufacture = time;
-    }
-    public int GeTimeTOManufacture()
-    {
-        return _timeToManufacture;
-    }
-    */
+    }*/
 }
 
 public enum AllManufacture
