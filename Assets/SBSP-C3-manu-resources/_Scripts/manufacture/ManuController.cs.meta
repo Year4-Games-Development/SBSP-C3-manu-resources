@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1c74cfc1dcc50594f878c80496bdb0a9
+timeCreated: 1512073623
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - name: {fileID: 114143248052962304, guid: e059b6afe6a50cd48a8b714e6d438aaa, type: 2}
+  - description: {instanceID: 0}
+  - button: {instanceID: 0}
+  - cost: {instanceID: 0}
+  - maufacturePrefab: {fileID: 1877967010850818, guid: e059b6afe6a50cd48a8b714e6d438aaa,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
