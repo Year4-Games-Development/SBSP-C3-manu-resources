@@ -13,6 +13,13 @@ namespace Tests
             var go = new GameObject("ItemImage");
             Assert.AreEqual("ItemImage", go.name);
         }
+
+        [Test]
+        public void TestSlotCount()
+        {
+            var count = new GameObject("ItemSlot(Clone)");
+            Assert.AreEqual("ItemSlot(Clone)", count.name);
+        }
     }
 }
 
