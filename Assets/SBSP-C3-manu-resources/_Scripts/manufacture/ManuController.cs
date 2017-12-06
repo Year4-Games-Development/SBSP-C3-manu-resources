@@ -30,7 +30,7 @@ public class ManuController : MonoBehaviour, IResearchEvent
     void Awake()
     {
         _manuModel = new ManuModel(itemName, description, button, cost);
-        
+
     }
 
 
