@@ -20,7 +20,6 @@ public class DroidManager : MonoBehaviour, IResearchEvent
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
 
-
     }
 
     void Start()
@@ -83,7 +82,6 @@ public class DroidManager : MonoBehaviour, IResearchEvent
     {
         if (_droidManagerModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.More_Bays))
         {
-
             _droidManagerModel.SetMaxBaySize(4);
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
 

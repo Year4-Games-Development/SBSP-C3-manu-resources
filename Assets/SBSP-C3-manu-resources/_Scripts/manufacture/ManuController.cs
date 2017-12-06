@@ -4,37 +4,24 @@ using UnityEngine.UI;
 
 public class ManuController : MonoBehaviour, IResearchEvent
 {
-    public Text name;
+    public Text itemName;
     public Text description;
     public Button button;
     public Text cost;
 
     private ManuModel _manuModel;
     private ManuView _manuView;
-    public GameObject maufacturePrefab;
-    private List<Manufacture> _manufacture;
     private InventoryManager _inventoryManager;
 
     void Awake()
     {
-       
-        _manufacture = new List<Manufacture>
-        {
-            new Manufacture("Machineguns", "You can build machineguns", AllManufacture.Machinegun, 1),
-            new Manufacture("Ammo", "Make ammo for gun", AllManufacture.Ammo, 1),
-            new Manufacture("Fuel", "Make fuel for engines", AllManufacture.Fuel, 2),
-            new Manufacture("Search Droid", "Droid used for mining ", AllManufacture.SeaechDroid, 2),
-            new Manufacture("Repair Droid", "Droid used for repairing the ship", AllManufacture.RepairDroid, 2)
-        };
+        _manuModel = new ManuModel(itemName, description, button, cost);
+        _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing); 
     }
 
     void Start()
     {
-        GenerateProducts();
         SuscribeToResearchEvent(_manuModel.GetMainController().GetResearchController());
-
-        _manuModel = new ManuModel(name, description, button, cost);
-        _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing);
     }
 
     public ManuModel GetManuModel()
@@ -74,53 +61,18 @@ public class ManuController : MonoBehaviour, IResearchEvent
         }
     }
 
-    private void GenerateProducts()
-    {
-        for (int i = 0; i < _manufacture.Count; i++)
-        {
-            if (_manufacture[i].IsLearned() == true)
-            {
-                GameObject newManuGameObject = Instantiate(maufacturePrefab);
-                newManuGameObject.transform.SetParent(gameObject.transform);
-                newManuGameObject.transform.localScale = new Vector3(1, 1, 1);
-                ManuController manuController = newManuGameObject.GetComponent<ManuController>();
-                manuController.GetManuModel().SetManufacture(_manufacture[i]);
-                manuController.GetManuModel().SetManufactureController(this);
-            }
-        }
-    }
-
-    public bool IsResearchLearned(AllResearches research)
-    {
-        for (int i = 0; i < _manufacture.Count; i++)
-        {
-            if (_manufacture[i].GetResearch() == research)
-            {
-                if (_manufacture[i].IsLearned())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }//end of for loop
-        return false;
-    }
-
     public void OnResearchLearned()
     {
         Debug.Log("OnResearchLearned called");
-        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Ammo))
+        if (_manuModel.GetMainController().GetManuController().IsResearchLearned(AllManufacture.Ammo))
         {
-            Debug.Log("Manufacture Rockets prefab ");
-            GenerateProducts();
+            Debug.Log("Manufacture ammo prefab ");
+            _manuModel.GetManuPanelController().GenerateProducts();
         }
-        if (_manuModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.Fuel))
+        if (_manuModel.GetMainController().GetManuController().IsResearchLearned(AllManufacture.Fuel))
         {
            Debug.Log("Manufacture Fuel prefab");
-           GenerateProducts();
+            _manuModel.GetManuPanelController().GenerateProducts();
         }   
     }
 

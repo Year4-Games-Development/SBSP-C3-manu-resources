@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainResourceController : MonoBehaviour {
 
     public DroidManager droidManager;
     public ResearchPanelController researchController;
     public InventoryManager inventoryManager;
-    public ManuController manuController;
+    public ManuPanelController manuPanelController;
 
     void Start()
     {
         droidManager.GetDroidManagerModel().SetMainController(this);
         researchController.SetMainController(this);//need to implement MC
         inventoryManager.GetInventoryManagerModel().SetMainController(this);
-        manuController.GetManuModel().SetMainController(this);
+        manuPanelController.SetMainController(this);
     }
     
     public DroidManager GetDroidManager()
@@ -33,9 +31,9 @@ public class MainResourceController : MonoBehaviour {
         return inventoryManager;
     }
 
-    public ManuController GetManuController()
+    public ManuPanelController GetManuController()
     {
-        return manuController;
+        return manuPanelController;
     }
 
 }

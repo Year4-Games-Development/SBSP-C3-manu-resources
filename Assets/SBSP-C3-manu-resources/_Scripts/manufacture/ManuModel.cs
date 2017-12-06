@@ -7,6 +7,7 @@ public class ManuModel
     private MainResourceController _mainController;
     private ResearchPanelController researchPanelController;
     private Manufacture _manufacture;
+    private ManuPanelController _manuPanelController;
 
     private RechargeTimer _timer;
     private ManuView _view;
@@ -63,5 +64,15 @@ public class ManuModel
 
         return _mainController;
 
+    }
+
+    public void SetManuPanelController(ManuPanelController controller)
+    {
+        _manuPanelController = controller;
+    }
+
+    public ManuPanelController GetManuPanelController()
+    {
+        return _manuPanelController;
     }
 }
