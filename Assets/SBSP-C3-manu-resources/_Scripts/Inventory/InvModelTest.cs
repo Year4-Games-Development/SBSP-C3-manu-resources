@@ -24,7 +24,7 @@ namespace Tests
         [Test]
         public void TestSlotsAreNotNull()
         {
-            var gos = new GameObject("ItemSlot");
+            var gos = new GameObject("ItemImage");
             Assert.IsNotNull("ItemSlot", gos.name);
         }
     }
