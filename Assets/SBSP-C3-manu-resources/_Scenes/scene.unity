@@ -380,11 +380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8610ebb8502593b429dcc7d99d37d011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 0}
-  description: {fileID: 0}
-  button: {fileID: 0}
+  name: {fileID: 114143248052962304, guid: db46a0d28c1210841bc54cf512cf79f1, type: 2}
+  description: {fileID: 114523752406038650, guid: db46a0d28c1210841bc54cf512cf79f1,
+    type: 2}
+  button: {fileID: 114798534785227436, guid: db46a0d28c1210841bc54cf512cf79f1, type: 2}
   cost: {fileID: 0}
-  maufacturePrefab: {fileID: 0}
+  maufacturePrefab: {fileID: 1877967010850818, guid: db46a0d28c1210841bc54cf512cf79f1,
+    type: 2}
 --- !u!1 &604398154
 GameObject:
   m_ObjectHideFlags: 0

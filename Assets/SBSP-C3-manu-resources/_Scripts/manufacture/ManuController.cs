@@ -33,6 +33,8 @@ public class ManuController : MonoBehaviour, IResearchEvent
     void Start()
     {
         SuscribeToResearchEvent(_manuModel.GetMainController().GetResearchController());
+        _manuModel = new ManuModel(name, description, button, cost);
+        _manuModel.GetManuView().GetManufactureButton().onClick.AddListener(Manufactureing);
     }
 
     public ManuModel GetManuModel()
