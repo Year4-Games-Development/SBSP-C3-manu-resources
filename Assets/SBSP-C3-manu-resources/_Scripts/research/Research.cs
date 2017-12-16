@@ -70,5 +70,6 @@ public enum AllResearches
     Ammo,
     SearchDroid,
     RepairDroid,
+    Rockets,
     Fuel
 }

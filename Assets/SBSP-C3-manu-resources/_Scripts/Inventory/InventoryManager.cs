@@ -13,7 +13,6 @@ public class InventoryManager : MonoBehaviour {
 
     void Start()
     {
-
         CreateInventory();
         InventoryInitialisation();
     }
@@ -22,7 +21,6 @@ public class InventoryManager : MonoBehaviour {
     {
         for (int i = 0; i < _inventoryManagerModel.GetSlotCount(); i++)
         {
-
             GameObject slotObject = Instantiate(_inventoryManagerModel.GetInventorySlotPrefab());
             slotObject.transform.SetParent(this.transform);
             slotObject.transform.localScale = new Vector3(1, 1, 1);
@@ -31,26 +29,21 @@ public class InventoryManager : MonoBehaviour {
             _inventoryManagerModel.SetInventorySlot(slot,i);
             slot.SetInventoryManager(this);
             slot.GetInventorySlotModel().GetInventorySlotView().GetSlotButton().onClick.AddListener(slot.UseItem);
-
         }
     }
 
     public bool AddItem(Item item)
     {
-
         for (int i = 0; i < _inventoryManagerModel.GetSlotCount(); i++)
         {
-
             if (!_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().IsEmpty())
             {
                 if (!_inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().GetSlotItemHolder().IsFull() &&
                     _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().GetSlotItemHolder().Peek().GetItemType() == item.GetItemType())
                 {
-
                     _inventoryManagerModel.GetInventorySlotAtIndex(i).GetInventorySlotModel().AddItemToSlot(item);
 
                     return true;
-
                 }
             }
 
@@ -123,5 +116,4 @@ public class InventoryManager : MonoBehaviour {
             AddItem(ItemFactory.instance.CreateItem(ItemType.DarkMatter)); ;
         }
     }
-
 }

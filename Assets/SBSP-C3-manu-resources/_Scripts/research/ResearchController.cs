@@ -44,5 +44,4 @@ public class ResearchController : MonoBehaviour, ITimeable
         _researchModel.GetResearch().SetLearned(true);
         _researchModel.GetMainController().OnResearchFinishedEvent();
     }
-
 }

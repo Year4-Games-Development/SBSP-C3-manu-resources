@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class InventoryManagerModel{
@@ -20,7 +18,6 @@ public class InventoryManagerModel{
 
     public int GetSlotCount()
     {
-
         return _slotCount;
     }
 
@@ -32,30 +29,21 @@ public class InventoryManagerModel{
 
     public InventorySlot GetInventorySlotAtIndex(int index)
     {
-
         return _inventorySlots[index];
-
     }
 
     public GameObject GetInventorySlotPrefab()
     {
-
         return _inventorySlotPrefab;
-
     }
 
     public void SetMainController(MainResourceController controller)
     {
-
         _mainController = controller;
-
     }
 
     public MainResourceController GetMainController()
     {
-
         return _mainController;
-
     }
-
 }

@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ManuController : MonoBehaviour, IResearchEvent
+public class ManuController : MonoBehaviour
 {
     public Text itemName;
     public Text description;
@@ -30,9 +29,7 @@ public class ManuController : MonoBehaviour, IResearchEvent
     void Awake()
     {
         _manuModel = new ManuModel(itemName, description, button, cost);
-
     }
-
 
     public ManuModel GetManuModel()
     {
@@ -41,8 +38,7 @@ public class ManuController : MonoBehaviour, IResearchEvent
 
     public void Manufactureing()
     {
-
-        Debug.Log("adasdasdasdasdasd");
+        Debug.Log("product being manufactured");
 
         if (_manuModel.GetManufacture().GetName() == "Fuel")
         {
@@ -71,26 +67,5 @@ public class ManuController : MonoBehaviour, IResearchEvent
             InventoryManager.RemoveItem(ItemType.Gold);
             Debug.Log("Manufacturing:" + _manuModel.GetManufacture().GetName());
         }
-    }
-
-    public void OnResearchLearned()
-    {
-        Debug.Log("OnResearchLearned called");
-
-        if (_manuModel.GetMainController().GetManuController().IsResearchLearned(AllManufacture.Ammo))
-        {
-            Debug.Log("Manufacture ammo prefab ");
-            _manuModel.GetManuPanelController().GenerateProducts();
-        }
-        if (_manuModel.GetMainController().GetManuController().IsResearchLearned(AllManufacture.Fuel))
-        {
-           Debug.Log("Manufacture Fuel prefab");
-            _manuModel.GetManuPanelController().GenerateProducts();
-        }   
-    }
-
-    public void SuscribeToResearchEvent(ResearchPanelController controller)
-    {
-        controller.onFinished += OnResearchLearned;
     }
 }

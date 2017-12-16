@@ -7,7 +7,6 @@ public class Manufacture
     private int _timeToManufacture;
 
     AllManufacture _thisManufacture;
-    //AllResearches _thisResearch;
 
     public Manufacture(string name, string description, AllManufacture manufacture, int cost)
     {
@@ -62,11 +61,6 @@ public class Manufacture
     {
         return _cost;
     }
-
-    /*public AllResearches GetResearch()
-    {
-        return _thisResearch;
-    }*/
 }
 
 public enum AllManufacture

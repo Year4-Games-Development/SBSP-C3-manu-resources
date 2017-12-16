@@ -16,12 +16,9 @@ public class ResearchModel{
         _timer = new RechargeTimer();
     }
 
-
     public void SetResearch(Research research)
     {
         _research = research;
-
-        //update the view when research is added
         _researchView.SetName(_research.GetName());
         _researchView.SetDescription(_research.GetDescription());
         _researchView.SetTimerText("Time to learn: " + _research.GetTime());
