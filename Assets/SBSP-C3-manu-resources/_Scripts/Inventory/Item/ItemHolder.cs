@@ -37,9 +37,6 @@ public class ItemHolder{
 
     public int GetSize()
     {
-
         return top + 1;
-
     }
-
 }

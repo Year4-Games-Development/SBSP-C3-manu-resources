@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ResearchPanelController : MonoBehaviour
 {
-
     public GameObject researchPrefab;
     private List<Research> _researches;
     private MainResourceController _mainController;
@@ -18,11 +17,13 @@ public class ResearchPanelController : MonoBehaviour
         _researches.Add(new Research("Machineguns", "You can build machineguns", AllResearches.Machinegun, 5));
         _researches.Add(new Research("Ammo", "Learn to make ammo", AllResearches.Ammo, 5));
         _researches.Add(new Research("Fuel", "Learn to make fuel for engines", AllResearches.Fuel, 2));
+        _researches.Add(new Research("Rockets", "used for weopens", AllResearches.Rockets, 2));
+        _researches.Add(new Research("Search Droid", "Droid used for mining ", AllResearches.SearchDroid, 2));
+        _researches.Add(new Research("Repair Droid", "Droid used for repairing the ship", AllResearches.RepairDroid, 2));
     }
 
     void Start()
     {
-        //generate UI for each research
         GenerateResearches();
     }
 
@@ -71,5 +72,4 @@ public class ResearchPanelController : MonoBehaviour
         if (onFinished != null)
             onFinished();
     }
-
 }

@@ -7,7 +7,6 @@ public class ManuView
     private Text _cost;
     private Button _manufactureButton;
 
-
     public ManuView(Text name, Text description, Button button, Text cost)
     {
         _name = name;
